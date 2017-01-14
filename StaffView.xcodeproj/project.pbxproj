@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
+		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
+		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
+		A0D2801A86CA6519C5B30ADA /* StaffView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D250794C6778FE3F74BCD9E /* StaffView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAD6E70AA8E99FBE1AF221AE /* StaffView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D250794C6778FE3F74BCD9E /* StaffView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C938C49EBAC47DEC355E7A34 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6870483698A7BBAD26761F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 784E4F6ECD541EDEC5CFB81F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4A69BA995D67FD467B26097;
+			remoteInfo = "StaffView macOS";
+		};
+		FBF06667C78D3E68850CB156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 784E4F6ECD541EDEC5CFB81F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B3370F75911AE3B7EF357ED;
+			remoteInfo = "StaffView iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		011480B1B9E225B515CD20C5 /* StaffView macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "StaffView macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		500875C5E63DA13A41385EB5 /* StaffView iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "StaffView iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D250794C6778FE3F74BCD9E /* StaffView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaffView.h; path = StaffView/StaffView.h; sourceTree = "<group>"; };
+		78A135726D1E591EE8B7898C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = StaffViewTests/Info.plist; sourceTree = "<group>"; };
+		A82D52BF7B18A8C113C0DBA8 /* StaffView macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C131EDE7E9BC408F427BB5B7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = StaffView/Info.plist; sourceTree = "<group>"; };
+		DB674A640E0221D687A517C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CDFE19475C99FB02F7E1390 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D4A704B4550388AEB940CB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C938C49EBAC47DEC355E7A34 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3369EE0656480725B84BBB01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D615A94E42A2B4616EB613C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17CAC6C263E92247D79516ED /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DB674A640E0221D687A517C3 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		42AC5A3986B11A6CC328E34E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				500875C5E63DA13A41385EB5 /* StaffView iOS.framework */,
+				3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */,
+				011480B1B9E225B515CD20C5 /* StaffView macOS.framework */,
+				A82D52BF7B18A8C113C0DBA8 /* StaffView macOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55079FAF9C4B8E789A9F11CA = {
+			isa = PBXGroup;
+			children = (
+				42AC5A3986B11A6CC328E34E /* Products */,
+				F2E8506C0CC88EF53879345D /* Frameworks */,
+				AF09B49D23F9E253B613C9C5 /* StaffView */,
+				974D86A2A019C3113805BD93 /* StaffViewTests */,
+				6D250794C6778FE3F74BCD9E /* StaffView.h */,
+			);
+			sourceTree = "<group>";
+		};
+		82CA29FA49AB6EA1EAB39E95 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				3919256C7525A0E03C5E63BF /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		93A8E6EE8C78D26491C95E7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78A135726D1E591EE8B7898C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		974D86A2A019C3113805BD93 /* StaffViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				93A8E6EE8C78D26491C95E7B /* Supporting Files */,
+			);
+			name = StaffViewTests;
+			sourceTree = "<group>";
+		};
+		AF09B49D23F9E253B613C9C5 /* StaffView */ = {
+			isa = PBXGroup;
+			children = (
+				F83B90CEC209B3E190D6780A /* Supporting Files */,
+			);
+			name = StaffView;
+			sourceTree = "<group>";
+		};
+		F2E8506C0CC88EF53879345D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17CAC6C263E92247D79516ED /* iOS */,
+				82CA29FA49AB6EA1EAB39E95 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F83B90CEC209B3E190D6780A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C131EDE7E9BC408F427BB5B7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		665F288BDF09C9E5D6EAD544 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D2801A86CA6519C5B30ADA /* StaffView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB653C4663F97BFE3ECD04CE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAD6E70AA8E99FBE1AF221AE /* StaffView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4927A255575C3FC5C979C29C /* StaffView iOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED4435F0A73602ACE7E9F7C8 /* Build configuration list for PBXNativeTarget "StaffView iOS Tests" */;
+			buildPhases = (
+				ACFB539A95A6B7577D4ACBF7 /* Sources */,
+				3369EE0656480725B84BBB01 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78A896EED6D613793EA28FE1 /* PBXTargetDependency */,
+			);
+			name = "StaffView iOS Tests";
+			productName = "StaffView iOS Tests";
+			productReference = 3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9B3370F75911AE3B7EF357ED /* StaffView iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0712E3F0470F89F958745B4 /* Build configuration list for PBXNativeTarget "StaffView iOS" */;
+			buildPhases = (
+				DF9DE75C923150A6CC3165C9 /* Sources */,
+				0CDFE19475C99FB02F7E1390 /* Frameworks */,
+				665F288BDF09C9E5D6EAD544 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StaffView iOS";
+			productName = "StaffView iOS";
+			productReference = 500875C5E63DA13A41385EB5 /* StaffView iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA0B86FF0AECFA2B05B160D4 /* StaffView macOS Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FA7416DA530650F5635085F /* Build configuration list for PBXNativeTarget "StaffView macOS Tests" */;
+			buildPhases = (
+				70A7700280D7B95A7E8111C0 /* Sources */,
+				D615A94E42A2B4616EB613C1 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBFBCEFA9AC1F25227E0D0CF /* PBXTargetDependency */,
+			);
+			name = "StaffView macOS Tests";
+			productName = "StaffView macOS Tests";
+			productReference = A82D52BF7B18A8C113C0DBA8 /* StaffView macOS Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4A69BA995D67FD467B26097 /* StaffView macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBE4EA6CAC6A0C4BD00889AC /* Build configuration list for PBXNativeTarget "StaffView macOS" */;
+			buildPhases = (
+				C94BA0AD601CBC7BC1E72397 /* Sources */,
+				0D4A704B4550388AEB940CB0 /* Frameworks */,
+				AB653C4663F97BFE3ECD04CE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StaffView macOS";
+			productName = "StaffView macOS";
+			productReference = 011480B1B9E225B515CD20C5 /* StaffView macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		784E4F6ECD541EDEC5CFB81F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 16276C044865B7F7FA6ADA68 /* Build configuration list for PBXProject "StaffView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 55079FAF9C4B8E789A9F11CA;
+			productRefGroup = 42AC5A3986B11A6CC328E34E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B3370F75911AE3B7EF357ED /* StaffView iOS */,
+				4927A255575C3FC5C979C29C /* StaffView iOS Tests */,
+				E4A69BA995D67FD467B26097 /* StaffView macOS */,
+				BA0B86FF0AECFA2B05B160D4 /* StaffView macOS Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70A7700280D7B95A7E8111C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFB539A95A6B7577D4ACBF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C94BA0AD601CBC7BC1E72397 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF9DE75C923150A6CC3165C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78A896EED6D613793EA28FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "StaffView iOS";
+			target = 9B3370F75911AE3B7EF357ED /* StaffView iOS */;
+			targetProxy = FBF06667C78D3E68850CB156 /* PBXContainerItemProxy */;
+		};
+		EBFBCEFA9AC1F25227E0D0CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "StaffView macOS";
+			target = E4A69BA995D67FD467B26097 /* StaffView macOS */;
+			targetProxy = A6870483698A7BBAD26761F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0E1C4154A7245EAA684E36B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dn-m.StaffView";
+				PRODUCT_NAME = StaffView;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2A0E49EF255471555D6B57F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		349EEEB40F57B99D360796F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		3B2E9BEB16A69C24F873EF07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffViewTests/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		49966ABC82B1D9CFB8FD809C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dn-m.StaffView";
+				PRODUCT_NAME = StaffView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5C4A2FB6CBE5836E45115DE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dn-m.StaffView";
+				PRODUCT_NAME = StaffView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		832D7FDF14052F2976EDA1BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffViewTests/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A8C8729A3EC044850BBC79D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Debug;
+		};
+		ACE6905A7FA0A194AC28A897 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6F406115C7E5F4081065063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = StaffView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dn-m.StaffView";
+				PRODUCT_NAME = StaffView;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16276C044865B7F7FA6ADA68 /* Build configuration list for PBXProject "StaffView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8C8729A3EC044850BBC79D2 /* Debug */,
+				ACE6905A7FA0A194AC28A897 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FA7416DA530650F5635085F /* Build configuration list for PBXNativeTarget "StaffView macOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				832D7FDF14052F2976EDA1BC /* Release */,
+				3B2E9BEB16A69C24F873EF07 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0712E3F0470F89F958745B4 /* Build configuration list for PBXNativeTarget "StaffView iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49966ABC82B1D9CFB8FD809C /* Release */,
+				5C4A2FB6CBE5836E45115DE6 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBE4EA6CAC6A0C4BD00889AC /* Build configuration list for PBXNativeTarget "StaffView macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6F406115C7E5F4081065063 /* Release */,
+				0E1C4154A7245EAA684E36B0 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED4435F0A73602ACE7E9F7C8 /* Build configuration list for PBXNativeTarget "StaffView iOS Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349EEEB40F57B99D360796F5 /* Release */,
+				2A0E49EF255471555D6B57F1 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 784E4F6ECD541EDEC5CFB81F /* Project object */;
+}
