@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		076D04781E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D04791E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
-		076D047B1E2D328F0023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047A1E2D328F0023ED96 /* ClefView.swift */; };
-		076D047C1E2D328F0023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047A1E2D328F0023ED96 /* ClefView.swift */; };
 		076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
 		076D047F1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
 		076D04811E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */; };
@@ -19,6 +17,66 @@
 		076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */; };
 		076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
 		076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
+		076D04B81E2D43D60023ED96 /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* Accidental.swift */; };
+		076D04B91E2D43D60023ED96 /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* Accidental.swift */; };
+		076D04BA1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */; };
+		076D04BB1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */; };
+		076D04BC1E2D43D60023ED96 /* AccidentalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */; };
+		076D04BD1E2D43D60023ED96 /* AccidentalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */; };
+		076D04BE1E2D43D60023ED96 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A81E2D43D60023ED96 /* Flat.swift */; };
+		076D04BF1E2D43D60023ED96 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A81E2D43D60023ED96 /* Flat.swift */; };
+		076D04C01E2D43D60023ED96 /* FlatDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A91E2D43D60023ED96 /* FlatDown.swift */; };
+		076D04C11E2D43D60023ED96 /* FlatDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A91E2D43D60023ED96 /* FlatDown.swift */; };
+		076D04C21E2D43D60023ED96 /* FlatUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AA1E2D43D60023ED96 /* FlatUp.swift */; };
+		076D04C31E2D43D60023ED96 /* FlatUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AA1E2D43D60023ED96 /* FlatUp.swift */; };
+		076D04C41E2D43D60023ED96 /* Natural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AB1E2D43D60023ED96 /* Natural.swift */; };
+		076D04C51E2D43D60023ED96 /* Natural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AB1E2D43D60023ED96 /* Natural.swift */; };
+		076D04C61E2D43D60023ED96 /* NaturalDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AC1E2D43D60023ED96 /* NaturalDown.swift */; };
+		076D04C71E2D43D60023ED96 /* NaturalDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AC1E2D43D60023ED96 /* NaturalDown.swift */; };
+		076D04C81E2D43D60023ED96 /* NaturalUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AD1E2D43D60023ED96 /* NaturalUp.swift */; };
+		076D04C91E2D43D60023ED96 /* NaturalUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AD1E2D43D60023ED96 /* NaturalUp.swift */; };
+		076D04CA1E2D43D60023ED96 /* QuarterFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AE1E2D43D60023ED96 /* QuarterFlat.swift */; };
+		076D04CB1E2D43D60023ED96 /* QuarterFlat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AE1E2D43D60023ED96 /* QuarterFlat.swift */; };
+		076D04CC1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AF1E2D43D60023ED96 /* QuarterFlatDown.swift */; };
+		076D04CD1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AF1E2D43D60023ED96 /* QuarterFlatDown.swift */; };
+		076D04CE1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B01E2D43D60023ED96 /* QuarterFlatUp.swift */; };
+		076D04CF1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B01E2D43D60023ED96 /* QuarterFlatUp.swift */; };
+		076D04D01E2D43D60023ED96 /* QuarterSharp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B11E2D43D60023ED96 /* QuarterSharp.swift */; };
+		076D04D11E2D43D60023ED96 /* QuarterSharp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B11E2D43D60023ED96 /* QuarterSharp.swift */; };
+		076D04D21E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B21E2D43D60023ED96 /* QuarterSharpDown.swift */; };
+		076D04D31E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B21E2D43D60023ED96 /* QuarterSharpDown.swift */; };
+		076D04D41E2D43D60023ED96 /* QuarterSharpUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B31E2D43D60023ED96 /* QuarterSharpUp.swift */; };
+		076D04D51E2D43D60023ED96 /* QuarterSharpUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B31E2D43D60023ED96 /* QuarterSharpUp.swift */; };
+		076D04D61E2D43D60023ED96 /* Sharp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B41E2D43D60023ED96 /* Sharp.swift */; };
+		076D04D71E2D43D60023ED96 /* Sharp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B41E2D43D60023ED96 /* Sharp.swift */; };
+		076D04D81E2D43D60023ED96 /* SharpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B51E2D43D60023ED96 /* SharpDown.swift */; };
+		076D04D91E2D43D60023ED96 /* SharpDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B51E2D43D60023ED96 /* SharpDown.swift */; };
+		076D04DA1E2D43D60023ED96 /* SharpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B61E2D43D60023ED96 /* SharpType.swift */; };
+		076D04DB1E2D43D60023ED96 /* SharpType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B61E2D43D60023ED96 /* SharpType.swift */; };
+		076D04DC1E2D43D60023ED96 /* SharpUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B71E2D43D60023ED96 /* SharpUp.swift */; };
+		076D04DD1E2D43D60023ED96 /* SharpUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04B71E2D43D60023ED96 /* SharpUp.swift */; };
+		076D04E91E2D45690023ED96 /* AltoClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DE1E2D45690023ED96 /* AltoClef.swift */; };
+		076D04EA1E2D45690023ED96 /* AltoClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DE1E2D45690023ED96 /* AltoClef.swift */; };
+		076D04EB1E2D45690023ED96 /* BassClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DF1E2D45690023ED96 /* BassClef.swift */; };
+		076D04EC1E2D45690023ED96 /* BassClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DF1E2D45690023ED96 /* BassClef.swift */; };
+		076D04ED1E2D45690023ED96 /* CircleClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E01E2D45690023ED96 /* CircleClefComponent.swift */; };
+		076D04EE1E2D45690023ED96 /* CircleClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E01E2D45690023ED96 /* CircleClefComponent.swift */; };
+		076D04EF1E2D45690023ED96 /* CircleClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */; };
+		076D04F01E2D45690023ED96 /* CircleClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */; };
+		076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E21E2D45690023ED96 /* ClefComponent.swift */; };
+		076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E21E2D45690023ED96 /* ClefComponent.swift */; };
+		076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */; };
+		076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */; };
+		076D04F71E2D45690023ED96 /* DotClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E51E2D45690023ED96 /* DotClefOrnament.swift */; };
+		076D04F81E2D45690023ED96 /* DotClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E51E2D45690023ED96 /* DotClefOrnament.swift */; };
+		076D04F91E2D45690023ED96 /* LineClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E61E2D45690023ED96 /* LineClefComponent.swift */; };
+		076D04FA1E2D45690023ED96 /* LineClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E61E2D45690023ED96 /* LineClefComponent.swift */; };
+		076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E71E2D45690023ED96 /* TenorClef.swift */; };
+		076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E71E2D45690023ED96 /* TenorClef.swift */; };
+		076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E81E2D45690023ED96 /* TrebleClef.swift */; };
+		076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E81E2D45690023ED96 /* TrebleClef.swift */; };
+		076D05001E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
+		076D05011E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
 		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
 		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
@@ -47,11 +105,40 @@
 /* Begin PBXFileReference section */
 		011480B1B9E225B515CD20C5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		076D04771E2D32870023ED96 /* StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.swift; path = StaffView/StaffView.swift; sourceTree = "<group>"; };
-		076D047A1E2D328F0023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
 		076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationRenderer.swift; path = StaffView/StaffInformationRenderer.swift; sourceTree = "<group>"; };
 		076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureRenderer.swift; path = StaffView/StaffStructureRenderer.swift; sourceTree = "<group>"; };
 		076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationConfiguration.swift; path = StaffView/StaffInformationConfiguration.swift; sourceTree = "<group>"; };
 		076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureConfiguration.swift; path = StaffView/StaffStructureConfiguration.swift; sourceTree = "<group>"; };
+		076D04A51E2D43D60023ED96 /* Accidental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accidental.swift; path = StaffView/Accidental.swift; sourceTree = "<group>"; };
+		076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalComponent.swift; path = StaffView/AccidentalComponent.swift; sourceTree = "<group>"; };
+		076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalFactory.swift; path = StaffView/AccidentalFactory.swift; sourceTree = "<group>"; };
+		076D04A81E2D43D60023ED96 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flat.swift; path = StaffView/Flat.swift; sourceTree = "<group>"; };
+		076D04A91E2D43D60023ED96 /* FlatDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatDown.swift; path = StaffView/FlatDown.swift; sourceTree = "<group>"; };
+		076D04AA1E2D43D60023ED96 /* FlatUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatUp.swift; path = StaffView/FlatUp.swift; sourceTree = "<group>"; };
+		076D04AB1E2D43D60023ED96 /* Natural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Natural.swift; path = StaffView/Natural.swift; sourceTree = "<group>"; };
+		076D04AC1E2D43D60023ED96 /* NaturalDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NaturalDown.swift; path = StaffView/NaturalDown.swift; sourceTree = "<group>"; };
+		076D04AD1E2D43D60023ED96 /* NaturalUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NaturalUp.swift; path = StaffView/NaturalUp.swift; sourceTree = "<group>"; };
+		076D04AE1E2D43D60023ED96 /* QuarterFlat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuarterFlat.swift; path = StaffView/QuarterFlat.swift; sourceTree = "<group>"; };
+		076D04AF1E2D43D60023ED96 /* QuarterFlatDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuarterFlatDown.swift; path = StaffView/QuarterFlatDown.swift; sourceTree = "<group>"; };
+		076D04B01E2D43D60023ED96 /* QuarterFlatUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuarterFlatUp.swift; path = StaffView/QuarterFlatUp.swift; sourceTree = "<group>"; };
+		076D04B11E2D43D60023ED96 /* QuarterSharp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuarterSharp.swift; path = StaffView/QuarterSharp.swift; sourceTree = "<group>"; };
+		076D04B21E2D43D60023ED96 /* QuarterSharpDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuarterSharpDown.swift; path = StaffView/QuarterSharpDown.swift; sourceTree = "<group>"; };
+		076D04B31E2D43D60023ED96 /* QuarterSharpUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuarterSharpUp.swift; path = StaffView/QuarterSharpUp.swift; sourceTree = "<group>"; };
+		076D04B41E2D43D60023ED96 /* Sharp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sharp.swift; path = StaffView/Sharp.swift; sourceTree = "<group>"; };
+		076D04B51E2D43D60023ED96 /* SharpDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharpDown.swift; path = StaffView/SharpDown.swift; sourceTree = "<group>"; };
+		076D04B61E2D43D60023ED96 /* SharpType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharpType.swift; path = StaffView/SharpType.swift; sourceTree = "<group>"; };
+		076D04B71E2D43D60023ED96 /* SharpUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharpUp.swift; path = StaffView/SharpUp.swift; sourceTree = "<group>"; };
+		076D04DE1E2D45690023ED96 /* AltoClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltoClef.swift; path = StaffView/AltoClef.swift; sourceTree = "<group>"; };
+		076D04DF1E2D45690023ED96 /* BassClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BassClef.swift; path = StaffView/BassClef.swift; sourceTree = "<group>"; };
+		076D04E01E2D45690023ED96 /* CircleClefComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleClefComponent.swift; path = StaffView/CircleClefComponent.swift; sourceTree = "<group>"; };
+		076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleClefOrnament.swift; path = StaffView/CircleClefOrnament.swift; sourceTree = "<group>"; };
+		076D04E21E2D45690023ED96 /* ClefComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefComponent.swift; path = StaffView/ClefComponent.swift; sourceTree = "<group>"; };
+		076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiamondClefOrnament.swift; path = StaffView/DiamondClefOrnament.swift; sourceTree = "<group>"; };
+		076D04E51E2D45690023ED96 /* DotClefOrnament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotClefOrnament.swift; path = StaffView/DotClefOrnament.swift; sourceTree = "<group>"; };
+		076D04E61E2D45690023ED96 /* LineClefComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineClefComponent.swift; path = StaffView/LineClefComponent.swift; sourceTree = "<group>"; };
+		076D04E71E2D45690023ED96 /* TenorClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TenorClef.swift; path = StaffView/TenorClef.swift; sourceTree = "<group>"; };
+		076D04E81E2D45690023ED96 /* TrebleClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrebleClef.swift; path = StaffView/TrebleClef.swift; sourceTree = "<group>"; };
+		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500875C5E63DA13A41385EB5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +185,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076D04A21E2D43640023ED96 /* Clef */ = {
+			isa = PBXGroup;
+			children = (
+				076D04DE1E2D45690023ED96 /* AltoClef.swift */,
+				076D04DF1E2D45690023ED96 /* BassClef.swift */,
+				076D04E01E2D45690023ED96 /* CircleClefComponent.swift */,
+				076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */,
+				076D04E21E2D45690023ED96 /* ClefComponent.swift */,
+				076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */,
+				076D04E51E2D45690023ED96 /* DotClefOrnament.swift */,
+				076D04E61E2D45690023ED96 /* LineClefComponent.swift */,
+				076D04E71E2D45690023ED96 /* TenorClef.swift */,
+				076D04E81E2D45690023ED96 /* TrebleClef.swift */,
+				076D04FF1E2D46380023ED96 /* ClefView.swift */,
+			);
+			name = Clef;
+			sourceTree = "<group>";
+		};
+		076D04A31E2D43710023ED96 /* Accidental */ = {
+			isa = PBXGroup;
+			children = (
+				076D04A51E2D43D60023ED96 /* Accidental.swift */,
+				076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */,
+				076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */,
+				076D04A81E2D43D60023ED96 /* Flat.swift */,
+				076D04A91E2D43D60023ED96 /* FlatDown.swift */,
+				076D04AA1E2D43D60023ED96 /* FlatUp.swift */,
+				076D04AB1E2D43D60023ED96 /* Natural.swift */,
+				076D04AC1E2D43D60023ED96 /* NaturalDown.swift */,
+				076D04AD1E2D43D60023ED96 /* NaturalUp.swift */,
+				076D04AE1E2D43D60023ED96 /* QuarterFlat.swift */,
+				076D04AF1E2D43D60023ED96 /* QuarterFlatDown.swift */,
+				076D04B01E2D43D60023ED96 /* QuarterFlatUp.swift */,
+				076D04B11E2D43D60023ED96 /* QuarterSharp.swift */,
+				076D04B21E2D43D60023ED96 /* QuarterSharpDown.swift */,
+				076D04B31E2D43D60023ED96 /* QuarterSharpUp.swift */,
+				076D04B41E2D43D60023ED96 /* Sharp.swift */,
+				076D04B51E2D43D60023ED96 /* SharpDown.swift */,
+				076D04B61E2D43D60023ED96 /* SharpType.swift */,
+				076D04B71E2D43D60023ED96 /* SharpUp.swift */,
+			);
+			name = Accidental;
+			sourceTree = "<group>";
+		};
+		076D04A41E2D43770023ED96 /* Notehead */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Notehead;
+			sourceTree = "<group>";
+		};
 		17CAC6C263E92247D79516ED /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,11 +295,13 @@
 			children = (
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
 				076D04771E2D32870023ED96 /* StaffView.swift */,
-				076D047A1E2D328F0023ED96 /* ClefView.swift */,
+				076D04A21E2D43640023ED96 /* Clef */,
 				076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */,
 				076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */,
 				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
 				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
+				076D04A41E2D43770023ED96 /* Notehead */,
+				076D04A31E2D43710023ED96 /* Accidental */,
 			);
 			name = StaffView;
 			sourceTree = "<group>";
@@ -380,12 +520,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076D047C1E2D328F0023ED96 /* ClefView.swift in Sources */,
+				076D04F01E2D45690023ED96 /* CircleClefOrnament.swift in Sources */,
+				076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */,
+				076D04C91E2D43D60023ED96 /* NaturalUp.swift in Sources */,
+				076D04EA1E2D45690023ED96 /* AltoClef.swift in Sources */,
+				076D04EC1E2D45690023ED96 /* BassClef.swift in Sources */,
+				076D04CF1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
 				076D047F1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
+				076D04BF1E2D43D60023ED96 /* Flat.swift in Sources */,
+				076D04EE1E2D45690023ED96 /* CircleClefComponent.swift in Sources */,
+				076D04C31E2D43D60023ED96 /* FlatUp.swift in Sources */,
+				076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */,
+				076D04F81E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
 				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
+				076D04CD1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
+				076D04B91E2D43D60023ED96 /* Accidental.swift in Sources */,
+				076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */,
+				076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
+				076D04CB1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
+				076D04DB1E2D43D60023ED96 /* SharpType.swift in Sources */,
+				076D04DD1E2D43D60023ED96 /* SharpUp.swift in Sources */,
+				076D04C51E2D43D60023ED96 /* Natural.swift in Sources */,
+				076D04D91E2D43D60023ED96 /* SharpDown.swift in Sources */,
 				076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
+				076D04D11E2D43D60023ED96 /* QuarterSharp.swift in Sources */,
+				076D04C11E2D43D60023ED96 /* FlatDown.swift in Sources */,
 				076D04821E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */,
 				076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
+				076D05011E2D46380023ED96 /* ClefView.swift in Sources */,
+				076D04C71E2D43D60023ED96 /* NaturalDown.swift in Sources */,
+				076D04BD1E2D43D60023ED96 /* AccidentalFactory.swift in Sources */,
+				076D04D71E2D43D60023ED96 /* Sharp.swift in Sources */,
+				076D04BB1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */,
+				076D04D51E2D43D60023ED96 /* QuarterSharpUp.swift in Sources */,
+				076D04D31E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */,
+				076D04FA1E2D45690023ED96 /* LineClefComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,12 +562,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076D047B1E2D328F0023ED96 /* ClefView.swift in Sources */,
+				076D04EF1E2D45690023ED96 /* CircleClefOrnament.swift in Sources */,
+				076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */,
+				076D04C81E2D43D60023ED96 /* NaturalUp.swift in Sources */,
+				076D04E91E2D45690023ED96 /* AltoClef.swift in Sources */,
+				076D04EB1E2D45690023ED96 /* BassClef.swift in Sources */,
+				076D04CE1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
 				076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
+				076D04BE1E2D43D60023ED96 /* Flat.swift in Sources */,
+				076D04ED1E2D45690023ED96 /* CircleClefComponent.swift in Sources */,
+				076D04C21E2D43D60023ED96 /* FlatUp.swift in Sources */,
+				076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */,
+				076D04F71E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
 				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
+				076D04CC1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
+				076D04B81E2D43D60023ED96 /* Accidental.swift in Sources */,
+				076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */,
+				076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
+				076D04CA1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
+				076D04DA1E2D43D60023ED96 /* SharpType.swift in Sources */,
+				076D04DC1E2D43D60023ED96 /* SharpUp.swift in Sources */,
+				076D04C41E2D43D60023ED96 /* Natural.swift in Sources */,
+				076D04D81E2D43D60023ED96 /* SharpDown.swift in Sources */,
 				076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
+				076D04D01E2D43D60023ED96 /* QuarterSharp.swift in Sources */,
+				076D04C01E2D43D60023ED96 /* FlatDown.swift in Sources */,
 				076D04811E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */,
 				076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
+				076D05001E2D46380023ED96 /* ClefView.swift in Sources */,
+				076D04C61E2D43D60023ED96 /* NaturalDown.swift in Sources */,
+				076D04BC1E2D43D60023ED96 /* AccidentalFactory.swift in Sources */,
+				076D04D61E2D43D60023ED96 /* Sharp.swift in Sources */,
+				076D04BA1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */,
+				076D04D41E2D43D60023ED96 /* QuarterSharpUp.swift in Sources */,
+				076D04D21E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */,
+				076D04F91E2D45690023ED96 /* LineClefComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
