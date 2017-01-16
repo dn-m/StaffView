@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076D04781E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
+		076D04791E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
+		076D047B1E2D328F0023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047A1E2D328F0023ED96 /* ClefView.swift */; };
+		076D047C1E2D328F0023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047A1E2D328F0023ED96 /* ClefView.swift */; };
+		076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
+		076D047F1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
+		076D04811E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */; };
+		076D04821E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */; };
+		076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */; };
+		076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */; };
+		076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
+		076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
 		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
 		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
@@ -33,10 +45,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		011480B1B9E225B515CD20C5 /* StaffView macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "StaffView macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		011480B1B9E225B515CD20C5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		076D04771E2D32870023ED96 /* StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.swift; path = StaffView/StaffView.swift; sourceTree = "<group>"; };
+		076D047A1E2D328F0023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
+		076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationRenderer.swift; path = StaffView/StaffInformationRenderer.swift; sourceTree = "<group>"; };
+		076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureRenderer.swift; path = StaffView/StaffStructureRenderer.swift; sourceTree = "<group>"; };
+		076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationConfiguration.swift; path = StaffView/StaffInformationConfiguration.swift; sourceTree = "<group>"; };
+		076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureConfiguration.swift; path = StaffView/StaffStructureConfiguration.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		500875C5E63DA13A41385EB5 /* StaffView iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "StaffView iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		500875C5E63DA13A41385EB5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D250794C6778FE3F74BCD9E /* StaffView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = StaffView.h; path = StaffView/StaffView.h; sourceTree = "<group>"; };
 		78A135726D1E591EE8B7898C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = StaffViewTests/Info.plist; sourceTree = "<group>"; };
 		A82D52BF7B18A8C113C0DBA8 /* StaffView macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,9 +109,9 @@
 		42AC5A3986B11A6CC328E34E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				500875C5E63DA13A41385EB5 /* StaffView iOS.framework */,
+				500875C5E63DA13A41385EB5 /* StaffView.framework */,
 				3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */,
-				011480B1B9E225B515CD20C5 /* StaffView macOS.framework */,
+				011480B1B9E225B515CD20C5 /* StaffView.framework */,
 				A82D52BF7B18A8C113C0DBA8 /* StaffView macOS Tests.xctest */,
 			);
 			name = Products;
@@ -138,6 +156,12 @@
 			isa = PBXGroup;
 			children = (
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
+				076D04771E2D32870023ED96 /* StaffView.swift */,
+				076D047A1E2D328F0023ED96 /* ClefView.swift */,
+				076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */,
+				076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */,
+				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
+				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
 			);
 			name = StaffView;
 			sourceTree = "<group>";
@@ -187,6 +211,7 @@
 			buildPhases = (
 				ACFB539A95A6B7577D4ACBF7 /* Sources */,
 				3369EE0656480725B84BBB01 /* Frameworks */,
+				3DA323E343EC5C64B0502AEF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -212,7 +237,7 @@
 			);
 			name = "StaffView iOS";
 			productName = "StaffView iOS";
-			productReference = 500875C5E63DA13A41385EB5 /* StaffView iOS.framework */;
+			productReference = 500875C5E63DA13A41385EB5 /* StaffView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BA0B86FF0AECFA2B05B160D4 /* StaffView macOS Tests */ = {
@@ -221,6 +246,7 @@
 			buildPhases = (
 				70A7700280D7B95A7E8111C0 /* Sources */,
 				D615A94E42A2B4616EB613C1 /* Frameworks */,
+				0F859F4CBFF7C7C63DF16019 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -246,7 +272,7 @@
 			);
 			name = "StaffView macOS";
 			productName = "StaffView macOS";
-			productReference = 011480B1B9E225B515CD20C5 /* StaffView macOS.framework */;
+			productReference = 011480B1B9E225B515CD20C5 /* StaffView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -257,6 +283,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					9B3370F75911AE3B7EF357ED = {
+						LastSwiftMigration = 0820;
+					};
+					E4A69BA995D67FD467B26097 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = 16276C044865B7F7FA6ADA68 /* Build configuration list for PBXProject "StaffView" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -278,6 +312,55 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F859F4CBFF7C7C63DF16019 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Articulations.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Collections.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/GraphicsTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PathTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Pitch.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PitchSpellingTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PlotModel.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PlotView.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/StaffModel.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		3DA323E343EC5C64B0502AEF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Articulations.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Collections.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GraphicsTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PathTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Pitch.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PitchSpellingTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PlotModel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PlotView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/StaffModel.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70A7700280D7B95A7E8111C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -297,6 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D047C1E2D328F0023ED96 /* ClefView.swift in Sources */,
+				076D047F1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
+				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
+				076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
+				076D04821E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */,
+				076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +393,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D047B1E2D328F0023ED96 /* ClefView.swift in Sources */,
+				076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
+				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
+				076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
+				076D04811E2D32BB0023ED96 /* StaffStructureRenderer.swift in Sources */,
+				076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -339,6 +435,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffView/Info.plist;
@@ -350,6 +447,8 @@
 				PRODUCT_NAME = StaffView;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -358,12 +457,15 @@
 		2A0E49EF255471555D6B57F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(SRCROOT)/Carthage/Build/iOS";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -373,12 +475,15 @@
 		349EEEB40F57B99D360796F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(SRCROOT)/Carthage/Build/iOS";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -388,11 +493,14 @@
 		3B2E9BEB16A69C24F873EF07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(SRCROOT)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -412,6 +521,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -422,6 +532,7 @@
 				PRODUCT_NAME = StaffView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -432,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -440,6 +552,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -450,6 +563,8 @@
 				PRODUCT_NAME = StaffView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -459,11 +574,14 @@
 		832D7FDF14052F2976EDA1BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(SRCROOT)/Carthage/Build/Mac";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -566,6 +685,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffView/Info.plist;
@@ -577,6 +697,7 @@
 				PRODUCT_NAME = StaffView;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

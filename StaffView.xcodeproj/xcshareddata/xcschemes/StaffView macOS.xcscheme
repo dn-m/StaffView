@@ -7,57 +7,58 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForAnalyzing = "YES"
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
-            buildForArchiving = "YES">
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4A69BA995D67FD467B26097"
+               BuildableName = "StaffView.framework"
                BlueprintName = "StaffView macOS"
-               ReferencedContainer = "container:StaffView.xcodeproj"
-               BuildableName = "StaffView macOS.framework">
+               ReferencedContainer = "container:StaffView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForAnalyzing = "NO"
             buildForTesting = "YES"
             buildForRunning = "NO"
             buildForProfiling = "NO"
-            buildForArchiving = "NO">
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BA0B86FF0AECFA2B05B160D4'
-               BlueprintName = 'StaffView macOS Tests'
-               ReferencedContainer = 'container:StaffView.xcodeproj'
-               BuildableName = 'StaffView macOS Tests.xctest'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA0B86FF0AECFA2B05B160D4"
+               BuildableName = "StaffView macOS Tests.xctest"
+               BlueprintName = "StaffView macOS Tests"
+               ReferencedContainer = "container:StaffView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug"
       codeCoverageEnabled = "YES">
-      <AdditionalOptions>
-      </AdditionalOptions>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BA0B86FF0AECFA2B05B160D4'
-               BlueprintName = 'StaffView macOS Tests'
-               ReferencedContainer = 'container:StaffView.xcodeproj'
-               BuildableName = 'StaffView macOS Tests.xctest'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA0B86FF0AECFA2B05B160D4"
+               BuildableName = "StaffView macOS Tests.xctest"
+               BlueprintName = "StaffView macOS Tests"
+               ReferencedContainer = "container:StaffView.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -65,17 +66,25 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      buildConfiguration = "Debug"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E4A69BA995D67FD467B26097"
+            BuildableName = "StaffView.framework"
+            BlueprintName = "StaffView macOS"
+            ReferencedContainer = "container:StaffView.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      debugDocumentVersioning = "YES">
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
