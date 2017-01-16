@@ -48,3 +48,19 @@ extension ClefView {
         )
     }
 }
+
+extension Clef.Kind {
+    
+    public var view: ClefView.Type {
+        switch self {
+        case .bass:
+            return TrebleClef.self
+        case .tenor:
+            return TenorClef.self
+        case .alto:
+            return AltoClef.self
+        case .treble:
+            return TrebleClef.self
+        }
+    }
+}

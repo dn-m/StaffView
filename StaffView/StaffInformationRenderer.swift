@@ -7,13 +7,23 @@
 //
 
 import QuartzCore
+import Pitch
+import PitchSpellingTools
 import StaffModel
 import GraphicsTools
 
 public struct StaffInformationRenderer: Renderer {
     
-    public init(model: StaffModel) {
-        
+    private let ledgerLinesRenderDelegate: LedgerLineRenderDelegate?
+    let model: StaffModel
+    
+    public init(
+        model: StaffModel,
+        ledgerLinesRenderDelegate: LedgerLineRenderDelegate? = nil
+    )
+    {
+        self.model = model
+        self.ledgerLinesRenderDelegate = ledgerLinesRenderDelegate
     }
     
     public func render(
@@ -21,6 +31,16 @@ public struct StaffInformationRenderer: Renderer {
         with configuration: StaffInformationConfiguration
     )
     {
-        fatalError("Does not do anything")
+        for (position, points) in model {
+            for point in points {
+                
+                let (above, below) = point.ledgerLines(model.verticalAxis)
+                delegateLedgerLineRendering(at: position, above: above, below: below)
+            }
+        }
+    }
+    
+    private func delegateLedgerLineRendering(at position: Double, above: Int, below: Int) {
+        ledgerLinesRenderDelegate?.addLedgerLines(at: position, above: above, below: below)
     }
 }

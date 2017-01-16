@@ -79,6 +79,8 @@
 		076D05011E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
 		076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
 		076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
+		076D05061E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */; };
+		076D05071E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
 		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
 		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
@@ -142,6 +144,7 @@
 		076D04E81E2D45690023ED96 /* TrebleClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrebleClef.swift; path = StaffView/TrebleClef.swift; sourceTree = "<group>"; };
 		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
 		076D05021E2D481C0023ED96 /* NoteheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadView.swift; path = StaffView/NoteheadView.swift; sourceTree = "<group>"; };
+		076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerLineRenderDelegate.swift; path = StaffView/LedgerLineRenderDelegate.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500875C5E63DA13A41385EB5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,11 +302,12 @@
 			children = (
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
 				076D04771E2D32870023ED96 /* StaffView.swift */,
-				076D04A21E2D43640023ED96 /* Clef */,
 				076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */,
 				076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */,
 				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
 				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
+				076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */,
+				076D04A21E2D43640023ED96 /* Clef */,
 				076D04A41E2D43770023ED96 /* Notehead */,
 				076D04A31E2D43710023ED96 /* Accidental */,
 			);
@@ -543,6 +547,7 @@
 				076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */,
 				076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CB1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
+				076D05071E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */,
 				076D04DB1E2D43D60023ED96 /* SharpType.swift in Sources */,
 				076D04DD1E2D43D60023ED96 /* SharpUp.swift in Sources */,
 				076D04C51E2D43D60023ED96 /* Natural.swift in Sources */,
@@ -586,6 +591,7 @@
 				076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */,
 				076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CA1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
+				076D05061E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */,
 				076D04DA1E2D43D60023ED96 /* SharpType.swift in Sources */,
 				076D04DC1E2D43D60023ED96 /* SharpUp.swift in Sources */,
 				076D04C41E2D43D60023ED96 /* Natural.swift in Sources */,
