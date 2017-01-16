@@ -11,7 +11,7 @@ import QuartzCore
 import PathTools
 import GraphicsTools
 
-public class Notehead: CAShapeLayer, ShapeType {
+public class NoteheadView: CAShapeLayer, ShapeType {
     
     public var point: CGPoint
     public var staffSlotHeight: StaffSlot

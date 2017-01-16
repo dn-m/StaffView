@@ -1,7 +1,7 @@
 
 //
-//  .swift
-//  DNM_iOS
+//  AccidentalView.swift
+//  StaffView
 //
 //  Created by James Bean on 8/18/15.
 //  Copyright © 2015 James Bean. All rights reserved.
@@ -157,7 +157,7 @@ public class AccidentalView: CALayer, CompositeShapeType {
     }
 }
 
-extension Accidental {
+extension AccidentalView {
     
     public static func makeAccidental(
         withKind kind: Accidental,

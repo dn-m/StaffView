@@ -17,8 +17,8 @@
 		076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */; };
 		076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
 		076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
-		076D04B81E2D43D60023ED96 /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* Accidental.swift */; };
-		076D04B91E2D43D60023ED96 /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* Accidental.swift */; };
+		076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* AccidentalView.swift */; };
+		076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* AccidentalView.swift */; };
 		076D04BA1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */; };
 		076D04BB1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */; };
 		076D04BC1E2D43D60023ED96 /* AccidentalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */; };
@@ -81,6 +81,8 @@
 		076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
 		076D05061E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */; };
 		076D05071E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */; };
+		076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
+		076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
 		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
 		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
@@ -113,7 +115,7 @@
 		076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureRenderer.swift; path = StaffView/StaffStructureRenderer.swift; sourceTree = "<group>"; };
 		076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationConfiguration.swift; path = StaffView/StaffInformationConfiguration.swift; sourceTree = "<group>"; };
 		076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureConfiguration.swift; path = StaffView/StaffStructureConfiguration.swift; sourceTree = "<group>"; };
-		076D04A51E2D43D60023ED96 /* Accidental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Accidental.swift; path = StaffView/Accidental.swift; sourceTree = "<group>"; };
+		076D04A51E2D43D60023ED96 /* AccidentalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalView.swift; path = StaffView/AccidentalView.swift; sourceTree = "<group>"; };
 		076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalComponent.swift; path = StaffView/AccidentalComponent.swift; sourceTree = "<group>"; };
 		076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalFactory.swift; path = StaffView/AccidentalFactory.swift; sourceTree = "<group>"; };
 		076D04A81E2D43D60023ED96 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flat.swift; path = StaffView/Flat.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
 		076D05021E2D481C0023ED96 /* NoteheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadView.swift; path = StaffView/NoteheadView.swift; sourceTree = "<group>"; };
 		076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerLineRenderDelegate.swift; path = StaffView/LedgerLineRenderDelegate.swift; sourceTree = "<group>"; };
+		076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffRepresentedPitch.swift; path = StaffView/StaffRepresentedPitch.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500875C5E63DA13A41385EB5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +215,7 @@
 		076D04A31E2D43710023ED96 /* Accidental */ = {
 			isa = PBXGroup;
 			children = (
-				076D04A51E2D43D60023ED96 /* Accidental.swift */,
+				076D04A51E2D43D60023ED96 /* AccidentalView.swift */,
 				076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */,
 				076D04A71E2D43D60023ED96 /* AccidentalFactory.swift */,
 				076D04A81E2D43D60023ED96 /* Flat.swift */,
@@ -307,6 +310,7 @@
 				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
 				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
 				076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */,
+				076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */,
 				076D04A21E2D43640023ED96 /* Clef */,
 				076D04A41E2D43770023ED96 /* Notehead */,
 				076D04A31E2D43710023ED96 /* Accidental */,
@@ -541,9 +545,10 @@
 				076D04C31E2D43D60023ED96 /* FlatUp.swift in Sources */,
 				076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */,
 				076D04F81E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
+				076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
 				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04CD1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
-				076D04B91E2D43D60023ED96 /* Accidental.swift in Sources */,
+				076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */,
 				076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */,
 				076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CB1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
@@ -585,9 +590,10 @@
 				076D04C21E2D43D60023ED96 /* FlatUp.swift in Sources */,
 				076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */,
 				076D04F71E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
+				076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
 				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04CC1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
-				076D04B81E2D43D60023ED96 /* Accidental.swift in Sources */,
+				076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */,
 				076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */,
 				076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CA1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
