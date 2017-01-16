@@ -77,6 +77,8 @@
 		076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E81E2D45690023ED96 /* TrebleClef.swift */; };
 		076D05001E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
 		076D05011E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
+		076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
+		076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
 		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
 		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
@@ -139,6 +141,7 @@
 		076D04E71E2D45690023ED96 /* TenorClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TenorClef.swift; path = StaffView/TenorClef.swift; sourceTree = "<group>"; };
 		076D04E81E2D45690023ED96 /* TrebleClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrebleClef.swift; path = StaffView/TrebleClef.swift; sourceTree = "<group>"; };
 		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
+		076D05021E2D481C0023ED96 /* NoteheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadView.swift; path = StaffView/NoteheadView.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500875C5E63DA13A41385EB5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +235,7 @@
 		076D04A41E2D43770023ED96 /* Notehead */ = {
 			isa = PBXGroup;
 			children = (
+				076D05021E2D481C0023ED96 /* NoteheadView.swift */,
 			);
 			name = Notehead;
 			sourceTree = "<group>";
@@ -524,6 +528,7 @@
 				076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C91E2D43D60023ED96 /* NaturalUp.swift in Sources */,
 				076D04EA1E2D45690023ED96 /* AltoClef.swift in Sources */,
+				076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */,
 				076D04EC1E2D45690023ED96 /* BassClef.swift in Sources */,
 				076D04CF1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
 				076D047F1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
@@ -566,6 +571,7 @@
 				076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C81E2D43D60023ED96 /* NaturalUp.swift in Sources */,
 				076D04E91E2D45690023ED96 /* AltoClef.swift in Sources */,
+				076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */,
 				076D04EB1E2D45690023ED96 /* BassClef.swift in Sources */,
 				076D04CE1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
 				076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
