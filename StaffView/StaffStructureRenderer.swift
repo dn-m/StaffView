@@ -22,7 +22,6 @@ public struct StaffStructureRenderer: Renderer {
     
     private var staffLines = LinesSegmentCollection()
     private var ledgerLines: [Double: [LedgerLineDirection: Int]] = [:]
-    
     private let model: StaffModel
     
     public init(model: StaffModel) {
