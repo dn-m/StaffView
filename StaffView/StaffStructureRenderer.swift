@@ -70,7 +70,7 @@ public struct StaffStructureRenderer: Renderer {
         kind: Clef.Kind,
         x: CGFloat,
         staffTop: CGFloat,
-        staffSlotHeight: StaffSlot
+        staffSlotHeight: StaffSlotHeight
     ) -> CALayer
     {
         return kind.view.init(
@@ -112,7 +112,7 @@ public struct StaffStructureRenderer: Renderer {
         for segment in staffLines {
             
             (0..<5).forEach { lineNumber in
-                let altitude = CGFloat(lineNumber * staffSlotHeight) * 2
+                let altitude = CGFloat(lineNumber) * CGFloat(staffSlotHeight) * 2
                 let left = CGFloat(segment.start)
                 let right = CGFloat(segment.stop)
                 

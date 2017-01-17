@@ -10,5 +10,5 @@ import QuartzCore
 
 /// - TODO: Consider requiring conformance to `ColorModeObserving`
 public protocol ClefComponent {
-    var lineWidth: CGFloat { get set }
+   var lineWidth: CGFloat { get set }
 }

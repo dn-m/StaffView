@@ -11,6 +11,7 @@ import QuartzCore
 import PathTools
 import GraphicsTools
 
+/// - TODO: Decouple `NoteheadView` from `staffSlotHeight`.
 public class NoteheadView: CAShapeLayer, ShapeType {
     
     public var point: CGPoint

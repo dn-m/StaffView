@@ -36,9 +36,9 @@ public final class BassClef: CALayer, ClefView {
     public var components: [CALayer] = []
     public let x: CGFloat
     public let staffTop: CGFloat
-    public let staffSlotHeight: StaffSlot
+    public let staffSlotHeight: StaffSlotHeight
     
-    public init(x: CGFloat, staffTop: CGFloat, staffSlotHeight: StaffSlot) {
+    public init(x: CGFloat, staffTop: CGFloat, staffSlotHeight: StaffSlotHeight) {
         self.x = x
         self.staffTop = staffTop
         self.staffSlotHeight = staffSlotHeight

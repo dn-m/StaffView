@@ -39,5 +39,4 @@ public struct StaffRepresentedPitch {
             staffSlotHeight: self.staffSlotHeight
         )
     }
-
 }

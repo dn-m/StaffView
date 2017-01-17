@@ -15,10 +15,10 @@ public protocol ClefView: CompositeShapeType {
     var x: CGFloat { get }
     var staffTop: CGFloat { get }
     var lineWidth: CGFloat { get }
-    var staffSlotHeight: StaffSlot { get }
+    var staffSlotHeight: StaffSlotHeight { get }
     var extenderLength: CGFloat { get }
     
-    init(x: CGFloat, staffTop: CGFloat, staffSlotHeight: StaffSlot)
+    init(x: CGFloat, staffTop: CGFloat, staffSlotHeight: StaffSlotHeight)
 }
 
 extension ClefView {

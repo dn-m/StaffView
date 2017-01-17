@@ -33,7 +33,6 @@ public struct StaffInformationRenderer: Renderer {
     {
         for (position, points) in model {
             for point in points {
-                
                 let (above, below) = point.ledgerLines(model.verticalAxis)
                 delegateLedgerLineRendering(at: position, above: above, below: below)
             }

@@ -6,6 +6,15 @@
 //
 //
 
+import GraphicsTools
+
 public struct StaffInformationConfiguration {
+
+    public let staffSlotHeight: StaffSlotHeight
+    public let noteheadColor: Color
     
+    public init(staffSlotHeight: StaffSlotHeight, noteheadColor: Color) {
+        self.staffSlotHeight = staffSlotHeight
+        self.noteheadColor = noteheadColor
+    }
 }
