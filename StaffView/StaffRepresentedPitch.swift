@@ -6,6 +6,7 @@
 //
 //
 
+import GraphicsTools
 import StaffModel
 import QuartzCore
 
@@ -13,7 +14,7 @@ public struct StaffRepresentedPitch {
     
     private let representableContext: StaffRepresentablePitch
     private let altitude: CGFloat
-    private let staffSlotHeight: StaffSlot
+    private let staffSlotHeight: StaffSlotHeight
     
     public let notehead: NoteheadView?
     public let accidental: AccidentalView?
@@ -21,7 +22,7 @@ public struct StaffRepresentedPitch {
     public init(
         representableContext: StaffRepresentablePitch,
         altitude: CGFloat, // calculate altitude within staffEvent?
-        staffSlotHeight: StaffSlot
+        staffSlotHeight: StaffSlotHeight
     )
     {
         self.representableContext = representableContext
@@ -38,5 +39,7 @@ public struct StaffRepresentedPitch {
             point: CGPoint(x: 0, y: self.altitude),
             staffSlotHeight: self.staffSlotHeight
         )
+        
+        accidental?.color = Color.red
     }
 }

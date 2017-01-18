@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
+		0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
 		076D04781E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D04791E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
@@ -79,12 +81,12 @@
 		076D05011E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
 		076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
 		076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
-		076D05061E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */; };
-		076D05071E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */; };
+		076D05061E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */; };
+		076D05071E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */; };
 		076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
 		076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
-		07FFE8C91E2E85E400023FFC /* StaffConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */; };
-		07FFE8CA1E2E85E400023FFC /* StaffConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */; };
+		07FFE8C91E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
+		07FFE8CA1E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
 		07FFE8CD1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
@@ -114,6 +116,7 @@
 
 /* Begin PBXFileReference section */
 		011480B1B9E225B515CD20C5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffLinesRenderDelegate.swift; path = StaffView/StaffLinesRenderDelegate.swift; sourceTree = "<group>"; };
 		076D04771E2D32870023ED96 /* StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.swift; path = StaffView/StaffView.swift; sourceTree = "<group>"; };
 		076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationRenderer.swift; path = StaffView/StaffInformationRenderer.swift; sourceTree = "<group>"; };
 		076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureRenderer.swift; path = StaffView/StaffStructureRenderer.swift; sourceTree = "<group>"; };
@@ -150,9 +153,9 @@
 		076D04E81E2D45690023ED96 /* TrebleClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrebleClef.swift; path = StaffView/TrebleClef.swift; sourceTree = "<group>"; };
 		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
 		076D05021E2D481C0023ED96 /* NoteheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadView.swift; path = StaffView/NoteheadView.swift; sourceTree = "<group>"; };
-		076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerLineRenderDelegate.swift; path = StaffView/LedgerLineRenderDelegate.swift; sourceTree = "<group>"; };
+		076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerLinesRenderDelegate.swift; path = StaffView/LedgerLinesRenderDelegate.swift; sourceTree = "<group>"; };
 		076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffRepresentedPitch.swift; path = StaffView/StaffRepresentedPitch.swift; sourceTree = "<group>"; };
-		07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffConfiguration.swift; path = StaffView/StaffConfiguration.swift; sourceTree = "<group>"; };
+		07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewConfiguration.swift; path = StaffView/StaffViewConfiguration.swift; sourceTree = "<group>"; };
 		07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffSlotHeight.swift; path = StaffView/StaffSlotHeight.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,12 +315,13 @@
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
 				076D04771E2D32870023ED96 /* StaffView.swift */,
 				07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */,
-				07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */,
+				07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */,
 				076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */,
 				076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */,
 				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
 				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
-				076D05051E2D493E0023ED96 /* LedgerLineRenderDelegate.swift */,
+				076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */,
+				0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */,
 				076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */,
 				076D04A21E2D43640023ED96 /* Clef */,
 				076D04A41E2D43770023ED96 /* Notehead */,
@@ -446,6 +450,7 @@
 				TargetAttributes = {
 					9B3370F75911AE3B7EF357ED = {
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					E4A69BA995D67FD467B26097 = {
 						LastSwiftMigration = 0820;
@@ -544,7 +549,7 @@
 				076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C91E2D43D60023ED96 /* NaturalUp.swift in Sources */,
 				076D04EA1E2D45690023ED96 /* AltoClef.swift in Sources */,
-				07FFE8CA1E2E85E400023FFC /* StaffConfiguration.swift in Sources */,
+				07FFE8CA1E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */,
 				076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */,
 				076D04EC1E2D45690023ED96 /* BassClef.swift in Sources */,
 				076D04CF1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
@@ -562,7 +567,7 @@
 				076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */,
 				076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CB1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
-				076D05071E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */,
+				076D05071E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */,
 				076D04DB1E2D43D60023ED96 /* SharpType.swift in Sources */,
 				076D04DD1E2D43D60023ED96 /* SharpUp.swift in Sources */,
 				076D04C51E2D43D60023ED96 /* Natural.swift in Sources */,
@@ -578,6 +583,7 @@
 				076D04D71E2D43D60023ED96 /* Sharp.swift in Sources */,
 				076D04BB1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */,
 				076D04D51E2D43D60023ED96 /* QuarterSharpUp.swift in Sources */,
+				0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				076D04D31E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */,
 				076D04FA1E2D45690023ED96 /* LineClefComponent.swift in Sources */,
 			);
@@ -591,7 +597,7 @@
 				076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C81E2D43D60023ED96 /* NaturalUp.swift in Sources */,
 				076D04E91E2D45690023ED96 /* AltoClef.swift in Sources */,
-				07FFE8C91E2E85E400023FFC /* StaffConfiguration.swift in Sources */,
+				07FFE8C91E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */,
 				076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */,
 				076D04EB1E2D45690023ED96 /* BassClef.swift in Sources */,
 				076D04CE1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
@@ -609,7 +615,7 @@
 				076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */,
 				076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CA1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
-				076D05061E2D493E0023ED96 /* LedgerLineRenderDelegate.swift in Sources */,
+				076D05061E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */,
 				076D04DA1E2D43D60023ED96 /* SharpType.swift in Sources */,
 				076D04DC1E2D43D60023ED96 /* SharpUp.swift in Sources */,
 				076D04C41E2D43D60023ED96 /* Natural.swift in Sources */,
@@ -625,6 +631,7 @@
 				076D04D61E2D43D60023ED96 /* Sharp.swift in Sources */,
 				076D04BA1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */,
 				076D04D41E2D43D60023ED96 /* QuarterSharpUp.swift in Sources */,
+				0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				076D04D21E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */,
 				076D04F91E2D45690023ED96 /* LineClefComponent.swift in Sources */,
 			);
@@ -741,10 +748,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = F8LCL8SXLX;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -772,7 +780,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;

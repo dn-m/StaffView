@@ -27,7 +27,10 @@ public final class StaffView: CALayer, PlotView, Renderer {
     public init(model: StaffModel) {
         self.model = model
         self.structureRenderer = StaffStructureRenderer(model: model)
-        self.informationRenderer = StaffInformationRenderer(model: model)
+        self.informationRenderer = StaffInformationRenderer(
+            model: model,
+            staffLinesRenderDelegate: structureRenderer
+        )
         super.init()
     }
     
@@ -35,20 +38,33 @@ public final class StaffView: CALayer, PlotView, Renderer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func render(in context: CALayer, with configuration: StaffConfiguration) {
+    public func render(in context: CALayer, with configuration: StaffViewConfiguration) {
+    
         
         let staffSlotHeight = configuration.staffSlotHeight
         
         let structureConfig = StaffStructureConfiguration(
             staffSlotHeight: staffSlotHeight,
-            linesColor: Color(gray: 1, alpha: 1)
+            linesColor: Color(gray: 0.5, alpha: 1)
         )
         
         let infoConfig = StaffInformationConfiguration(
             staffSlotHeight: staffSlotHeight,
             noteheadColor: Color.red)
         
-        structureRenderer.render(in: context, with: structureConfig)
-        informationRenderer.render(in: context, with: infoConfig)
+        for (position, points) in model {
+            print("position: \(position)")
+            for point in points {
+                print(point)
+            }
+        }
+        
+        
+        informationRenderer.render(in: information, with: infoConfig)
+        structureRenderer.stopLines(at: 500)
+        structureRenderer.render(in: structure, with: structureConfig)
+        
+        context.addSublayer(structure)
+        context.addSublayer(information)
     }
 }

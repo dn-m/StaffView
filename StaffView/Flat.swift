@@ -24,6 +24,9 @@ public class Flat: AccidentalView {
     internal override var yRef: CGFloat { get { return column_up_height } }
     
     public override func createComponents() {
+        
+        print("flat create components")
+        
         addBody()
         addColumnUp()
         addColumnDown()
