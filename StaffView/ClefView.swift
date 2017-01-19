@@ -37,7 +37,7 @@ extension ClefView {
     }
     
     public var lineWidth: CGFloat {
-        return 0.15 * CGFloat(staffSlotHeight)
+        return 0.2 * CGFloat(staffSlotHeight)
     }
     
     public var line: LineClefComponent {
