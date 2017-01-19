@@ -14,7 +14,7 @@ extension PitchCollection: Showable {
     
     public func show(in context: CALayer) {
         
-        let spelled = map { try! $0.spelledWithDefaultSpelling() }
+        let spelled = map { $0.spelledWithDefaultSpelling() }
         let representable = spelled.map { StaffRepresentablePitch($0) }
         let points = representable.map { StaffPointModel([$0]) }
         
