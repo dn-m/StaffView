@@ -87,6 +87,8 @@
 		076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
 		078EF3281E30F7B5005576EE /* Pitch+StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3271E30F7B5005576EE /* Pitch+StaffView.swift */; };
 		078EF3291E30F7B5005576EE /* Pitch+StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3271E30F7B5005576EE /* Pitch+StaffView.swift */; };
+		078EF32B1E3100F0005576EE /* Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF32A1E3100F0005576EE /* Showable.swift */; };
+		078EF32C1E3100F0005576EE /* Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF32A1E3100F0005576EE /* Showable.swift */; };
 		07FFE8C91E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CA1E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
@@ -158,6 +160,7 @@
 		076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerLinesRenderDelegate.swift; path = StaffView/LedgerLinesRenderDelegate.swift; sourceTree = "<group>"; };
 		076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffRepresentedPitch.swift; path = StaffView/StaffRepresentedPitch.swift; sourceTree = "<group>"; };
 		078EF3271E30F7B5005576EE /* Pitch+StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Pitch+StaffView.swift"; path = "StaffView/Pitch+StaffView.swift"; sourceTree = "<group>"; };
+		078EF32A1E3100F0005576EE /* Showable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Showable.swift; path = StaffView/Showable.swift; sourceTree = "<group>"; };
 		07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewConfiguration.swift; path = StaffView/StaffViewConfiguration.swift; sourceTree = "<group>"; };
 		07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffSlotHeight.swift; path = StaffView/StaffSlotHeight.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -317,6 +320,7 @@
 			children = (
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
 				076D04771E2D32870023ED96 /* StaffView.swift */,
+				078EF32A1E3100F0005576EE /* Showable.swift */,
 				078EF3271E30F7B5005576EE /* Pitch+StaffView.swift */,
 				07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */,
 				07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */,
@@ -564,6 +568,7 @@
 				076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */,
 				076D04F81E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
 				076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
+				078EF32C1E3100F0005576EE /* Showable.swift in Sources */,
 				07FFE8CD1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04CD1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
@@ -613,6 +618,7 @@
 				076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */,
 				076D04F71E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
 				076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
+				078EF32B1E3100F0005576EE /* Showable.swift in Sources */,
 				07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04CC1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,

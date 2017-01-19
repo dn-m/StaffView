@@ -10,7 +10,7 @@ import Pitch
 import StaffModel
 import QuartzCore
 
-extension Pitch {
+extension Pitch: Showable {
     
     public func show(in context: CALayer) {
         
