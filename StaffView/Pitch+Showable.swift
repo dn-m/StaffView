@@ -1,5 +1,5 @@
 //
-//  Pitch+StaffView.swift
+//  Pitch+Showable.swift
 //  StaffView
 //
 //  Created by James Bean on 1/19/17.

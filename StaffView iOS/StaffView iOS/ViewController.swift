@@ -18,16 +18,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pitch: Pitch = 60
         let layer = CALayer()
-        pitch.show(in: layer)
-        layer.position.x = view.frame.midX
-        layer.position.y = view.frame.midY
-        view.layer.addSublayer(layer)
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        //let pitch: Pitch = 60
+        let collection: PitchCollection = [60, 61, 62, 63]
+        
+        collection.show(in: layer)
+        layer.position.x += 200
+        layer.position.y += 200
+        view.layer.addSublayer(layer)
     }
 }

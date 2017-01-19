@@ -19,7 +19,10 @@ public final class StaffView: CALayer, PlotView, Renderer {
     public var informationRenderer: StaffInformationRenderer
     public var structureRenderer: StaffStructureRenderer
     
+    /// FIXME: Not yet implemented!
     public let concreteVerticalPosition: (StaffSlot) -> Double = { _ in fatalError() }
+    
+    /// FIXME: Not yet implemented!
     public let concreteHorizontalPosition: (Double) -> Double = { _ in fatalError() }
 
     public let model: StaffModel
@@ -39,9 +42,7 @@ public final class StaffView: CALayer, PlotView, Renderer {
     }
     
     public func render(in context: CALayer, with configuration: StaffViewConfiguration) {
-        
-        print("staffview.render in: \(context), with: \(configuration)")
-        
+
         let staffSlotHeight = configuration.staffSlotHeight
         
         let structureConfig = StaffStructureConfiguration(
@@ -55,13 +56,10 @@ public final class StaffView: CALayer, PlotView, Renderer {
             staffSlotHeight: staffSlotHeight,
             noteheadColor: Color.red)
 
+        // temporary
+        structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
         
         informationRenderer.render(in: information, with: infoConfig)
-        
-        // FIXME
-        structureRenderer.stopLines(at: 200)
-        
-        
         structureRenderer.render(in: structure, with: structureConfig)
         
         context.addSublayer(structure)
