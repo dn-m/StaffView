@@ -15,7 +15,7 @@ extension Sequence where Iterator.Element == PitchSet {
     public func show(in context: CALayer) {
         
         // Extend PitchSet to be defaultSpellable
-        let spelled = map { $0.map { $0.spelledWithDefaultSpelling() } }
+        let spelled = map { $0.spelledWithDefaultSpelling() }
         let representable = spelled.map { $0.map { StaffRepresentablePitch($0) } }
         let points = representable.map { StaffPointModel($0) }
         
