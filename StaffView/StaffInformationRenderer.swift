@@ -32,13 +32,21 @@ public class StaffInformationRenderer: Renderer {
         with configuration: StaffInformationConfiguration
     )
     {
+        
+        print("info render: \(configuration)")
+        
+        // FIXME
         startLines(at: 0)
         
         for (position, points) in model {
             
+            print("position: \(position); points: \(points)")
+            
+            // FIXME
             startLines(at: position)
 
             for point in points {
+                
                 let (above, below) = point.ledgerLines(model.verticalAxis)
                 
                 delegateLedgerLineRendering(at: position, above: above, below: below)
@@ -60,7 +68,6 @@ public class StaffInformationRenderer: Renderer {
                 
                 context.addSublayer(represented.notehead!)
                 context.addSublayer(represented.accidental!)
-                
             }
         }
     }

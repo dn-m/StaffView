@@ -12,7 +12,7 @@ public struct StaffViewConfiguration {
     
     let staffSlotHeight: StaffSlotHeight
     
-    public init(staffSlotHeight: StaffSlotHeight) {
+    public init(staffSlotHeight: StaffSlotHeight = 12) {
         self.staffSlotHeight = staffSlotHeight
     }
 }

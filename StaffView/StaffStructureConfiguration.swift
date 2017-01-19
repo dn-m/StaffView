@@ -13,6 +13,8 @@ public struct StaffStructureConfiguration {
  
     public let staffSlotHeight: StaffSlotHeight
     public let linesColor: Color
+    public let clefColor: Color
+    public let maskColor: Color
     
     var ledgerLineWidth: StaffSlotHeight {
         return 0.175 * staffSlotHeight
@@ -28,10 +30,14 @@ public struct StaffStructureConfiguration {
     
     public init(
         staffSlotHeight: StaffSlotHeight = 12,
-        linesColor: Color = Color.init(gray: 0.5, alpha: 1)
+        linesColor: Color = Color.init(gray: 0.5, alpha: 1),
+        clefColor: Color,
+        maskColor: Color
     )
     {
         self.staffSlotHeight = staffSlotHeight
         self.linesColor = linesColor
+        self.clefColor = clefColor
+        self.maskColor = maskColor
     }
 }

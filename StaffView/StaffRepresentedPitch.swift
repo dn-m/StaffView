@@ -21,7 +21,7 @@ public struct StaffRepresentedPitch {
     
     public init(
         representableContext: StaffRepresentablePitch,
-        altitude: CGFloat, // calculate altitude within staffEvent?
+        altitude: CGFloat,
         staffSlotHeight: StaffSlotHeight
     )
     {
@@ -39,7 +39,5 @@ public struct StaffRepresentedPitch {
             point: CGPoint(x: 0, y: self.altitude),
             staffSlotHeight: self.staffSlotHeight
         )
-        
-        accidental?.color = Color.red
     }
 }

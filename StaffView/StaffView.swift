@@ -39,29 +39,29 @@ public final class StaffView: CALayer, PlotView, Renderer {
     }
     
     public func render(in context: CALayer, with configuration: StaffViewConfiguration) {
-    
+        
+        print("staffview.render in: \(context), with: \(configuration)")
         
         let staffSlotHeight = configuration.staffSlotHeight
         
         let structureConfig = StaffStructureConfiguration(
             staffSlotHeight: staffSlotHeight,
-            linesColor: Color(gray: 0.5, alpha: 1)
+            linesColor: Color(gray: 0.5, alpha: 1),
+            clefColor: Color.red,
+            maskColor: Color(gray: 1, alpha: 1)
         )
         
         let infoConfig = StaffInformationConfiguration(
             staffSlotHeight: staffSlotHeight,
             noteheadColor: Color.red)
-        
-        for (position, points) in model {
-            print("position: \(position)")
-            for point in points {
-                print(point)
-            }
-        }
-        
+
         
         informationRenderer.render(in: information, with: infoConfig)
-        structureRenderer.stopLines(at: 500)
+        
+        // FIXME
+        structureRenderer.stopLines(at: 200)
+        
+        
         structureRenderer.render(in: structure, with: structureConfig)
         
         context.addSublayer(structure)

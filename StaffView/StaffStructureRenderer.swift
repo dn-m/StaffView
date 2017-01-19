@@ -62,7 +62,9 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
             kind: model.verticalAxis.kind,
             x: 0,
             staffTop: 0,
-            staffSlotHeight: staffSlotHeight
+            staffSlotHeight: staffSlotHeight,
+            foregroundColor: configuration.clefColor,
+            maskColor: configuration.maskColor
         )
     }
     
@@ -71,13 +73,17 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
         kind: Clef.Kind,
         x: CGFloat,
         staffTop: CGFloat,
-        staffSlotHeight: StaffSlotHeight
+        staffSlotHeight: StaffSlotHeight,
+        foregroundColor: Color,
+        maskColor: Color
     ) -> CALayer
     {
         return kind.view.init(
             x: x,
             staffTop: staffTop,
-            staffSlotHeight: staffSlotHeight
+            staffSlotHeight: staffSlotHeight,
+            foregroundColor: foregroundColor,
+            maskColor: maskColor
         ) as! CALayer
     }
     

@@ -20,9 +20,10 @@ public final class TrebleClef: CALayer, ClefView {
     private var circle: CircleClefOrnament {
         return CircleClefOrnament(
             point: CGPoint(x: 0, y: ornamentAltitude),
-            radius: 0.8 * CGFloat(staffSlotHeight),
+            radius: 1 * CGFloat(staffSlotHeight),
             lineWidth: lineWidth,
-            color: Color.red.cgColor
+            lineColor: Color.red.cgColor,
+            backgroundColor: Color(gray: 1, alpha: 1).cgColor
         )
     }
     
@@ -31,11 +32,22 @@ public final class TrebleClef: CALayer, ClefView {
     public let x: CGFloat
     public let staffTop: CGFloat
     public let staffSlotHeight: StaffSlotHeight
+    public var foregroundColor: Color
+    public var maskColor: Color
     
-    public init(x: CGFloat, staffTop: CGFloat, staffSlotHeight: StaffSlotHeight) {
+    public init(
+        x: CGFloat,
+        staffTop: CGFloat,
+        staffSlotHeight: StaffSlotHeight,
+        foregroundColor: Color,
+        maskColor: Color
+    )
+    {
         self.x = x
         self.staffTop = staffTop
         self.staffSlotHeight = staffSlotHeight
+        self.foregroundColor = foregroundColor
+        self.maskColor = maskColor
         super.init()
         build()
     }

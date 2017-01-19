@@ -81,9 +81,6 @@ public class AccidentalView: CALayer, CompositeShapeType {
     public var color: Color = Color(gray: 0.85, alpha: 1) {
         
         didSet {
-            
-            print("color did set: \(color)")
-            
             self.components
                 .flatMap { $0 as? CAShapeLayer }
                 .forEach { $0.fillColor = color.cgColor }
