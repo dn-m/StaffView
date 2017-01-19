@@ -93,6 +93,10 @@
 		078EF32F1E310169005576EE /* PitchCollection+Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF32D1E310169005576EE /* PitchCollection+Showable.swift */; };
 		078EF3321E3103FA005576EE /* AccidentalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3311E3103FA005576EE /* AccidentalTests.swift */; };
 		078EF3331E3103FA005576EE /* AccidentalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3311E3103FA005576EE /* AccidentalTests.swift */; };
+		078EF3351E3106E4005576EE /* StaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3341E3106E4005576EE /* StaffViewTests.swift */; };
+		078EF3361E3106E4005576EE /* StaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3341E3106E4005576EE /* StaffViewTests.swift */; };
+		078EF3381E310702005576EE /* PitchSet+Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3371E310702005576EE /* PitchSet+Showable.swift */; };
+		078EF3391E310702005576EE /* PitchSet+Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3371E310702005576EE /* PitchSet+Showable.swift */; };
 		07FFE8C91E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CA1E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
@@ -167,6 +171,8 @@
 		078EF32A1E3100F0005576EE /* Showable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Showable.swift; path = StaffView/Showable.swift; sourceTree = "<group>"; };
 		078EF32D1E310169005576EE /* PitchCollection+Showable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitchCollection+Showable.swift"; path = "StaffView/PitchCollection+Showable.swift"; sourceTree = "<group>"; };
 		078EF3311E3103FA005576EE /* AccidentalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalTests.swift; path = StaffViewTests/AccidentalTests.swift; sourceTree = "<group>"; };
+		078EF3341E3106E4005576EE /* StaffViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewTests.swift; path = StaffViewTests/StaffViewTests.swift; sourceTree = "<group>"; };
+		078EF3371E310702005576EE /* PitchSet+Showable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitchSet+Showable.swift"; path = "StaffView/PitchSet+Showable.swift"; sourceTree = "<group>"; };
 		07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewConfiguration.swift; path = StaffView/StaffViewConfiguration.swift; sourceTree = "<group>"; };
 		07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffSlotHeight.swift; path = StaffView/StaffSlotHeight.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -272,6 +278,7 @@
 			children = (
 				078EF3271E30F7B5005576EE /* Pitch+Showable.swift */,
 				078EF32D1E310169005576EE /* PitchCollection+Showable.swift */,
+				078EF3371E310702005576EE /* PitchSet+Showable.swift */,
 			);
 			name = Showable;
 			sourceTree = "<group>";
@@ -327,6 +334,7 @@
 			children = (
 				93A8E6EE8C78D26491C95E7B /* Supporting Files */,
 				078EF3311E3103FA005576EE /* AccidentalTests.swift */,
+				078EF3341E3106E4005576EE /* StaffViewTests.swift */,
 			);
 			name = StaffViewTests;
 			sourceTree = "<group>";
@@ -562,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				078EF3331E3103FA005576EE /* AccidentalTests.swift in Sources */,
+				078EF3361E3106E4005576EE /* StaffViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				078EF3321E3103FA005576EE /* AccidentalTests.swift in Sources */,
+				078EF3351E3106E4005576EE /* StaffViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +591,7 @@
 				078EF32F1E310169005576EE /* PitchCollection+Showable.swift in Sources */,
 				076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C91E2D43D60023ED96 /* NaturalUp.swift in Sources */,
+				078EF3391E310702005576EE /* PitchSet+Showable.swift in Sources */,
 				076D04EA1E2D45690023ED96 /* AltoClef.swift in Sources */,
 				07FFE8CA1E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */,
 				076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */,
@@ -632,6 +643,7 @@
 				078EF32E1E310169005576EE /* PitchCollection+Showable.swift in Sources */,
 				076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C81E2D43D60023ED96 /* NaturalUp.swift in Sources */,
+				078EF3381E310702005576EE /* PitchSet+Showable.swift in Sources */,
 				076D04E91E2D45690023ED96 /* AltoClef.swift in Sources */,
 				07FFE8C91E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */,
 				076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */,

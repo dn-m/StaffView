@@ -50,24 +50,24 @@ public class StaffInformationRenderer: Renderer {
                 let (above, below) = point.ledgerLines(model.verticalAxis)
                 
                 delegateLedgerLineRendering(at: position, above: above, below: below)
-                
-                let slots = point.elements
-                    .map { $0.spelledPitch }
-                    .map(model.verticalAxis.coordinate)
-                
-                print("slots: \(slots)")
-                
-                let lowestSlot = model.verticalAxis.coordinate(point.elements.first!.spelledPitch)
-                
-                let altitude = StaffSlotHeight(4 - lowestSlot) * configuration.staffSlotHeight
-                
-                let represented = StaffRepresentedPitch(representableContext: point.elements.first!, altitude: CGFloat(altitude), staffSlotHeight: configuration.staffSlotHeight)
-                
-                represented.notehead?.position.x = CGFloat(position)
-                represented.accidental?.position.x = CGFloat(position) - 30
-                
-                context.addSublayer(represented.notehead!)
-                context.addSublayer(represented.accidental!)
+
+                for element in point.elements {
+                    
+                    let slot = model.verticalAxis.coordinate(element.spelledPitch)
+                    let altitude = StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
+                    
+                    let represented = StaffRepresentedPitch(
+                        representableContext: element,
+                        altitude: CGFloat(altitude),
+                        staffSlotHeight: configuration.staffSlotHeight
+                    )
+                    
+                    represented.notehead?.position.x = CGFloat(position)
+                    represented.accidental?.position.x = CGFloat(position) - 30
+                    
+                    context.addSublayer(represented.notehead!)
+                    context.addSublayer(represented.accidental!)
+                }
             }
         }
     }

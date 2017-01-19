@@ -21,9 +21,10 @@ class ViewController: UIViewController {
         let layer = CALayer()
 
         //let pitch: Pitch = 60
-        let collection: PitchCollection = [60, 61, 62, 63]
+        //let collection: PitchCollection = [60, 61, 62, 63]
+        let set: PitchSet = [57, 66, 81]
         
-        collection.show(in: layer)
+        set.show(in: layer)
         layer.position.x += 200
         layer.position.y += 200
         view.layer.addSublayer(layer)
