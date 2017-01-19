@@ -14,7 +14,7 @@ extension Pitch: Showable {
     
     public func show(in context: CALayer) {
         
-        let spelled = try! self.spelledWithDefaultSpelling()
+        let spelled = spelledWithDefaultSpelling()
         let representable = StaffRepresentablePitch(spelled)
         let point = StaffPointModel([representable])
         let position: Double = 100
