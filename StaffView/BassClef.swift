@@ -37,11 +37,22 @@ public final class BassClef: CALayer, ClefView {
     public let x: CGFloat
     public let staffTop: CGFloat
     public let staffSlotHeight: StaffSlotHeight
+    public let foregroundColor: Color
+    public let maskColor: Color
     
-    public init(x: CGFloat, staffTop: CGFloat, staffSlotHeight: StaffSlotHeight) {
+    public init(
+        x: CGFloat,
+        staffTop: CGFloat,
+        staffSlotHeight: StaffSlotHeight,
+        foregroundColor: Color,
+        maskColor: Color
+    )
+    {
         self.x = x
         self.staffTop = staffTop
         self.staffSlotHeight = staffSlotHeight
+        self.foregroundColor = foregroundColor
+        self.maskColor = maskColor
         super.init()
         build()
     }

@@ -15,7 +15,7 @@ import GraphicsTools
 public class NoteheadView: CAShapeLayer, ShapeType {
     
     public var point: CGPoint
-    public var staffSlotHeight: StaffSlot
+    public var staffSlotHeight: StaffSlotHeight
     
     public var color: Color = Color(gray: 0.5, alpha: 1) {
         didSet {
@@ -24,14 +24,14 @@ public class NoteheadView: CAShapeLayer, ShapeType {
     }
     
     private var width: CGFloat {
-        return 1.236 * CGFloat(staffSlotHeight)
+        return 2.25 * CGFloat(staffSlotHeight)
     }
     
     private var height: CGFloat {
         return 0.75 * width
     }
     
-    public init(point: CGPoint, staffSlotHeight: StaffSlot) {
+    public init(point: CGPoint, staffSlotHeight: StaffSlotHeight) {
         self.point = point
         self.staffSlotHeight = staffSlotHeight
         super.init()

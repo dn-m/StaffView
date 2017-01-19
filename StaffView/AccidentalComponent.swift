@@ -15,7 +15,7 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
     
     public override var description: String { get { return "AccidentalComponent" } }
     
-    public var staffSlotHeight: StaffSlot = 0
+    public var staffSlotHeight: StaffSlotHeight = 0
     public var scale: CGFloat = 1
     public var gS: CGFloat { get { return CGFloat(staffSlotHeight) * scale } }
     
@@ -91,7 +91,13 @@ public class ComponentArrow: AccidentalComponent {
     internal var height: CGFloat { get { return 0.75 * gS } }
     internal var barbDepth: CGFloat { get { return 0.236 * gS } }
     
-    public init(staffSlotHeight: StaffSlot, scale: CGFloat, point: CGPoint, direction: Direction) {
+    public init(
+        staffSlotHeight: StaffSlotHeight,
+        scale: CGFloat,
+        point: CGPoint,
+        direction: Direction
+    )
+    {
         self.point = point
         self.direction = direction
         super.init()
@@ -181,7 +187,7 @@ public class ComponentBodyFlat: ComponentBody {
     public var bowlLineWidthBottom: CGFloat { get { return 0.382 * gS } }
     public var bowlLineWidthStress: CGFloat { get { return 0.25 * gS } }
     
-    public init(staffSlotHeight: StaffSlot, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -243,7 +249,7 @@ public class ComponentBodyNatural: ComponentBody {
     
     public override var thickLineLength: CGFloat { get { return midWidth + thinLineWidth } }
     
-    public init(staffSlotHeight: StaffSlot, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -306,7 +312,7 @@ public class ComponentBodyQuarterSharp: ComponentBody {
     internal override var yRef: CGFloat { get { return 0.5 * height } }
     internal override var xRef: CGFloat { get { return 0.5 * width } }
     
-    public init(staffSlotHeight: StaffSlot, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -349,7 +355,7 @@ public class ComponentBodySharp: ComponentBody {
     internal override var yRef: CGFloat { get { return 0.5 * height } }
     internal override var xRef: CGFloat { get { return 0.5 * width } }
     
-    public init(staffSlotHeight: StaffSlot, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -402,7 +408,7 @@ public class ComponentColumn: AccidentalComponent {
     public var arrow: ComponentArrow?
     
     public init(
-        staffSlotHeight: StaffSlot,
+        staffSlotHeight: StaffSlotHeight,
         scale: CGFloat,
         x: CGFloat,
         y_internal: CGFloat,

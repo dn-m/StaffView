@@ -19,7 +19,10 @@ public final class StaffView: CALayer, PlotView, Renderer {
     public var informationRenderer: StaffInformationRenderer
     public var structureRenderer: StaffStructureRenderer
     
+    /// FIXME: Not yet implemented!
     public let concreteVerticalPosition: (StaffSlot) -> Double = { _ in fatalError() }
+    
+    /// FIXME: Not yet implemented!
     public let concreteHorizontalPosition: (Double) -> Double = { _ in fatalError() }
 
     public let model: StaffModel
@@ -27,7 +30,10 @@ public final class StaffView: CALayer, PlotView, Renderer {
     public init(model: StaffModel) {
         self.model = model
         self.structureRenderer = StaffStructureRenderer(model: model)
-        self.informationRenderer = StaffInformationRenderer(model: model)
+        self.informationRenderer = StaffInformationRenderer(
+            model: model,
+            staffLinesRenderDelegate: structureRenderer
+        )
         super.init()
     }
     
@@ -35,20 +41,28 @@ public final class StaffView: CALayer, PlotView, Renderer {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func render(in context: CALayer, with configuration: StaffConfiguration) {
-        
+    public func render(in context: CALayer, with configuration: StaffViewConfiguration) {
+
         let staffSlotHeight = configuration.staffSlotHeight
         
         let structureConfig = StaffStructureConfiguration(
             staffSlotHeight: staffSlotHeight,
-            linesColor: Color(gray: 1, alpha: 1)
+            linesColor: Color(gray: 0.5, alpha: 1),
+            clefColor: Color.red,
+            maskColor: Color(gray: 1, alpha: 1)
         )
         
         let infoConfig = StaffInformationConfiguration(
             staffSlotHeight: staffSlotHeight,
             noteheadColor: Color.red)
+
+        // temporary
+        structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
         
-        structureRenderer.render(in: context, with: structureConfig)
-        informationRenderer.render(in: context, with: infoConfig)
+        informationRenderer.render(in: information, with: infoConfig)
+        structureRenderer.render(in: structure, with: structureConfig)
+        
+        context.addSublayer(structure)
+        context.addSublayer(information)
     }
 }

@@ -6,6 +6,7 @@
 //
 //
 
+import GraphicsTools
 import StaffModel
 import QuartzCore
 
@@ -13,15 +14,15 @@ public struct StaffRepresentedPitch {
     
     private let representableContext: StaffRepresentablePitch
     private let altitude: CGFloat
-    private let staffSlotHeight: StaffSlot
+    private let staffSlotHeight: StaffSlotHeight
     
     public let notehead: NoteheadView?
     public let accidental: AccidentalView?
     
     public init(
         representableContext: StaffRepresentablePitch,
-        altitude: CGFloat, // calculate altitude within staffEvent?
-        staffSlotHeight: StaffSlot
+        altitude: CGFloat,
+        staffSlotHeight: StaffSlotHeight
     )
     {
         self.representableContext = representableContext

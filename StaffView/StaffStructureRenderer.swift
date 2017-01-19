@@ -13,7 +13,7 @@ import PathTools
 import GraphicsTools
 import PlotView
 
-public struct StaffStructureRenderer: Renderer {
+public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
 
     private enum LedgerLineDirection: CGFloat {
         case above = -1
@@ -24,20 +24,22 @@ public struct StaffStructureRenderer: Renderer {
     private var ledgerLines: [Double: [LedgerLineDirection: Int]] = [:]
     private let model: StaffModel
     
+    /// - TODO: Do not pass model, just clef
     public init(model: StaffModel) {
         self.model = model
         self.staffLines = LinesSegmentCollection()
     }
     
-    public mutating func startLines(at x: Double) {
+    public func startLines(at x: Double) {
         staffLines.startLines(at: x)
     }
     
-    public mutating func stopLines(at x: Double) {
+    public func stopLines(at x: Double) {
         staffLines.stopLines(at: x)
     }
     
-    public mutating func addLedgerLines(at position: Double, above: Int, below: Int) {
+    public func addLedgerLines(at position: Double, above: Int, below: Int) {
+        print("add ledger lines: \(position); below: \(below)")
         ledgerLines.ensureValue(for: position)
         ledgerLines[position]![.below] = below
         ledgerLines[position]![.above] = above
@@ -60,7 +62,9 @@ public struct StaffStructureRenderer: Renderer {
             kind: model.verticalAxis.kind,
             x: 0,
             staffTop: 0,
-            staffSlotHeight: staffSlotHeight
+            staffSlotHeight: staffSlotHeight,
+            foregroundColor: configuration.clefColor,
+            maskColor: configuration.maskColor
         )
     }
     
@@ -69,13 +73,17 @@ public struct StaffStructureRenderer: Renderer {
         kind: Clef.Kind,
         x: CGFloat,
         staffTop: CGFloat,
-        staffSlotHeight: StaffSlotHeight
+        staffSlotHeight: StaffSlotHeight,
+        foregroundColor: Color,
+        maskColor: Color
     ) -> CALayer
     {
         return kind.view.init(
             x: x,
             staffTop: staffTop,
-            staffSlotHeight: staffSlotHeight
+            staffSlotHeight: staffSlotHeight,
+            foregroundColor: foregroundColor,
+            maskColor: maskColor
         ) as! CALayer
     }
     
@@ -105,7 +113,7 @@ public struct StaffStructureRenderer: Renderer {
     private func staffLines(configuration: StaffStructureConfiguration) -> Path {
         
         let staffSlotHeight = configuration.staffSlotHeight
-        
+
         let path = Path()
         
         for segment in staffLines {
@@ -119,6 +127,7 @@ public struct StaffStructureRenderer: Renderer {
                     .addLine(to: CGPoint(x: right, y: altitude))
             }
         }
+
         return path
     }
     

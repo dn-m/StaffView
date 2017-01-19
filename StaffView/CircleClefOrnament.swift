@@ -15,13 +15,20 @@ public final class CircleClefOrnament: CAShapeLayer, CircleClefComponent {
     public let point: CGPoint
     public let radius: CGFloat
     
-    public init(point: CGPoint, radius: CGFloat, lineWidth: CGFloat, color: CGColor) {
+    public init(
+        point: CGPoint,
+        radius: CGFloat,
+        lineWidth: CGFloat,
+        lineColor: CGColor = Color.red.cgColor,
+        backgroundColor: CGColor = Color(gray: 1, alpha: 1).cgColor
+    )
+    {
         self.point = point
         self.radius = radius
         super.init()
-        self.strokeColor = color
-        self.fillColor = Color(gray: 0, alpha: 1).cgColor
         self.lineWidth = lineWidth
+        self.strokeColor = lineColor
+        self.fillColor = backgroundColor
         build()
     }
     

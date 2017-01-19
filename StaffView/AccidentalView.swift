@@ -25,11 +25,12 @@ public class AccidentalView: CALayer, CompositeShapeType {
     public let point: CGPoint
     
     /// Graphical height of a single Guidonian staff space
-    public let staffSlotHeight: StaffSlot
+    public let staffSlotHeight: StaffSlotHeight
     
     /// Scale.
     public let scale: CGFloat
     
+    /// - FIXME: This is awful.
     public var gS: CGFloat {
         return CGFloat(staffSlotHeight) * scale
     }
@@ -80,18 +81,16 @@ public class AccidentalView: CALayer, CompositeShapeType {
     public var color: Color = Color(gray: 0.85, alpha: 1) {
         
         didSet {
-            
-            print("color did set: \(color)")
-            
             self.components
                 .flatMap { $0 as? CAShapeLayer }
                 .forEach { $0.fillColor = color.cgColor }
         }
     }
 
-    public required init(point: CGPoint, staffSlotHeight: StaffSlot, scale: CGFloat) {
+    /// - FIXME: `staffSlotHeight` _was_ `staffspaceHeight` (2x the size)
+    public required init(point: CGPoint, staffSlotHeight: StaffSlotHeight, scale: CGFloat) {
         self.point = point
-        self.staffSlotHeight = staffSlotHeight
+        self.staffSlotHeight = 2 * staffSlotHeight // TEMP
         self.scale = scale
         super.init()
         build()
@@ -106,9 +105,7 @@ public class AccidentalView: CALayer, CompositeShapeType {
     }
     
     public func commitComponents() {
-        self.components
-            .flatMap { $0 as? CAShapeLayer }
-            .forEach { $0.fillColor = color.cgColor }
+        components.forEach(addSublayer)
     }
     
     public func makeFrame() -> CGRect {
@@ -162,7 +159,7 @@ extension AccidentalView {
     public static func makeAccidental(
         withKind kind: Accidental,
         point: CGPoint,
-        staffSlotHeight: StaffSlot,
+        staffSlotHeight: StaffSlotHeight,
         scale: CGFloat = 1
     ) -> AccidentalView
     {
@@ -192,7 +189,7 @@ extension AccidentalView {
         coarse: Float,
         fine: Float,
         point: CGPoint,
-        staffSlotHeight: StaffSlot,
+        staffSlotHeight: StaffSlotHeight,
         scale: CGFloat = 1
     ) -> AccidentalView?
     {
