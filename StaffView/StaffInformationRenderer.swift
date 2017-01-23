@@ -33,15 +33,11 @@ public class StaffInformationRenderer: Renderer {
     )
     {
         
-        print("info render: \(configuration)")
-        
         // FIXME
         startLines(at: 0)
         
         for (position, points) in model {
-            
-            print("position: \(position); points: \(points)")
-            
+    
             // FIXME
             startLines(at: position)
 
