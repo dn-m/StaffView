@@ -39,7 +39,6 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
     }
     
     public func addLedgerLines(at position: Double, above: Int, below: Int) {
-        print("add ledger lines: \(position); below: \(below)")
         ledgerLines.ensureValue(for: position)
         ledgerLines[position]![.below] = below
         ledgerLines[position]![.above] = above
