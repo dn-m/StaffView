@@ -157,8 +157,8 @@ public class AccidentalView: CALayer, CompositeShapeType {
 extension AccidentalView {
     
     public static func makeAccidental(
-        withKind kind: Accidental,
-        point: CGPoint,
+        _ kind: Accidental,
+        at point: CGPoint,
         staffSlotHeight: StaffSlotHeight,
         scale: CGFloat = 1
     ) -> AccidentalView
@@ -188,7 +188,7 @@ extension AccidentalView {
     public static func makeAccidental(
         coarse: Float,
         fine: Float,
-        point: CGPoint,
+        at point: CGPoint,
         staffSlotHeight: StaffSlotHeight,
         scale: CGFloat = 1
     ) -> AccidentalView?
@@ -198,9 +198,8 @@ extension AccidentalView {
             return nil
         }
         
-        return makeAccidental(
-            withKind: kind,
-            point: point,
+        return makeAccidental(kind,
+            at: point,
             staffSlotHeight: staffSlotHeight,
             scale: scale
         )

@@ -34,9 +34,8 @@ public struct StaffRepresentedPitch {
             staffSlotHeight: self.staffSlotHeight
         )
         
-        self.accidental = AccidentalView.makeAccidental(
-            withKind: self.representableContext.accidental,
-            point: CGPoint(x: 0, y: self.altitude),
+        self.accidental = AccidentalView.makeAccidental(self.representableContext.accidental,
+            at: CGPoint(x: 0, y: self.altitude),
             staffSlotHeight: self.staffSlotHeight
         )
     }

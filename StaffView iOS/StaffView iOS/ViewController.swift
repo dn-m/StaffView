@@ -19,28 +19,30 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
 
+        var x: CGFloat = 10
         (0..<1_000).forEach { _ in
             let accidental = Accidental.flat
             let accidentalView = AccidentalView.makeAccidental(
                 withKind: accidental,
-                point: CGPoint.zero,
-                staffSlotHeight: 40
+                point: CGPoint(x: x, y: 100),
+                staffSlotHeight: 12
             )
+            view.layer.addSublayer(accidentalView)
+            x += 20
         }
         
-//        let layer = CALayer()
-//
-//        //let pitch: Pitch = 60
-//        //let collection: PitchCollection = [60, 61, 62, 63]
-//        //let set: PitchSet = [57, 66, 81]
-//        //let setSequence: [PitchSet] = [[60], [61,65], [66,81], [55,75]]
-//        
+        let layer = CALayer()
+        let pitch: Pitch = 60
+        let collection: PitchCollection = [60, 61, 62, 63]
+        let set: PitchSet = [57, 66, 81]
+        let setSequence: [PitchSet] = [[60], [61,65], [66,81], [55,75]]
+
+        set.show(in: layer)
+
 //        let collection: PitchCollection = PitchCollection((0..<1000).map { _ in Pitch.random() })
-//        
-//        
 //        collection.show(in: layer)
-//        layer.position.x += 200
-//        layer.position.y += 200
-//        view.layer.addSublayer(layer)
+        layer.position.x += 200
+        layer.position.y += 200
+        view.layer.addSublayer(layer)
     }
 }
