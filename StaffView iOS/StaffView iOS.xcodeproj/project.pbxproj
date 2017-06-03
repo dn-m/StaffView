@@ -106,17 +106,7 @@
 		0759A4341E3008FB00E2E40C = {
 			isa = PBXGroup;
 			children = (
-				0759A4741E3009E600E2E40C /* StaffView.framework */,
-				0759A4521E30096600E2E40C /* ArithmeticTools.framework */,
-				0759A4531E30096600E2E40C /* Articulations.framework */,
-				0759A4541E30096600E2E40C /* Collections.framework */,
-				0759A4551E30096600E2E40C /* GraphicsTools.framework */,
-				0759A4561E30096600E2E40C /* PathTools.framework */,
-				0759A4571E30096600E2E40C /* Pitch.framework */,
-				0759A4581E30096600E2E40C /* PitchSpellingTools.framework */,
-				0759A4591E30096600E2E40C /* PlotModel.framework */,
-				0759A45A1E30096600E2E40C /* PlotView.framework */,
-				0759A45B1E30096600E2E40C /* StaffModel.framework */,
+				07ABA3F21EE1E88700190BFC /* Frameworks */,
 				0759A43F1E3008FC00E2E40C /* StaffView iOS */,
 				0759A43E1E3008FC00E2E40C /* Products */,
 			);
@@ -141,6 +131,24 @@
 				0759A44C1E3008FC00E2E40C /* Info.plist */,
 			);
 			path = "StaffView iOS";
+			sourceTree = "<group>";
+		};
+		07ABA3F21EE1E88700190BFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0759A4741E3009E600E2E40C /* StaffView.framework */,
+				0759A4521E30096600E2E40C /* ArithmeticTools.framework */,
+				0759A4531E30096600E2E40C /* Articulations.framework */,
+				0759A4541E30096600E2E40C /* Collections.framework */,
+				0759A4551E30096600E2E40C /* GraphicsTools.framework */,
+				0759A4561E30096600E2E40C /* PathTools.framework */,
+				0759A4571E30096600E2E40C /* Pitch.framework */,
+				0759A4581E30096600E2E40C /* PitchSpellingTools.framework */,
+				0759A4591E30096600E2E40C /* PlotModel.framework */,
+				0759A45A1E30096600E2E40C /* PlotView.framework */,
+				0759A45B1E30096600E2E40C /* StaffModel.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +353,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "StaffView iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.StaffView-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,7 +369,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = "StaffView iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bean.StaffView-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,6 +396,7 @@
 				0759A4511E3008FC00E2E40C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

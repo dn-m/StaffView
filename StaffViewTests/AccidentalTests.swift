@@ -17,12 +17,19 @@ class AccidentalTests: XCTestCase {
         
         measure {
             (0..<1000).forEach { _ in
-                _ = AccidentalView.makeAccidental(
-                    withKind: accidental,
-                    point: CGPoint.zero,
+                _ = AccidentalView.makeAccidental(accidental,
+                    at: CGPoint.zero,
                     staffSlotHeight: 12
                 )
             }
         }
+    }
+    
+    func testPrintToPDF() {
+        let accidental = AccidentalView.makeAccidental(.sharp, at: .zero, staffSlotHeight: 40)
+        accidental.showTestBorder()
+        print("accidental frame: \(accidental.frame)")
+        
+        accidental.renderToPDF(name: "sharp")
     }
 }
