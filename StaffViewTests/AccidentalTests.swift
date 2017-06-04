@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import PathTools
 import StaffModel
 import StaffView
 
@@ -18,7 +19,7 @@ class AccidentalTests: XCTestCase {
         measure {
             (0..<1000).forEach { _ in
                 _ = AccidentalView.makeAccidental(accidental,
-                    at: CGPoint.zero,
+                    at: Point(),
                     staffSlotHeight: 12
                 )
             }
@@ -26,7 +27,7 @@ class AccidentalTests: XCTestCase {
     }
     
     func testPrintToPDF() {
-        let accidental = AccidentalView.makeAccidental(.sharp, at: .zero, staffSlotHeight: 40)
+        let accidental = AccidentalView.makeAccidental(.sharp, at: Point(), staffSlotHeight: 40)
         accidental.showTestBorder()
         print("accidental frame: \(accidental.frame)")
         

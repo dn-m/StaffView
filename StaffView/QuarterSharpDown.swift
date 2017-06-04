@@ -15,7 +15,7 @@ public class QuarterSharpDown: QuarterSharp {
     public override var column_down_height: Double { get { return 2 * gS } }
     
     internal override var height: Double {
-        get { return column_up_height + column_down_height + 0.5 * arrowHeight }
+        return column_up_height + column_down_height + 0.5 * arrowHeight
     }
     
     internal override var width: Double { get { return thickLineLength } }
@@ -41,4 +41,3 @@ public class QuarterSharpDown: QuarterSharp {
         arrow_center_down!.alignment = .center
     }
 }
-

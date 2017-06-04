@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
 		0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
+		07600F8E1EE46E880049E8B2 /* NoteheadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07600F8D1EE46E880049E8B2 /* NoteheadTests.swift */; };
+		07600F8F1EE46E880049E8B2 /* NoteheadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07600F8D1EE46E880049E8B2 /* NoteheadTests.swift */; };
 		076D04781E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D04791E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
@@ -131,6 +133,7 @@
 /* Begin PBXFileReference section */
 		011480B1B9E225B515CD20C5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffLinesRenderDelegate.swift; path = StaffView/StaffLinesRenderDelegate.swift; sourceTree = "<group>"; };
+		07600F8D1EE46E880049E8B2 /* NoteheadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadTests.swift; path = StaffViewTests/NoteheadTests.swift; sourceTree = "<group>"; };
 		076D04771E2D32870023ED96 /* StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.swift; path = StaffView/StaffView.swift; sourceTree = "<group>"; };
 		076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationRenderer.swift; path = StaffView/StaffInformationRenderer.swift; sourceTree = "<group>"; };
 		076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureRenderer.swift; path = StaffView/StaffStructureRenderer.swift; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 			children = (
 				93A8E6EE8C78D26491C95E7B /* Supporting Files */,
 				078EF3311E3103FA005576EE /* AccidentalTests.swift */,
+				07600F8D1EE46E880049E8B2 /* NoteheadTests.swift */,
 				078EF3341E3106E4005576EE /* StaffViewTests.swift */,
 			);
 			name = StaffViewTests;
@@ -573,6 +577,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07600F8F1EE46E880049E8B2 /* NoteheadTests.swift in Sources */,
 				078EF3331E3103FA005576EE /* AccidentalTests.swift in Sources */,
 				078EF3361E3106E4005576EE /* StaffViewTests.swift in Sources */,
 			);
@@ -582,6 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07600F8E1EE46E880049E8B2 /* NoteheadTests.swift in Sources */,
 				078EF3321E3103FA005576EE /* AccidentalTests.swift in Sources */,
 				078EF3351E3106E4005576EE /* StaffViewTests.swift in Sources */,
 			);
