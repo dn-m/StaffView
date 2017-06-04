@@ -347,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
-				078EF3301E31017C005576EE /* Showable */,
 				076D04771E2D32870023ED96 /* StaffView.swift */,
 				078EF32A1E3100F0005576EE /* Showable.swift */,
 				07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */,
@@ -359,6 +358,7 @@
 				076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */,
 				0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */,
 				076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */,
+				078EF3301E31017C005576EE /* Showable */,
 				076D04A21E2D43640023ED96 /* Clef */,
 				076D04A41E2D43770023ED96 /* Notehead */,
 				076D04A31E2D43710023ED96 /* Accidental */,

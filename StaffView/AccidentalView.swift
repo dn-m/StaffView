@@ -8,6 +8,7 @@
 //
 
 import QuartzCore
+import PathTools
 import GraphicsTools
 import StaffModel
 
@@ -22,37 +23,37 @@ public class AccidentalView: CALayer, CompositeShapeType {
      >
      > `x` values of a column of accidentals are aligned.
     */
-    public let point: CGPoint
+    public let point: Point
     
     /// Graphical height of a single Guidonian staff space
     public let staffSlotHeight: StaffSlotHeight
     
     /// Scale.
-    public let scale: CGFloat
+    public let scale: Double
     
     /// - FIXME: This is awful.
-    public var gS: CGFloat {
-        return CGFloat(staffSlotHeight) * scale
+    public var gS: Double {
+        return Double(staffSlotHeight) * scale
     }
     
-    internal var xRef: CGFloat { fatalError() }
-    internal var yRef: CGFloat { fatalError() }
+    internal var xRef: Double { fatalError() }
+    internal var yRef: Double { fatalError() }
     
-    internal var left: CGFloat { fatalError() }
-    internal var top: CGFloat  { fatalError() }
-    internal var width: CGFloat  { fatalError() }
-    internal var height: CGFloat  { fatalError() }
+    internal var left: Double { fatalError() }
+    internal var top: Double  { fatalError() }
+    internal var width: Double  { fatalError() }
+    internal var height: Double  { fatalError() }
     
-    public var boundingWidth: CGFloat? { get { return getBoundingWidth() } }
+    public var boundingWidth: Double? { return getBoundingWidth() }
     
     // for sharp types
-    public var midWidth: CGFloat { get { return 0.575 * gS } }
-    public var flankWidth: CGFloat { get { return 0.15 * gS } }
+    public var midWidth: Double { get { return 0.575 * gS } }
+    public var flankWidth: Double { get { return 0.15 * gS } }
 
-    public var thinLineWidth: CGFloat { get { return 0.0875 * gS } }
+    public var thinLineWidth: Double { get { return 0.0875 * gS } }
     
     // arrow having types
-    public var arrowHeight: CGFloat { get { return 0.618 * gS } }
+    public var arrowHeight: Double { get { return 0.618 * gS } }
     
     public var column: Int?
     
@@ -88,7 +89,7 @@ public class AccidentalView: CALayer, CompositeShapeType {
     }
 
     /// - FIXME: `staffSlotHeight` _was_ `staffspaceHeight` (2x the size)
-    public required init(point: CGPoint, staffSlotHeight: StaffSlotHeight, scale: CGFloat) {
+    public required init(point: Point, staffSlotHeight: StaffSlotHeight, scale: Double) {
         self.point = point
         self.staffSlotHeight = 2 * staffSlotHeight // TEMP
         self.scale = scale
@@ -127,17 +128,15 @@ public class AccidentalView: CALayer, CompositeShapeType {
         return height
     }
     
-    internal func getBoundingWidth() -> CGFloat? {
-        if components.count == 0 { return nil }
-        var minX: CGFloat?
-        var maxX: CGFloat?
-        for component in components {
-            if minX == nil { minX = component.frame.minX }
-            else if component.frame.minX < minX! { minX = component.frame.minX }
-            if maxX == nil { maxX = component.frame.maxX }
-            else if component.frame.maxX > maxX! { maxX = component.frame.maxX }
+    internal func getBoundingWidth() -> Double? {
+        
+        guard !components.isEmpty else {
+            return nil
         }
-        return maxX! - minX!
+        
+        let min = Double(components.map { $0.frame.minX }.min()!)
+        let max = Double(components.map { $0.frame.maxX }.max()!)
+        return max - min
     }
     
     // abstract these for more global usage with CALayers
@@ -158,9 +157,9 @@ extension AccidentalView {
     
     public static func makeAccidental(
         _ kind: Accidental,
-        at point: CGPoint,
+        at point: Point,
         staffSlotHeight: StaffSlotHeight,
-        scale: CGFloat = 1
+        scale: Double = 1
     ) -> AccidentalView
     {
         var classType: AccidentalView.Type {
@@ -188,9 +187,9 @@ extension AccidentalView {
     public static func makeAccidental(
         coarse: Float,
         fine: Float,
-        at point: CGPoint,
+        at point: Point,
         staffSlotHeight: StaffSlotHeight,
-        scale: CGFloat = 1
+        scale: Double = 1
     ) -> AccidentalView?
     {
         

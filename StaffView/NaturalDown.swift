@@ -6,20 +6,20 @@
 //
 //
 
-import QuartzCore
+import PathTools
 
 public class NaturalDown: Natural {
     
     public override var description: String { get { return "naturalDown" } }
     
-    internal override var column_right_down_height: CGFloat { get { return 2 * gS } }
+    internal override var column_right_down_height: Double { return 2 * gS }
     
-    internal override var height: CGFloat {
-        get { return column_left_up_height + column_right_down_height + 0.5 * arrowHeight }
+    internal override var height: Double {
+        return column_left_up_height + column_right_down_height + 0.5 * arrowHeight
     }
     
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
-    internal override var yRef: CGFloat { get { return column_left_up_height } }
+    internal override var xRef: Double { return 0.5 * width }
+    internal override var yRef: Double { return column_left_up_height }
     
     public override func createComponents() {
         addBody()
@@ -34,7 +34,7 @@ public class NaturalDown: Natural {
         arrow_right_down = ComponentArrow(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: xRef + 0.5 * midWidth, y: yRef + column_right_down_height),
+            point: Point(x: xRef + 0.5 * midWidth, y: yRef + column_right_down_height),
             direction: .down
         )
         components.append(arrow_right_down!)

@@ -12,18 +12,18 @@ import GraphicsTools
 
 public protocol ClefView: CompositeShapeType {
     
-    var x: CGFloat { get }
-    var staffTop: CGFloat { get }
-    var lineWidth: CGFloat { get }
+    var x: Double { get }
+    var staffTop: Double { get }
+    var lineWidth: Double { get }
     var staffSlotHeight: StaffSlotHeight { get }
     var foregroundColor: Color { get }
     var maskColor: Color { get }
     
-    var extenderLength: CGFloat { get }
+    var extenderLength: Double { get }
     
     init(
-        x: CGFloat,
-        staffTop: CGFloat,
+        x: Double,
+        staffTop: Double,
         staffSlotHeight: StaffSlotHeight,
         foregroundColor: Color,
         maskColor: Color
@@ -32,17 +32,17 @@ public protocol ClefView: CompositeShapeType {
 
 extension ClefView {
     
-    public var extenderLength: CGFloat {
-        return 1 * CGFloat(staffSlotHeight)
+    public var extenderLength: Double {
+        return 1 * Double(staffSlotHeight)
     }
     
-    public var lineWidth: CGFloat {
-        return 0.2 * CGFloat(staffSlotHeight)
+    public var lineWidth: Double {
+        return 0.2 * Double(staffSlotHeight)
     }
     
     public var line: LineClefComponent {
         return LineClefComponent(
-            height: frame.height,
+            height: Double(frame.height),
             lineWidth: lineWidth,
             color: foregroundColor.cgColor
         )
@@ -53,7 +53,7 @@ extension ClefView {
             x: x,
             y: staffTop - extenderLength,
             width: 0,
-            height: 8 * CGFloat(staffSlotHeight) + 2 * extenderLength
+            height: 8 * Double(staffSlotHeight) + 2 * extenderLength
         )
     }
 }

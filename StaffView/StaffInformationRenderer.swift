@@ -54,7 +54,7 @@ public class StaffInformationRenderer: Renderer {
                     
                     let represented = StaffRepresentedPitch(
                         representableContext: element,
-                        altitude: CGFloat(altitude),
+                        altitude: altitude,
                         staffSlotHeight: configuration.staffSlotHeight
                     )
                     

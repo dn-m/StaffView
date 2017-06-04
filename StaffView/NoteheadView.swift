@@ -14,7 +14,7 @@ import GraphicsTools
 /// - TODO: Decouple `NoteheadView` from `staffSlotHeight`.
 public class NoteheadView: CAShapeLayer, ShapeType {
     
-    public var point: CGPoint
+    public var point: Point
     public var staffSlotHeight: StaffSlotHeight
     
     public var color: Color = Color(gray: 0.5, alpha: 1) {
@@ -23,15 +23,15 @@ public class NoteheadView: CAShapeLayer, ShapeType {
         }
     }
     
-    private var width: CGFloat {
-        return 2.25 * CGFloat(staffSlotHeight)
+    private var width: Double {
+        return 2.25 * staffSlotHeight
     }
     
-    private var height: CGFloat {
+    private var height: Double {
         return 0.75 * width
     }
     
-    public init(point: CGPoint, staffSlotHeight: StaffSlotHeight) {
+    public init(point: Point, staffSlotHeight: StaffSlotHeight) {
         self.point = point
         self.staffSlotHeight = staffSlotHeight
         super.init()
@@ -45,7 +45,7 @@ public class NoteheadView: CAShapeLayer, ShapeType {
     
     public func makePath() -> CGPath {
         
-        return Path.ellipse(rectangle: CGRect(x: 0, y: 0, width: width, height: height))
+        return Path.ellipse(in: Rectangle(x: 0, y: 0, width: width, height: height))
             .rotated(by: -45)
             .cgPath
     }

@@ -13,15 +13,15 @@ import GraphicsTools
 
 public final class AltoClef: CALayer, ClefView {
     
-    public var ornamentAltitude: CGFloat {
-        return 4 * CGFloat(staffSlotHeight) + extenderLength
+    public var ornamentAltitude: Double {
+        return 4 * staffSlotHeight + extenderLength
     }
     
     /// - FIXME: Test width !
     private var diamond: DiamondClefOrnament {
         return DiamondClefOrnament(
-            point: CGPoint(x: 0, y: ornamentAltitude),
-            width: 0.8 * CGFloat(staffSlotHeight),
+            point: Point(x: 0, y: ornamentAltitude),
+            width: 0.8 * staffSlotHeight,
             lineWidth: lineWidth,
             color: Color.red.cgColor
         )
@@ -29,15 +29,15 @@ public final class AltoClef: CALayer, ClefView {
     
     /// Components that need to built and added
     public var components: [CALayer] = []
-    public let x: CGFloat
-    public let staffTop: CGFloat
+    public let x: Double
+    public let staffTop: Double
     public let staffSlotHeight: StaffSlotHeight
     public let foregroundColor: Color
     public let maskColor: Color
     
     public init(
-        x: CGFloat,
-        staffTop: CGFloat,
+        x: Double,
+        staffTop: Double,
         staffSlotHeight: StaffSlotHeight,
         foregroundColor: Color,
         maskColor: Color

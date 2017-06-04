@@ -13,8 +13,8 @@ import GraphicsTools
 
 public final class BassClef: CALayer, ClefView {
     
-    public var ornamentAltitude: CGFloat {
-        return 1 * CGFloat(staffSlotHeight) + extenderLength
+    public var ornamentAltitude: Double {
+        return 1 * staffSlotHeight + extenderLength
     }
     
     private var dots: [DotClefOrnament] {
@@ -22,11 +22,11 @@ public final class BassClef: CALayer, ClefView {
         // Create a dot above and below (by 0.8 staff slots) the `ornamentAltitude`
         return [-1, 1].map { sign in
             DotClefOrnament(
-                point: CGPoint(
-                    x: 0.5 * CGFloat(staffSlotHeight),
-                    y: ornamentAltitude + CGFloat(0.8) * CGFloat(sign)
+                point: Point(
+                    x: 0.5 * staffSlotHeight,
+                    y: ornamentAltitude + 0.8 * Double(sign)
                 ),
-                radius: 0.175 * CGFloat(staffSlotHeight),
+                radius: 0.175 * staffSlotHeight,
                 color: Color.red.cgColor
             )
         }
@@ -34,15 +34,15 @@ public final class BassClef: CALayer, ClefView {
 
     /// Components that need to built and added
     public var components: [CALayer] = []
-    public let x: CGFloat
-    public let staffTop: CGFloat
+    public let x: Double
+    public let staffTop: Double
     public let staffSlotHeight: StaffSlotHeight
     public let foregroundColor: Color
     public let maskColor: Color
     
     public init(
-        x: CGFloat,
-        staffTop: CGFloat,
+        x: Double,
+        staffTop: Double,
         staffSlotHeight: StaffSlotHeight,
         foregroundColor: Color,
         maskColor: Color

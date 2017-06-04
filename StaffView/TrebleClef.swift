@@ -13,14 +13,14 @@ import GraphicsTools
 
 public final class TrebleClef: CALayer, ClefView {
     
-    public var ornamentAltitude: CGFloat {
-        return 6 * CGFloat(staffSlotHeight) + extenderLength
+    public var ornamentAltitude: Double {
+        return 6 * staffSlotHeight + extenderLength
     }
     
     private var circle: CircleClefOrnament {
         return CircleClefOrnament(
-            point: CGPoint(x: 0, y: ornamentAltitude),
-            radius: 1 * CGFloat(staffSlotHeight),
+            point: Point(x: 0, y: ornamentAltitude),
+            radius: 1 * staffSlotHeight,
             lineWidth: lineWidth,
             lineColor: Color.red.cgColor,
             backgroundColor: Color(gray: 1, alpha: 1).cgColor
@@ -29,15 +29,15 @@ public final class TrebleClef: CALayer, ClefView {
     
     /// Components that need to built and added
     public var components: [CALayer] = []
-    public let x: CGFloat
-    public let staffTop: CGFloat
+    public let x: Double
+    public let staffTop: Double
     public let staffSlotHeight: StaffSlotHeight
     public var foregroundColor: Color
     public var maskColor: Color
     
     public init(
-        x: CGFloat,
-        staffTop: CGFloat,
+        x: Double,
+        staffTop: Double,
         staffSlotHeight: StaffSlotHeight,
         foregroundColor: Color,
         maskColor: Color

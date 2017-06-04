@@ -6,21 +6,21 @@
 //
 //
 
-import QuartzCore
+import PathTools
 
 public class QuarterSharpDown: QuarterSharp {
     
     public override var description: String { get { return "quarterSharpDown" } }
     
-    public override var column_down_height: CGFloat { get { return 2 * gS } }
+    public override var column_down_height: Double { get { return 2 * gS } }
     
-    internal override var height: CGFloat {
+    internal override var height: Double {
         get { return column_up_height + column_down_height + 0.5 * arrowHeight }
     }
     
-    internal override var width: CGFloat { get { return thickLineLength } }
+    internal override var width: Double { get { return thickLineLength } }
     
-    internal override var yRef: CGFloat { get { return column_up_height } }
+    internal override var yRef: Double { get { return column_up_height } }
     
     public override func createComponents() {
         addBody()
@@ -33,7 +33,7 @@ public class QuarterSharpDown: QuarterSharp {
         arrow_center_down = ComponentArrow(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: xRef, y: yRef + column_down_height),
+            point: Point(x: xRef, y: yRef + column_down_height),
             direction: .down
         )
         components.append(arrow_center_down!)

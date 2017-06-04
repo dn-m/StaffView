@@ -11,10 +11,10 @@ import PathTools
 
 public final class DotClefOrnament: CAShapeLayer, CircleClefComponent {
     
-    public var point: CGPoint
-    public var radius: CGFloat
+    public var point: Point
+    public var radius: Double
     
-    public init(point: CGPoint, radius: CGFloat, color: CGColor) {
+    public init(point: Point, radius: Double, color: CGColor) {
         self.point = point
         self.radius = radius
         super.init()

@@ -6,22 +6,22 @@
 //
 //
 
-import QuartzCore
+import PathTools
 
 public class Flat: AccidentalView {
     
-    public override var description: String { get { return "flat" } }
+    public override var description: String { return "flat" }
     
-    internal var column_up_height: CGFloat { get { return 1.618 * gS } }
-    internal var column_down_height: CGFloat { get { return 0.75 * gS } }
+    internal var column_up_height: Double { return 1.618 * gS }
+    internal var column_down_height: Double { return 0.75 * gS }
     
-    internal override var height: CGFloat {
+    internal override var height: Double {
         get { return column_up_height + column_down_height }
     }
     
-    internal override var width: CGFloat { get { return midWidth } }
-    internal override var xRef: CGFloat { get { return 0.5 * midWidth } }
-    internal override var yRef: CGFloat { get { return column_up_height } }
+    internal override var width: Double { return midWidth }
+    internal override var xRef: Double { return 0.5 * midWidth }
+    internal override var yRef: Double { return column_up_height }
     
     public override func createComponents() {
         addBody()
@@ -33,7 +33,7 @@ public class Flat: AccidentalView {
         body = ComponentBodyFlat(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: xRef + 0.4 * thinLineWidth, y: yRef)
+            point: Point(x: xRef + 0.4 * thinLineWidth, y: yRef)
         )
         components.append(body!)
     }

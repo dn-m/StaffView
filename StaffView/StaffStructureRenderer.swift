@@ -15,7 +15,7 @@ import PlotView
 
 public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
 
-    private enum LedgerLineDirection: CGFloat {
+    private enum LedgerLineDirection: Double {
         case above = -1
         case below = 1
     }
@@ -70,8 +70,8 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
     /// - returns: `StaffClefView` with the given `kind` and graphical configuration.
     private func makeClef(
         kind: Clef.Kind,
-        x: CGFloat,
-        staffTop: CGFloat,
+        x: Double,
+        staffTop: Double,
         staffSlotHeight: StaffSlotHeight,
         foregroundColor: Color,
         maskColor: Color
@@ -118,12 +118,12 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
         for segment in staffLines {
             
             (0..<5).forEach { lineNumber in
-                let altitude = CGFloat(lineNumber) * CGFloat(staffSlotHeight) * 2
-                let left = CGFloat(segment.start)
-                let right = CGFloat(segment.stop)
+                let altitude = Double(lineNumber) * staffSlotHeight * 2
+                let left = segment.start
+                let right = segment.stop
                 
-                path.move(to: CGPoint(x: left, y: altitude))
-                    .addLine(to: CGPoint(x: right, y: altitude))
+                path.move(to: Point(x: left, y: altitude))
+                    .addLine(to: Point(x: right, y: altitude))
             }
         }
 
@@ -139,15 +139,15 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
         for (x, amountByDirection) in ledgerLines {
             for (direction, amount) in amountByDirection {
                 
-                let left = CGFloat(x - 0.5 * length)
-                let right = CGFloat(x + 0.5 * length)
+                let left = x - 0.5 * length
+                let right = x + 0.5 * length
                 
-                let refY = direction == .above ? -2 * CGFloat(staffSlotHeight) : 10 * CGFloat(staffSlotHeight)
+                let refY = direction == .above ? -2 * staffSlotHeight : 10 * staffSlotHeight
                 
                 (0..<amount).forEach { number in
-                    let altitude = CGFloat(number) * direction.rawValue * 2 * CGFloat(staffSlotHeight) + refY
-                    path.move(to: CGPoint(x: left, y: altitude))
-                        .addLine(to: CGPoint(x: right, y: altitude))
+                    let altitude = Double(number) * direction.rawValue * 2 * staffSlotHeight + refY
+                    path.move(to: Point(x: left, y: altitude))
+                        .addLine(to: Point(x: right, y: altitude))
                 }
             }
         }

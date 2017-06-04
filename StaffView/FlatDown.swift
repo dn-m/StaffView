@@ -6,13 +6,13 @@
 //
 //
 
-import QuartzCore
+import PathTools
 
 public class FlatDown: Flat {
     
-    public override var description: String { get { return "flatDown" } }
+    public override var description: String { return "flatDown" }
     
-    internal override var column_down_height: CGFloat { get { return 1.5 * gS } }
+    internal override var column_down_height: Double { return 1.5 * gS }
     
     public override func createComponents() {
         addBody()
@@ -25,7 +25,7 @@ public class FlatDown: Flat {
         arrow_left_down = ComponentArrow(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: 0, y: yRef + column_down_height),
+            point: Point(x: 0, y: yRef + column_down_height),
             direction: .down
         )
         components.append(arrow_left_down!)

@@ -10,14 +10,22 @@ import QuartzCore
 
 public protocol SharpType {
     
-    var thickLineSlope: CGFloat { get }
-    var thickLineWidth: CGFloat { get }
-    var thickLineLength: CGFloat { get }
+    var thickLineSlope: Double { get }
+    var thickLineWidth: Double { get }
+    var thickLineLength: Double { get }
 }
 
 extension SharpType where Self: AccidentalView {
     
-    public var thickLineSlope: CGFloat { return 0.25 }
-    public var thickLineWidth: CGFloat { return 0.382 * gS }
-    public var thickLineLength: CGFloat { return midWidth + 2 * flankWidth }
+    public var thickLineSlope: Double {
+        return 0.25
+    }
+    
+    public var thickLineWidth: Double {
+        return 0.382 * gS
+    }
+    
+    public var thickLineLength: Double {
+        return midWidth + 2 * flankWidth
+    }
 }

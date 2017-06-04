@@ -6,24 +6,24 @@
 //
 //
 
-import QuartzCore
+import PathTools
 
 public class Natural: AccidentalView {
     
-    public override var description: String { get { return "natural" } }
+    public override var description: String { return "natural" }
     
     //public var body: ComponentBody?
     
-    internal var column_left_up_height: CGFloat { get { return 1.236 * gS } }
-    internal var column_right_down_height: CGFloat { get { return 1.236 * gS } }
+    internal var column_left_up_height: Double {  return 1.236 * gS }
+    internal var column_right_down_height: Double { return 1.236 * gS }
     
-    internal override var height: CGFloat {
-        get { return column_left_up_height + column_right_down_height }
+    internal override var height: Double {
+        return column_left_up_height + column_right_down_height
     }
     
-    internal override var width: CGFloat { get { return 0 } }
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
-    internal override var yRef: CGFloat { get { return column_left_up_height } }
+    internal override var width: Double { get { return 0 } }
+    internal override var xRef: Double { get { return 0.5 * width } }
+    internal override var yRef: Double { get { return column_left_up_height } }
     
     public override func createComponents() {
         addBody()
@@ -37,7 +37,7 @@ public class Natural: AccidentalView {
         body = ComponentBodyNatural(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: xRef, y: yRef)
+            point: Point(x: xRef, y: yRef)
         )
         components.append(body!)
     }
