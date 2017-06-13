@@ -6,13 +6,12 @@
 //
 //
 
-import PathTools
+import GeometryTools
+import QuartzCore
 
 public class Natural: AccidentalView {
     
     public override var description: String { return "natural" }
-    
-    //public var body: ComponentBody?
     
     internal var column_left_up_height: Double {  return 1.236 * gS }
     internal var column_right_down_height: Double { return 1.236 * gS }
@@ -21,9 +20,17 @@ public class Natural: AccidentalView {
         return column_left_up_height + column_right_down_height
     }
     
-    internal override var width: Double { get { return 0 } }
-    internal override var xRef: Double { get { return 0.5 * width } }
-    internal override var yRef: Double { get { return column_left_up_height } }
+    internal override var width: Double {
+        return midWidth + thinLineWidth
+    }
+    
+    internal override var xRef: Double {
+        return 0.5 * width
+    }
+    
+    internal override var yRef: Double {
+        return column_left_up_height
+    }
     
     public override func createComponents() {
         addBody()
@@ -88,5 +95,27 @@ public class Natural: AccidentalView {
         )
         components.append(column_right_up!)
         column_right_up!.alignment = .right
+    }
+    
+    override public func makeFrame() -> CGRect {
+        
+        let frames = components.map { $0.frame }
+        
+        let minX = frames.map { $0.minX }.min()!
+        let maxX = frames.map { $0.maxX }.max()!
+        let minY = frames.map { $0.minY }.min()!
+        let maxY = frames.map { $0.maxY }.max()!
+        let width = maxX - minX
+        let height = maxY - minY
+        
+//        print("yRef: \(yRef)")
+//        print("xRef: \(xRef)")
+        
+        return CGRect(x: minX - CGFloat(xRef), y: minY - CGFloat(yRef), width: width, height: height)
+////
+//        // get bounding box here:
+//        let left = point.x - xRef
+//        let top = point.y - yRef
+//        return CGRect(x: left, y: top, width: width, height: height)
     }
 }

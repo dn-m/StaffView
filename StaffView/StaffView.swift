@@ -42,6 +42,10 @@ public struct StaffRenderer: PlotRenderer {
 
 public final class StaffView: CALayer, PlotView, Renderer {
     
+    // FIXME: Declaring this specifically should not be necessary. All that should be needed
+    // is `public let renderer: StaffRenderer`.
+    //
+    // Audit the `PlotView` -> `StaffView` protocol inheritence
     public typealias Renderer = StaffRenderer
     
     public let renderer: StaffRenderer
@@ -89,5 +93,27 @@ public final class StaffView: CALayer, PlotView, Renderer {
         renderer.structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
         
         renderer.render(in: context, with: config)
+    }
+}
+
+extension CALayer {
+    
+    var boundingBoxOfSublayers: CGRect {
+        
+        func traverse(_ layer: CALayer) {
+            print("\(type(of: layer)): \(layer.frame)")
+            
+            if let shapeLayer = layer as? CAShapeLayer {
+                print("-- shape layer: \(shapeLayer.path?.boundingBoxOfPath)")
+            }
+            
+            if let sublayers = layer.sublayers, !sublayers.isEmpty {
+                sublayers.forEach(traverse)
+            }
+        }
+        
+        traverse(self)
+        
+        return CGRect.zero
     }
 }

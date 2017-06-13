@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import GeometryTools
 import PathTools
 import StaffModel
 import StaffView

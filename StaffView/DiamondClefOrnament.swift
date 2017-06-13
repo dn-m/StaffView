@@ -7,8 +7,9 @@
 //
 
 import QuartzCore
-import GraphicsTools
+import GeometryTools
 import PathTools
+import GraphicsTools
 
 public final class DiamondClefOrnament: CAShapeLayer, ShapeType {
     
@@ -38,7 +39,7 @@ public final class DiamondClefOrnament: CAShapeLayer, ShapeType {
         return Path.square(
             center: Point(x: 0.5 * width, y: 0.5 * width),
             width: width
-        ).rotated(by: 45).cgPath
+        ).rotated(by: Angle(degrees: 45)).cgPath
     }
     
     public required init?(coder aDecoder: NSCoder) {

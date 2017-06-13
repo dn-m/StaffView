@@ -7,8 +7,9 @@
 //
 
 import QuartzCore
-import GraphicsTools
+import GeometryTools
 import PathTools
+import GraphicsTools
 
 public final class LineClefComponent: CAShapeLayer, ShapeType {
     
@@ -36,9 +37,9 @@ public final class LineClefComponent: CAShapeLayer, ShapeType {
     }
     
     public func makePath() -> CGPath {
-        return Path()
+        let builder = Path.builder
             .move(to: Point())
             .addLine(to: Point(x: 0, y: Double(frame.height)))
-            .cgPath
+        return builder.build().cgPath
     }
 }

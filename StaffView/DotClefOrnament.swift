@@ -7,7 +7,7 @@
 //
 
 import QuartzCore
-import PathTools
+import GeometryTools
 
 public final class DotClefOrnament: CAShapeLayer, CircleClefComponent {
     

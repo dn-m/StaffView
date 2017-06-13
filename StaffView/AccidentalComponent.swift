@@ -8,6 +8,7 @@
 
 import QuartzCore
 import StaffModel
+import GeometryTools
 import PathTools
 import GraphicsTools
 
@@ -41,23 +42,10 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
         super.init(coder: aDecoder)
     }
     
-    /*
-    public override init(layer: AnyObject) {
-        super.init(layer: layer)
-    }
-    */
-    
     private func setVisualAttributes() {
         fillColor = Color.red.cgColor
         lineWidth = 0
     }
-//    
-//    public func build() {
-//        path = makePath()
-//        frame = makeFrame()
-//        setVisualAttributes()
-//        hasBeenBuilt = true
-//    }
     
     public func makeFrame() -> CGRect {
         fatalError()
@@ -67,10 +55,6 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
         fatalError()
 //        return CGPathCreateMutable()
     }
-//    
-//    private func frame = makeFrame() {
-//        // something
-//    }
 }
 
 public class ComponentArrow: AccidentalComponent {
@@ -112,26 +96,19 @@ public class ComponentArrow: AccidentalComponent {
     
     public override func makePath() -> CGPath {
         frame = makeFrame()
-        // use Path.arrow()
-        var path = Path()
+        let builder = Path.builder
             .move(to: Point(x: 0.5 * width, y: 0))
             .addLine(to: Point(x: width, y: height))
             .addLine(to: Point(x: 0.5 * width, y: height - barbDepth))
             .addLine(to: Point(x: 0, y: height))
             .close()
+        let path = builder.build()
+        
         if direction == .down {
-            path = path.rotated(by: 180.0)
+            return path.rotated(by: Angle(degrees: 180.0)).cgPath
         }
+        
         return path.cgPath
-//        
-////        let path = UIBezierPath()
-//        path.moveToPoint(CGPointMake(0.5 * width, 0))
-//        path.addLineToPoint(CGPointMake(width, height))
-//        path.addLineToPoint(CGPointMake(0.5 * width, height - barbDepth))
-//        path.addLineToPoint(CGPointMake(0, height))
-//        path.closePath()
-//        if direction == .down { path.rotate(degrees: 180.0) }
-//        return path.CGPath
     }
     
     public override func makeFrame() -> CGRect {
@@ -197,36 +174,38 @@ public class ComponentBodyFlat: ComponentBody {
     public override func makePath() -> CGPath {
         frame = makeFrame()
         
-        return Path()
+        let builder = Path.builder
             .move(to: Point())
             .addCurve(to: Point(x: width, y: 0),
-                controlPoint1: Point(),
-                controlPoint2: Point(x: width - 0.125 * gS, y: -0.125 * gS)
+                control1: Point(),
+                control2: Point(x: width - 0.125 * gS, y: -0.125 * gS)
             )
             .addCurve(to: Point(x: 0, y: height),
-                controlPoint1: Point(x: width + 0.25 * gS, y: 0.309 * gS),
-                controlPoint2: Point(x: 0.125 * gS, y: height - 0.33 * gS)
+                control1: Point(x: width + 0.25 * gS, y: 0.309 * gS),
+                control2: Point(x: 0.125 * gS, y: height - 0.33 * gS)
             )
             .addLine(to: Point(x: 0, y: height - bowlLineWidthBottom))
-            .addCurve(to: Point(x: width - bowlLineWidthStress, y: 0.75 * bowlLineWidthStress),
-                controlPoint1: Point(x:
+            .addCurve(
+                to: Point(x: width - bowlLineWidthStress, y: 0.75 * bowlLineWidthStress),
+                control1: Point(x:
                     0.5 * bowlLineWidthBottom,
                     y: height - 1.25 * bowlLineWidthBottom
                 ),
-                controlPoint2: Point(
+                control2: Point(
                     x: width - 0.5 * bowlLineWidthBottom,
                     y: 1.333 * bowlLineWidthStress
                 )
             )
             .addCurve(to: Point(x: 0, y: bowlLineWidthTop),
-                controlPoint1: Point(
+                control1: Point(
                     x: width - 1.309 * bowlLineWidthStress,
                     y: 0.309 * bowlLineWidthStress
                 ),
-                controlPoint2: Point(x: 0, y: bowlLineWidthTop)
+                control2: Point(x: 0, y: bowlLineWidthTop)
             )
             .close()
-            .cgPath
+            
+        return builder.build().cgPath
     }
     
     public override func makeFrame() -> CGRect {
@@ -258,16 +237,22 @@ public class ComponentBodyNatural: ComponentBody {
     
     public override func makePath() -> CGPath {
         frame = makeFrame()
-        return [-thickLineΔY, +thickLineΔY].reduce(Path()) { path, altitude in
-            path.append(
-                Path.parallelogram(
-                    center: Point(x: xRef, y: yRef + altitude),
-                    height: thickLineWidth,
-                    width: thickLineLength,
-                    slope: thickLineSlope
-                )
-            )
-        }.cgPath
+        
+        let a = Path.parallelogram(
+            center: Point(x: xRef, y: yRef - thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        let b = Path.parallelogram(
+            center: Point(x: xRef, y: yRef + thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        return (a+b).cgPath
     }
     
     public override func makeFrame() -> CGRect {
@@ -363,16 +348,22 @@ public class ComponentBodySharp: ComponentBody {
     }
     
     public override func makePath() -> CGPath {
-        return [-thickLineΔY, +thickLineΔY].reduce(Path()) { path, altitude in
-            path.append(
-                Path.parallelogram(
-                    center: Point(x: xRef, y: yRef + altitude),
-                    height: thickLineWidth,
-                    width: thickLineLength,
-                    slope: thickLineSlope
-                )
-            )
-        }.cgPath
+        
+        let a = Path.parallelogram(
+            center: Point(x: xRef, y: yRef - thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        let b = Path.parallelogram(
+            center: Point(x: xRef, y: yRef + thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        return (a+b).cgPath
     }
     
     public override func makeFrame() -> CGRect {

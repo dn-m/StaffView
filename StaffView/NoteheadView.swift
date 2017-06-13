@@ -8,6 +8,7 @@
 
 import StaffModel
 import QuartzCore
+import GeometryTools
 import PathTools
 import GraphicsTools
 
@@ -46,7 +47,7 @@ public class NoteheadView: CAShapeLayer, ShapeType {
     public func makePath() -> CGPath {
         
         return Path.ellipse(in: Rectangle(x: 0, y: 0, width: width, height: height))
-            .rotated(by: -45)
+            .rotated(by: Angle(degrees: -45))
             .cgPath
     }
     

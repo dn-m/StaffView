@@ -7,7 +7,7 @@
 //
 
 import QuartzCore
-import PathTools
+import GeometryTools
 import GraphicsTools
 
 public final class CircleClefOrnament: CAShapeLayer, CircleClefComponent {

@@ -8,7 +8,7 @@
 
 import StaffModel
 import QuartzCore
-import PathTools
+import GeometryTools
 import GraphicsTools
 
 public final class AltoClef: CALayer, ClefView {

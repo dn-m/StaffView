@@ -7,11 +7,12 @@
 //
 
 import Collections
-import QuartzCore
 import StaffModel
+import GeometryTools
 import PathTools
 import GraphicsTools
 import PlotView
+import QuartzCore
 
 public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
 
@@ -113,45 +114,45 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
         
         let staffSlotHeight = configuration.staffSlotHeight
 
-        let path = Path()
-        
-        for segment in staffLines {
-            
-            (0..<5).forEach { lineNumber in
-                let altitude = Double(lineNumber) * staffSlotHeight * 2
-                let left = segment.start
-                let right = segment.stop
-                
-                path.move(to: Point(x: left, y: altitude))
-                    .addLine(to: Point(x: right, y: altitude))
+        return Path(
+            staffLines.flatMap { segment in
+                return (0..<5).map { lineNumber in
+                    let altitude = Double(lineNumber) * staffSlotHeight * 2
+                    let left = segment.start
+                    let right = segment.stop
+                    return BezierCurve(
+                        start: Point(x: left, y: altitude),
+                        end: Point(x: right, y: altitude)
+                    )
+                }
             }
-        }
-
-        return path
+        )
     }
     
     private func ledgerLines(configuration: StaffStructureConfiguration) -> Path {
         
         let staffSlotHeight = configuration.staffSlotHeight
-        
         let length = configuration.ledgerLineLength
-        let path = Path()
+        var curves: [BezierCurve] = []
+
         for (x, amountByDirection) in ledgerLines {
             for (direction, amount) in amountByDirection {
-                
                 let left = x - 0.5 * length
                 let right = x + 0.5 * length
-                
                 let refY = direction == .above ? -2 * staffSlotHeight : 10 * staffSlotHeight
                 
-                (0..<amount).forEach { number in
+                for number in 0..<amount {
                     let altitude = Double(number) * direction.rawValue * 2 * staffSlotHeight + refY
-                    path.move(to: Point(x: left, y: altitude))
-                        .addLine(to: Point(x: right, y: altitude))
+                    let curve = BezierCurve(
+                        start: Point(x: left, y: altitude),
+                        end: Point(x: right, y: altitude)
+                    )
+                    curves.append(curve)
                 }
             }
         }
         
-        return path
+        return Path(curves)
     }
 }
+

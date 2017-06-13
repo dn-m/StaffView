@@ -7,14 +7,37 @@
 //
 
 import XCTest
+import QuartzCore
+import Collections
 import Pitch
 import PitchSpellingTools
 import PlotModel
 import StaffModel
-import QuartzCore
+import GeometryTools
+import PathTools
 import StaffView
 
 class StaffViewTests: XCTestCase {
+    
+    func testNotehead() {
+        let notehead = NoteheadView(point: Point(), staffSlotHeight: 42)
+        notehead.showTestBorder()
+        notehead.renderToPDF(name: "notehead")
+    }
+    
+    func testAccidentals() {
+        
+        let accidentals: [Accidental] = [
+            .natural, .naturalUp, .naturalDown,
+            .sharp, .sharpUp, .sharpDown
+        ]
+        
+        for accidental in accidentals {
+            let view = AccidentalView.makeAccidental(accidental, at: Point(), staffSlotHeight: 42)
+            view.showTestBorder()
+            view.renderToPDF(name: "\(accidental)")
+        }
+    }
     
     func testMelodicCMajorTreble() {
         let layer = CALayer()

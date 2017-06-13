@@ -8,7 +8,7 @@
 //
 
 import QuartzCore
-import PathTools
+import GeometryTools
 import GraphicsTools
 import StaffModel
 
@@ -36,15 +36,33 @@ public class AccidentalView: CALayer, CompositeShapeType {
         return Double(staffSlotHeight) * scale
     }
     
-    internal var xRef: Double { fatalError() }
-    internal var yRef: Double { fatalError() }
+    internal var xRef: Double {
+        fatalError()
+    }
     
-    internal var left: Double { fatalError() }
-    internal var top: Double  { fatalError() }
-    internal var width: Double  { fatalError() }
-    internal var height: Double  { fatalError() }
+    internal var yRef: Double {
+        fatalError()
+    }
     
-    public var boundingWidth: Double? { return getBoundingWidth() }
+    internal var left: Double {
+        fatalError()
+    }
+    
+    internal var top: Double  {
+        fatalError()
+    }
+    
+    internal var width: Double  {
+        fatalError()
+    }
+    
+    internal var height: Double  {
+        fatalError()
+    }
+    
+    public var boundingWidth: Double? {
+        return getBoundingWidth()
+    }
     
     // for sharp types
     public var midWidth: Double { get { return 0.575 * gS } }
@@ -113,12 +131,6 @@ public class AccidentalView: CALayer, CompositeShapeType {
         let left = point.x - xRef
         let top = point.y - yRef
         return CGRect(x: left, y: top, width: width, height: height)
-    }
-    
-    private func setFrame() {
-        let left = point.x - xRef
-        let top = point.y - yRef
-        frame = CGRect(x: left, y: top, width: width, height: height)
     }
     
     private func getHeight() -> CGFloat {

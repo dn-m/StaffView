@@ -7,7 +7,7 @@
 //
 
 import StaffModel
-import PathTools
+import GeometryTools
 import GraphicsTools
 
 public struct StaffRepresentedPitch {
