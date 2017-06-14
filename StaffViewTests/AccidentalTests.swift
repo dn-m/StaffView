@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import GeometryTools
+import PathTools
 import StaffModel
 import StaffView
 
@@ -17,12 +19,17 @@ class AccidentalTests: XCTestCase {
         
         measure {
             (0..<1000).forEach { _ in
-                _ = AccidentalView.makeAccidental(
-                    withKind: accidental,
-                    point: CGPoint.zero,
+                _ = AccidentalView.makeAccidental(accidental,
+                    at: Point(),
                     staffSlotHeight: 12
                 )
             }
         }
+    }
+    
+    func testPrintToPDF() {
+        let accidental = AccidentalView.makeAccidental(.sharp, at: Point(), staffSlotHeight: 40)
+        accidental.showTestBorder()
+        accidental.renderToPDF(name: "sharp")
     }
 }

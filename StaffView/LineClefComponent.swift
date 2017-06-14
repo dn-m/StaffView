@@ -7,23 +7,24 @@
 //
 
 import QuartzCore
-import GraphicsTools
+import GeometryTools
 import PathTools
+import GraphicsTools
 
 public final class LineClefComponent: CAShapeLayer, ShapeType {
     
-    public let height: CGFloat
+    public let height: Double
 
     public init(
-        height: CGFloat,
-        lineWidth: CGFloat,
+        height: Double,
+        lineWidth: Double,
         color: CGColor
     )
     {
         self.height = height
         super.init()
         self.strokeColor = color
-        self.lineWidth = lineWidth
+        self.lineWidth = CGFloat(lineWidth)
         build()
     }
     
@@ -36,9 +37,9 @@ public final class LineClefComponent: CAShapeLayer, ShapeType {
     }
     
     public func makePath() -> CGPath {
-        return Path()
-            .move(to: CGPoint.zero)
-            .addLine(to: CGPoint(x: 0, y: frame.height))
-            .cgPath
+        let builder = Path.builder
+            .move(to: Point())
+            .addLine(to: Point(x: 0, y: Double(frame.height)))
+        return builder.build().cgPath
     }
 }

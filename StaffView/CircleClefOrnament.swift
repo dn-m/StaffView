@@ -7,18 +7,18 @@
 //
 
 import QuartzCore
-import PathTools
+import GeometryTools
 import GraphicsTools
 
 public final class CircleClefOrnament: CAShapeLayer, CircleClefComponent {
     
-    public let point: CGPoint
-    public let radius: CGFloat
+    public let point: Point
+    public let radius: Double
     
     public init(
-        point: CGPoint,
-        radius: CGFloat,
-        lineWidth: CGFloat,
+        point: Point,
+        radius: Double,
+        lineWidth: Double,
         lineColor: CGColor = Color.red.cgColor,
         backgroundColor: CGColor = Color(gray: 1, alpha: 1).cgColor
     )
@@ -26,7 +26,7 @@ public final class CircleClefOrnament: CAShapeLayer, CircleClefComponent {
         self.point = point
         self.radius = radius
         super.init()
-        self.lineWidth = lineWidth
+        self.lineWidth = CGFloat(lineWidth)
         self.strokeColor = lineColor
         self.fillColor = backgroundColor
         build()

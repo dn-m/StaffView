@@ -6,26 +6,26 @@
 //
 //
 
-import QuartzCore
+import GeometryTools
 
 public class Sharp: AccidentalView, SharpType {
     
-    public override var description: String { get { return "sharp" } }
+    public override var description: String { return "sharp" }
     
-    internal var column_left_up_height: CGFloat { get { return 0.95 * gS } }
-    internal var column_left_down_height: CGFloat { get { return 1.05 * gS } }
-    internal var column_right_up_height: CGFloat { get { return 1.05 * gS } }
-    internal var column_right_down_height: CGFloat { get { return 0.95 * gS } }
+    internal var column_left_up_height: Double { return 0.95 * gS }
+    internal var column_left_down_height: Double { return 1.05 * gS }
+    internal var column_right_up_height: Double { return 1.05 * gS }
+    internal var column_right_down_height: Double { return 0.95 * gS }
     
     
-    internal override var height: CGFloat {
+    internal override var height: Double {
         get { return column_right_up_height + column_left_down_height }
     }
     
-    internal override var width: CGFloat { get { return thickLineLength } }
+    internal override var width: Double { get { return thickLineLength } }
     
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
-    internal override var yRef: CGFloat { get { return 0.5 * height } }
+    internal override var xRef: Double { get { return 0.5 * width } }
+    internal override var yRef: Double { get { return 0.5 * height } }
     
     public override func createComponents() {
         addBody()
@@ -36,7 +36,11 @@ public class Sharp: AccidentalView, SharpType {
     }
     
     internal func addBody() {
-        body = ComponentBodySharp(staffSlotHeight: staffSlotHeight, scale: scale, point: CGPoint(x: xRef, y: yRef))
+        body = ComponentBodySharp(
+            staffSlotHeight: staffSlotHeight,
+            scale: scale,
+            point: Point(x: xRef, y: yRef)
+        )
         components.append(body!)
     }
     

@@ -9,15 +9,46 @@
 import QuartzCore
 import StaffModel
 import GraphicsTools
+import PlotModel
 import PlotView
+
+public struct StaffRenderConfiguration {
+    public let informationConfiguration: StaffInformationConfiguration
+    public let structureConfiguration: StaffStructureConfiguration
+}
+
+public struct StaffRenderer: PlotRenderer {
+    
+    public let informationRenderer: StaffInformationRenderer
+    public let structureRenderer: StaffStructureRenderer
+    
+    public init(model: StaffModel) {
+        self.structureRenderer = StaffStructureRenderer(model: model)
+        self.informationRenderer = StaffInformationRenderer(
+            model: model,
+            staffLinesRenderDelegate: structureRenderer
+        )
+    }
+
+    public func render(in context: CALayer, with configuration: StaffRenderConfiguration) {
+        let structure = CALayer()
+        let information = CALayer()
+        informationRenderer.render(in: information, with: configuration.informationConfiguration)
+        structureRenderer.render(in: structure, with: configuration.structureConfiguration)
+        context.addSublayer(structure)
+        context.addSublayer(information)
+    }
+}
 
 public final class StaffView: CALayer, PlotView, Renderer {
     
-    public let structure = CALayer()
-    public let information = CALayer()
+    // FIXME: Declaring this specifically should not be necessary. All that should be needed
+    // is `public let renderer: StaffRenderer`.
+    //
+    // Audit the `PlotView` -> `StaffView` protocol inheritence
+    public typealias Renderer = StaffRenderer
     
-    public var informationRenderer: StaffInformationRenderer
-    public var structureRenderer: StaffStructureRenderer
+    public let renderer: StaffRenderer
     
     /// FIXME: Not yet implemented!
     public let concreteVerticalPosition: (StaffSlot) -> Double = { _ in fatalError() }
@@ -29,11 +60,7 @@ public final class StaffView: CALayer, PlotView, Renderer {
     
     public init(model: StaffModel) {
         self.model = model
-        self.structureRenderer = StaffStructureRenderer(model: model)
-        self.informationRenderer = StaffInformationRenderer(
-            model: model,
-            staffLinesRenderDelegate: structureRenderer
-        )
+        self.renderer = StaffRenderer(model: model)
         super.init()
     }
     
@@ -54,15 +81,39 @@ public final class StaffView: CALayer, PlotView, Renderer {
         
         let infoConfig = StaffInformationConfiguration(
             staffSlotHeight: staffSlotHeight,
-            noteheadColor: Color.red)
+            noteheadColor: Color.red
+        )
+        
+        let config = StaffRenderConfiguration(
+            informationConfiguration: infoConfig,
+            structureConfiguration: structureConfig
+        )
 
         // temporary
-        structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
+        renderer.structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
         
-        informationRenderer.render(in: information, with: infoConfig)
-        structureRenderer.render(in: structure, with: structureConfig)
+        renderer.render(in: context, with: config)
+    }
+}
+
+extension CALayer {
+    
+    var boundingBoxOfSublayers: CGRect {
         
-        context.addSublayer(structure)
-        context.addSublayer(information)
+        func traverse(_ layer: CALayer) {
+            print("\(type(of: layer)): \(layer.frame)")
+            
+            if let shapeLayer = layer as? CAShapeLayer {
+                print("-- shape layer: \(shapeLayer.path?.boundingBoxOfPath)")
+            }
+            
+            if let sublayers = layer.sublayers, !sublayers.isEmpty {
+                sublayers.forEach(traverse)
+            }
+        }
+        
+        traverse(self)
+        
+        return CGRect.zero
     }
 }

@@ -6,13 +6,13 @@
 //
 //
 
-import QuartzCore
+import GeometryTools
 
 public class FlatUp: Flat {
     
     public override var description: String { get { return "flatUp" } }
     
-    internal override var column_up_height: CGFloat { get { return 2 * gS } }
+    internal override var column_up_height: Double { return 2 * gS }
     
     public override func createComponents() {
         addBody()
@@ -26,7 +26,7 @@ public class FlatUp: Flat {
         arrow_left_up = ComponentArrow(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: 0, y: yRef - column_up_height),
+            point: Point(x: 0, y: yRef - column_up_height),
             direction: .up
         )
         components.append(arrow_left_up!)

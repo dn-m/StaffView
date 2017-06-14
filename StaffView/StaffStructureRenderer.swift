@@ -7,15 +7,16 @@
 //
 
 import Collections
-import QuartzCore
 import StaffModel
+import GeometryTools
 import PathTools
 import GraphicsTools
 import PlotView
+import QuartzCore
 
 public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
 
-    private enum LedgerLineDirection: CGFloat {
+    private enum LedgerLineDirection: Double {
         case above = -1
         case below = 1
     }
@@ -70,8 +71,8 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
     /// - returns: `StaffClefView` with the given `kind` and graphical configuration.
     private func makeClef(
         kind: Clef.Kind,
-        x: CGFloat,
-        staffTop: CGFloat,
+        x: Double,
+        staffTop: Double,
         staffSlotHeight: StaffSlotHeight,
         foregroundColor: Color,
         maskColor: Color
@@ -113,45 +114,45 @@ public class StaffStructureRenderer: Renderer, StaffLinesRenderDelegate {
         
         let staffSlotHeight = configuration.staffSlotHeight
 
-        let path = Path()
-        
-        for segment in staffLines {
-            
-            (0..<5).forEach { lineNumber in
-                let altitude = CGFloat(lineNumber) * CGFloat(staffSlotHeight) * 2
-                let left = CGFloat(segment.start)
-                let right = CGFloat(segment.stop)
-                
-                path.move(to: CGPoint(x: left, y: altitude))
-                    .addLine(to: CGPoint(x: right, y: altitude))
+        return Path(
+            staffLines.flatMap { segment in
+                return (0..<5).map { lineNumber in
+                    let altitude = Double(lineNumber) * staffSlotHeight * 2
+                    let left = segment.start
+                    let right = segment.stop
+                    return BezierCurve(
+                        start: Point(x: left, y: altitude),
+                        end: Point(x: right, y: altitude)
+                    )
+                }
             }
-        }
-
-        return path
+        )
     }
     
     private func ledgerLines(configuration: StaffStructureConfiguration) -> Path {
         
         let staffSlotHeight = configuration.staffSlotHeight
-        
         let length = configuration.ledgerLineLength
-        let path = Path()
+        var curves: [BezierCurve] = []
+
         for (x, amountByDirection) in ledgerLines {
             for (direction, amount) in amountByDirection {
+                let left = x - 0.5 * length
+                let right = x + 0.5 * length
+                let refY = direction == .above ? -2 * staffSlotHeight : 10 * staffSlotHeight
                 
-                let left = CGFloat(x - 0.5 * length)
-                let right = CGFloat(x + 0.5 * length)
-                
-                let refY = direction == .above ? -2 * CGFloat(staffSlotHeight) : 10 * CGFloat(staffSlotHeight)
-                
-                (0..<amount).forEach { number in
-                    let altitude = CGFloat(number) * direction.rawValue * 2 * CGFloat(staffSlotHeight) + refY
-                    path.move(to: CGPoint(x: left, y: altitude))
-                        .addLine(to: CGPoint(x: right, y: altitude))
+                for number in 0..<amount {
+                    let altitude = Double(number) * direction.rawValue * 2 * staffSlotHeight + refY
+                    let curve = BezierCurve(
+                        start: Point(x: left, y: altitude),
+                        end: Point(x: right, y: altitude)
+                    )
+                    curves.append(curve)
                 }
             }
         }
         
-        return path
+        return Path(curves)
     }
 }
+

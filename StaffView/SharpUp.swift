@@ -6,22 +6,22 @@
 //
 //
 
-import QuartzCore
+import GeometryTools
 
 public class SharpUp: Sharp {
     
     public override var description: String { get { return "sharpUp" } }
     
-    internal override var column_right_up_height: CGFloat { get { return 2 * gS } }
+    internal override var column_right_up_height: Double { return 2 * gS }
     
-    internal override var height: CGFloat {
-        get { return column_right_up_height + column_left_down_height + 0.5 * arrowHeight }
+    internal override var height: Double {
+        return column_right_up_height + column_left_down_height + 0.5 * arrowHeight
     }
     
-    internal override var width: CGFloat { get { return thickLineLength } }
+    internal override var width: Double { get { return thickLineLength } }
     
-    internal override var xRef: CGFloat { get { return 0.5 * thickLineLength } }
-    internal override var yRef: CGFloat {
+    internal override var xRef: Double { get { return 0.5 * thickLineLength } }
+    internal override var yRef: Double {
         get { return column_right_up_height + 0.5 * arrowHeight }
     }
     
@@ -38,7 +38,7 @@ public class SharpUp: Sharp {
         arrow_right_up = ComponentArrow(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: xRef + 0.5 * midWidth, y: yRef - column_right_up_height),
+            point: Point(x: xRef + 0.5 * midWidth, y: yRef - column_right_up_height),
             direction: .up
         )
         components.append(arrow_right_up!)

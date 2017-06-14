@@ -54,12 +54,19 @@ public class StaffInformationRenderer: Renderer {
                     
                     let represented = StaffRepresentedPitch(
                         representableContext: element,
-                        altitude: CGFloat(altitude),
+                        altitude: altitude,
                         staffSlotHeight: configuration.staffSlotHeight
                     )
                     
                     represented.notehead?.position.x = CGFloat(position)
+                    
+                    // FIXME: Inject accidental placement algorithm
                     represented.accidental?.position.x = CGFloat(position) - 30
+                    
+                    print("accidental frame: \(represented.accidental?.frame)")
+                    print("notehad frame: \(represented.notehead?.frame)")
+                    represented.accidental?.showTestBorder()
+                    represented.notehead?.showTestBorder()
                     
                     context.addSublayer(represented.notehead!)
                     context.addSublayer(represented.accidental!)

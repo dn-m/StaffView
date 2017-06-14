@@ -6,7 +6,7 @@
 //
 //
 
-import QuartzCore
+import GeometryTools
 
 public class QuarterFlatDown: QuarterFlat {
     
@@ -14,7 +14,7 @@ public class QuarterFlatDown: QuarterFlat {
     
     public var arrow_down: ComponentArrow?
     
-    internal override var column_down_height: CGFloat { get { return 1.5 * gS } }
+    internal override var column_down_height: Double { return 1.5 * gS }
     
     public override func createComponents() {
         addBody()
@@ -27,7 +27,7 @@ public class QuarterFlatDown: QuarterFlat {
         arrow_right_down = ComponentArrow(
             staffSlotHeight: staffSlotHeight,
             scale: scale,
-            point: CGPoint(x: width, y: yRef + column_down_height),
+            point: Point(x: width, y: yRef + column_down_height),
             direction: .down
         )
         components.append(arrow_right_down!)

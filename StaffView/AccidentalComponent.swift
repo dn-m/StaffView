@@ -8,6 +8,7 @@
 
 import QuartzCore
 import StaffModel
+import GeometryTools
 import PathTools
 import GraphicsTools
 
@@ -16,8 +17,8 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
     public override var description: String { get { return "AccidentalComponent" } }
     
     public var staffSlotHeight: StaffSlotHeight = 0
-    public var scale: CGFloat = 1
-    public var gS: CGFloat { get { return CGFloat(staffSlotHeight) * scale } }
+    public var scale: Double = 1
+    public var gS: Double { get { return Double(staffSlotHeight) * scale } }
     
     public enum Alignment {
         case left, center, right
@@ -29,7 +30,7 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
     
     public var alignment: Alignment = .center
     
-    internal var thinLineWidth: CGFloat { get { return 0.0875 * gS } }
+    internal var thinLineWidth: Double { get { return 0.0875 * gS } }
     
     public var hasBeenBuilt: Bool = false
     
@@ -41,23 +42,10 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
         super.init(coder: aDecoder)
     }
     
-    /*
-    public override init(layer: AnyObject) {
-        super.init(layer: layer)
-    }
-    */
-    
     private func setVisualAttributes() {
         fillColor = Color.red.cgColor
         lineWidth = 0
     }
-//    
-//    public func build() {
-//        path = makePath()
-//        frame = makeFrame()
-//        setVisualAttributes()
-//        hasBeenBuilt = true
-//    }
     
     public func makeFrame() -> CGRect {
         fatalError()
@@ -67,34 +55,30 @@ public class AccidentalComponent: CAShapeLayer, ShapeType {
         fatalError()
 //        return CGPathCreateMutable()
     }
-//    
-//    private func frame = makeFrame() {
-//        // something
-//    }
 }
 
 public class ComponentArrow: AccidentalComponent {
     
     public override var description: String { get { return "Arrow" } }
     
-    public var point: CGPoint = CGPoint.zero
+    public var point = Point()
     
     public var direction: Direction = .none
     
     public var column: ComponentColumn?
     
-    public var contractionStepSize: CGFloat { get { return 0.25 * gS } }
+    public var contractionStepSize: Double { get { return 0.25 * gS } }
     
-    internal var top: CGFloat { get { return point.y - 0.5 * height } }
-    internal var left: CGFloat { get { return point.x - 0.5 * width } }
-    internal var width: CGFloat { get { return 0.618 * gS } }
-    internal var height: CGFloat { get { return 0.75 * gS } }
-    internal var barbDepth: CGFloat { get { return 0.236 * gS } }
+    internal var top: Double { get { return point.y - 0.5 * height } }
+    internal var left: Double { get { return point.x - 0.5 * width } }
+    internal var width: Double { get { return 0.618 * gS } }
+    internal var height: Double { get { return 0.75 * gS } }
+    internal var barbDepth: Double { get { return 0.236 * gS } }
     
     public init(
         staffSlotHeight: StaffSlotHeight,
-        scale: CGFloat,
-        point: CGPoint,
+        scale: Double,
+        point: Point,
         direction: Direction
     )
     {
@@ -112,26 +96,19 @@ public class ComponentArrow: AccidentalComponent {
     
     public override func makePath() -> CGPath {
         frame = makeFrame()
-        // use Path.arrow()
-        var path = Path()
-            .move(to: CGPoint(x: 0.5 * width, y: 0))
-            .addLine(to: CGPoint(x: width, y: height))
-            .addLine(to: CGPoint(x: 0.5 * width, y: height - barbDepth))
-            .addLine(to: CGPoint(x: 0, y: height))
+        let builder = Path.builder
+            .move(to: Point(x: 0.5 * width, y: 0))
+            .addLine(to: Point(x: width, y: height))
+            .addLine(to: Point(x: 0.5 * width, y: height - barbDepth))
+            .addLine(to: Point(x: 0, y: height))
             .close()
+        let path = builder.build()
+        
         if direction == .down {
-            path = path.rotated(by: 180.0)
+            return path.rotated(by: Angle(degrees: 180.0)).cgPath
         }
+        
         return path.cgPath
-//        
-////        let path = UIBezierPath()
-//        path.moveToPoint(CGPointMake(0.5 * width, 0))
-//        path.addLineToPoint(CGPointMake(width, height))
-//        path.addLineToPoint(CGPointMake(0.5 * width, height - barbDepth))
-//        path.addLineToPoint(CGPointMake(0, height))
-//        path.closePath()
-//        if direction == .down { path.rotate(degrees: 180.0) }
-//        return path.CGPath
     }
     
     public override func makeFrame() -> CGRect {
@@ -141,53 +118,48 @@ public class ComponentArrow: AccidentalComponent {
 
 public class ComponentBody: AccidentalComponent {
     
-    /*
-    public var y: CGFloat = 0
-    public var x: CGFloat = 0
-    */
-    
     public override var description: String { get { return "Body" } }
     
-    public var point: CGPoint = CGPoint.zero
+    public var point = Point()
     
-    internal var yRef: CGFloat { get { return 0 } }
-    internal var xRef: CGFloat { get { return 0 } }
+    internal var yRef: Double { get { return 0 } }
+    internal var xRef: Double { get { return 0 } }
     
-    public var midWidth: CGFloat { get { return 0.575 * gS } }
-    public var flankWidth: CGFloat { get { return 0.15 * gS } }
+    public var midWidth: Double { get { return 0.575 * gS } }
+    public var flankWidth: Double { get { return 0.15 * gS } }
     
-    public var thickLineSlope: CGFloat = 0.25
-    public var thickLineWidth: CGFloat { get { return 0.382 * gS } }
-    public var thickLineLength: CGFloat { get { return midWidth + 2 * flankWidth } }
+    public var thickLineSlope: Double = -0.25
+    public var thickLineWidth: Double { get { return 0.382 * gS } }
+    public var thickLineLength: Double { get { return midWidth + 2 * flankWidth } }
     
-    public var thickLineΔY: CGFloat { get { return 0.4125 * gS } }
+    public var thickLineΔY: Double { get { return 0.4125 * gS } }
     
-    internal var width: CGFloat { get { return 0 } }
-    internal var height: CGFloat { get { return 0 } }
+    internal var width: Double { get { return 0 } }
+    internal var height: Double { get { return 0 } }
     
-    public func getYAtX(x: CGFloat) -> CGFloat {
+    public func getYAtX(x: Double) -> Double {
         // mx + b
         return yRef - thickLineSlope * (x - 0.5 * width)
     }
     
-    internal func getHeight() -> CGFloat {
+    internal func getHeight() -> Double {
         return 0 // override
     }
 }
 
 public class ComponentBodyFlat: ComponentBody {
     
-    internal override var width: CGFloat { get { return midWidth } }
-    internal override var height: CGFloat { get { return 1.25 * gS } }
+    internal override var width: Double { get { return midWidth } }
+    internal override var height: Double { get { return 1.25 * gS } }
     
-    internal override var yRef: CGFloat { get { return 0.4 * height } }
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
+    internal override var yRef: Double { get { return 0.4 * height } }
+    internal override var xRef: Double { get { return 0.5 * width } }
     
-    public var bowlLineWidthTop: CGFloat { get { return 0.1875 * gS } }
-    public var bowlLineWidthBottom: CGFloat { get { return 0.382 * gS } }
-    public var bowlLineWidthStress: CGFloat { get { return 0.25 * gS } }
+    public var bowlLineWidthTop: Double { get { return 0.1875 * gS } }
+    public var bowlLineWidthBottom: Double { get { return 0.382 * gS } }
+    public var bowlLineWidthStress: Double { get { return 0.25 * gS } }
     
-    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: Double, point: Point) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -202,36 +174,38 @@ public class ComponentBodyFlat: ComponentBody {
     public override func makePath() -> CGPath {
         frame = makeFrame()
         
-        return Path()
-            .move(to: CGPoint.zero)
-            .addCurve(to: CGPoint(x: width, y: 0),
-                controlPoint1: CGPoint.zero,
-                controlPoint2: CGPoint(x: width - 0.125 * gS, y: -0.125 * gS)
+        let builder = Path.builder
+            .move(to: Point())
+            .addCurve(to: Point(x: width, y: 0),
+                control1: Point(),
+                control2: Point(x: width - 0.125 * gS, y: -0.125 * gS)
             )
-            .addCurve(to: CGPoint(x: 0, y: height),
-                controlPoint1: CGPoint(x: width + 0.25 * gS, y: 0.309 * gS),
-                controlPoint2: CGPoint(x: 0.125 * gS, y: height - 0.33 * gS)
+            .addCurve(to: Point(x: 0, y: height),
+                control1: Point(x: width + 0.25 * gS, y: 0.309 * gS),
+                control2: Point(x: 0.125 * gS, y: height - 0.33 * gS)
             )
-            .addLine(to: CGPoint(x: 0, y: height - bowlLineWidthBottom))
-            .addCurve(to: CGPoint(x: width - bowlLineWidthStress, y: 0.75 * bowlLineWidthStress),
-                controlPoint1: CGPoint(x:
+            .addLine(to: Point(x: 0, y: height - bowlLineWidthBottom))
+            .addCurve(
+                to: Point(x: width - bowlLineWidthStress, y: 0.75 * bowlLineWidthStress),
+                control1: Point(x:
                     0.5 * bowlLineWidthBottom,
                     y: height - 1.25 * bowlLineWidthBottom
                 ),
-                controlPoint2: CGPoint(
+                control2: Point(
                     x: width - 0.5 * bowlLineWidthBottom,
                     y: 1.333 * bowlLineWidthStress
                 )
             )
-            .addCurve(to: CGPoint(x: 0, y: bowlLineWidthTop),
-                controlPoint1: CGPoint(
+            .addCurve(to: Point(x: 0, y: bowlLineWidthTop),
+                control1: Point(
                     x: width - 1.309 * bowlLineWidthStress,
                     y: 0.309 * bowlLineWidthStress
                 ),
-                controlPoint2: CGPoint(x: 0, y: bowlLineWidthTop)
+                control2: Point(x: 0, y: bowlLineWidthTop)
             )
             .close()
-            .cgPath
+            
+        return builder.build().cgPath
     }
     
     public override func makeFrame() -> CGRect {
@@ -241,15 +215,15 @@ public class ComponentBodyFlat: ComponentBody {
 
 public class ComponentBodyNatural: ComponentBody {
     
-    internal override var width: CGFloat { get { return thickLineLength } }
-    internal override var height: CGFloat { get { return getHeight() } }
+    internal override var width: Double { get { return thickLineLength } }
+    internal override var height: Double { get { return getHeight() } }
     
-    internal override var yRef: CGFloat { get { return 0.5 * height } }
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
+    internal override var yRef: Double { get { return 0.5 * height } }
+    internal override var xRef: Double { get { return 0.5 * width } }
     
-    public override var thickLineLength: CGFloat { get { return midWidth + thinLineWidth } }
+    public override var thickLineLength: Double { get { return midWidth + thinLineWidth } }
     
-    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: Double, point: Point) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -263,23 +237,29 @@ public class ComponentBodyNatural: ComponentBody {
     
     public override func makePath() -> CGPath {
         frame = makeFrame()
-        return [-thickLineΔY, +thickLineΔY].reduce(Path()) { path, altitude in
-            path.append(
-                Path.parallelogram(
-                    center: CGPoint(x: xRef, y: yRef + altitude),
-                    height: thickLineWidth,
-                    width: thickLineLength,
-                    slope: thickLineSlope
-                )
-            )
-        }.cgPath
+        
+        let a = Path.parallelogram(
+            center: Point(x: xRef, y: yRef - thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        let b = Path.parallelogram(
+            center: Point(x: xRef, y: yRef + thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        return (a+b).cgPath
     }
     
     public override func makeFrame() -> CGRect {
         return CGRect(x: point.x - xRef, y: point.y - yRef, width: width, height: height)
     }
     
-    internal override func getHeight() -> CGFloat {
+    internal override func getHeight() -> Double {
         return 2 * thickLineΔY + thickLineWidth + thickLineSlope * width
     }
 }
@@ -306,13 +286,13 @@ public class ComponentBodyQuarterFlat: ComponentBodyFlat {
 
 public class ComponentBodyQuarterSharp: ComponentBody {
     
-    internal override var width: CGFloat { get { return thickLineLength } }
-    internal override var height: CGFloat { get { return getHeight() } }
+    internal override var width: Double { get { return thickLineLength } }
+    internal override var height: Double { get { return getHeight() } }
     
-    internal override var yRef: CGFloat { get { return 0.5 * height } }
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
+    internal override var yRef: Double { get { return 0.5 * height } }
+    internal override var xRef: Double { get { return 0.5 * width } }
     
-    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: Double, point: Point) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -342,20 +322,20 @@ public class ComponentBodyQuarterSharp: ComponentBody {
         return CGRect(x: point.x - xRef, y: point.y - yRef, width: width, height: height)
     }
     
-    internal override func getHeight() -> CGFloat {
+    internal override func getHeight() -> Double {
         return thickLineWidth + thickLineSlope * width
     }
 }
 
 public class ComponentBodySharp: ComponentBody {
     
-    internal override var width: CGFloat { get { return thickLineLength } }
-    internal override var height: CGFloat { get { return getHeight() } }
+    internal override var width: Double { get { return thickLineLength } }
+    internal override var height: Double { get { return getHeight() } }
     
-    internal override var yRef: CGFloat { get { return 0.5 * height } }
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
+    internal override var yRef: Double { get { return 0.5 * height } }
+    internal override var xRef: Double { get { return 0.5 * width } }
     
-    public init(staffSlotHeight: StaffSlotHeight, scale: CGFloat, point: CGPoint) {
+    public init(staffSlotHeight: StaffSlotHeight, scale: Double, point: Point) {
         super.init()
         self.point = point
         self.staffSlotHeight = staffSlotHeight
@@ -368,23 +348,29 @@ public class ComponentBodySharp: ComponentBody {
     }
     
     public override func makePath() -> CGPath {
-        return [-thickLineΔY, +thickLineΔY].reduce(Path()) { path, altitude in
-            path.append(
-                Path.parallelogram(
-                    center: CGPoint(x: xRef, y: yRef + altitude),
-                    height: thickLineWidth,
-                    width: thickLineLength,
-                    slope: thickLineSlope
-                )
-            )
-        }.cgPath
+        
+        let a = Path.parallelogram(
+            center: Point(x: xRef, y: yRef - thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        let b = Path.parallelogram(
+            center: Point(x: xRef, y: yRef + thickLineΔY),
+            height: thickLineWidth,
+            width: thickLineLength,
+            slope: thickLineSlope
+        )
+        
+        return (a+b).cgPath
     }
     
     public override func makeFrame() -> CGRect {
         return CGRect(x: point.x - xRef, y: point.y - yRef, width: width, height: height)
     }
     
-    internal override func getHeight() -> CGFloat {
+    internal override func getHeight() -> Double {
         return 2 * thickLineΔY + thickLineWidth + thickLineSlope * width
     }
 }
@@ -393,15 +379,15 @@ public class ComponentColumn: AccidentalComponent {
     
     public override var description: String { get { return "Column" } }
     
-    public var width: CGFloat { get { return 0.0875 * gS } }
+    public var width: Double { get { return 0.0875 * gS } }
     
-    public var x: CGFloat = 0
-    public var y_internal: CGFloat = 0
-    public var y_external: CGFloat = 0
+    public var x: Double = 0
+    public var y_internal: Double = 0
+    public var y_external: Double = 0
     
-    internal var top: CGFloat = 0
-    internal var left: CGFloat = 0
-    internal var height: CGFloat { get { return abs(y_internal - y_external) } }
+    internal var top: Double = 0
+    internal var left: Double = 0
+    internal var height: Double { get { return abs(y_internal - y_external) } }
     
     public var direction: Direction = .none // default?
     
@@ -409,10 +395,10 @@ public class ComponentColumn: AccidentalComponent {
     
     public init(
         staffSlotHeight: StaffSlotHeight,
-        scale: CGFloat,
-        x: CGFloat,
-        y_internal: CGFloat,
-        y_external: CGFloat
+        scale: Double,
+        x: Double,
+        y_internal: Double,
+        y_external: Double
     )
     {
         self.y_internal = y_internal
@@ -443,12 +429,12 @@ public class ComponentColumn: AccidentalComponent {
 //    }
     
     public override func makePath() -> CGPath {
-        return Path.rectangle(rectangle: bounds).cgPath
+        return Path.rectangle(Rectangle(bounds)).cgPath
     }
     
     public override func makeFrame() -> CGRect {
-        let left: CGFloat = x - 0.5 * width
-        let top: CGFloat = y_external < y_internal ? y_external : y_internal
+        let left: Double = x - 0.5 * width
+        let top: Double = y_external < y_internal ? y_external : y_internal
         return CGRect(x: left, y: top, width: width, height: height)
     }
 }

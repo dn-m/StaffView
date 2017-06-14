@@ -6,20 +6,20 @@
 //
 //
 
-import QuartzCore
+import GeometryTools
 
 public class QuarterSharp: AccidentalView, SharpType {
     
     public override var description: String { get { return "quarterSharp" } }
     
-    public var column_up_height: CGFloat { get { return 1.236 * gS } }
-    public var column_down_height: CGFloat { get { return 1.236 * gS } }
+    public var column_up_height: Double { return 1.236 * gS }
+    public var column_down_height: Double { return 1.236 * gS }
     
-    internal override var height: CGFloat { get { return column_up_height + column_down_height } }
-    internal override var width: CGFloat { get { return thickLineLength } }
+    internal override var height: Double { return column_up_height + column_down_height }
+    internal override var width: Double { return thickLineLength }
     
-    internal override var xRef: CGFloat { get { return 0.5 * width } }
-    internal override var yRef: CGFloat { get { return 0.5 * height } }
+    internal override var xRef: Double { return 0.5 * width }
+    internal override var yRef: Double { return 0.5 * height }
     
     public override func createComponents() {
         addBody()
@@ -29,7 +29,7 @@ public class QuarterSharp: AccidentalView, SharpType {
     
     internal func addBody() {
         body = ComponentBodyQuarterSharp(
-            staffSlotHeight: staffSlotHeight, scale: scale, point: CGPoint(x: xRef, y: yRef)
+            staffSlotHeight: staffSlotHeight, scale: scale, point: Point(x: xRef, y: yRef)
         )
         components.append(body!)
     }

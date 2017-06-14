@@ -7,13 +7,14 @@
 //
 
 import QuartzCore
+import GeometryTools
 import PathTools
 import GraphicsTools
 
 public protocol CircleClefComponent: ShapeType {
     
-    var point: CGPoint { get }
-    var radius: CGFloat { get }
+    var point: Point { get }
+    var radius: Double { get }
 }
 
 extension CircleClefComponent {
@@ -28,6 +29,6 @@ extension CircleClefComponent {
     }
     
     public func makePath() -> CGPath {
-        return Path.circle(center: CGPoint(x: radius, y: radius), radius: radius).cgPath
+        return Path.circle(center: Point(x: radius, y: radius), radius: radius).cgPath
     }
 }

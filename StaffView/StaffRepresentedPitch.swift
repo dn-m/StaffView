@@ -6,14 +6,14 @@
 //
 //
 
-import GraphicsTools
 import StaffModel
-import QuartzCore
+import GeometryTools
+import GraphicsTools
 
 public struct StaffRepresentedPitch {
     
     private let representableContext: StaffRepresentablePitch
-    private let altitude: CGFloat
+    private let altitude: Double
     private let staffSlotHeight: StaffSlotHeight
     
     public let notehead: NoteheadView?
@@ -21,7 +21,7 @@ public struct StaffRepresentedPitch {
     
     public init(
         representableContext: StaffRepresentablePitch,
-        altitude: CGFloat,
+        altitude: Double,
         staffSlotHeight: StaffSlotHeight
     )
     {
@@ -30,13 +30,12 @@ public struct StaffRepresentedPitch {
         self.staffSlotHeight = staffSlotHeight
         
         self.notehead = NoteheadView(
-            point: CGPoint(x: 0, y: self.altitude),
+            point: Point(x: 0, y: self.altitude),
             staffSlotHeight: self.staffSlotHeight
         )
         
-        self.accidental = AccidentalView.makeAccidental(
-            withKind: self.representableContext.accidental,
-            point: CGPoint(x: 0, y: self.altitude),
+        self.accidental = AccidentalView.makeAccidental(self.representableContext.accidental,
+            at: Point(x: 0, y: self.altitude),
             staffSlotHeight: self.staffSlotHeight
         )
     }
