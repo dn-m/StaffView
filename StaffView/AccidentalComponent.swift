@@ -128,7 +128,7 @@ public class ComponentBody: AccidentalComponent {
     public var midWidth: Double { get { return 0.575 * gS } }
     public var flankWidth: Double { get { return 0.15 * gS } }
     
-    public var thickLineSlope: Double = 0.25
+    public var thickLineSlope: Double = -0.25
     public var thickLineWidth: Double { get { return 0.382 * gS } }
     public var thickLineLength: Double { get { return midWidth + 2 * flankWidth } }
     

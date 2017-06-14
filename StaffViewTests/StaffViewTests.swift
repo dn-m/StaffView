@@ -15,6 +15,7 @@ import PlotModel
 import StaffModel
 import GeometryTools
 import PathTools
+import GraphicsTools
 import StaffView
 
 class StaffViewTests: XCTestCase {
@@ -29,13 +30,14 @@ class StaffViewTests: XCTestCase {
         
         let accidentals: [Accidental] = [
             .natural, .naturalUp, .naturalDown,
-            .sharp, .sharpUp, .sharpDown
+            .sharp, .sharpUp, .sharpDown,
+            .flat, .flatUp, .flatDown
         ]
         
         for accidental in accidentals {
             let view = AccidentalView.makeAccidental(accidental, at: Point(), staffSlotHeight: 42)
             view.showTestBorder()
-            view.renderToPDF(name: "\(accidental)")
+            view.renderToPDF(name: "accidental_\(accidental)")
         }
     }
     

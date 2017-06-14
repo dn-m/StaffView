@@ -45,10 +45,10 @@ public class NoteheadView: CAShapeLayer, ShapeType {
     }
     
     public func makePath() -> CGPath {
-        
-        return Path.ellipse(in: Rectangle(x: 0, y: 0, width: width, height: height))
-            .rotated(by: Angle(degrees: -45))
-            .cgPath
+        let rect = Rectangle(x: 0, y: 0, width: width, height: height)
+        let ellipse = Path.ellipse(in: rect)
+        let rotated = ellipse.rotated(by: Angle(degrees: -45))
+        return rotated.cgPath
     }
     
     public func makeFrame() -> CGRect {

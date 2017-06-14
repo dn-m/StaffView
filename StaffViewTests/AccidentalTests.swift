@@ -30,8 +30,6 @@ class AccidentalTests: XCTestCase {
     func testPrintToPDF() {
         let accidental = AccidentalView.makeAccidental(.sharp, at: Point(), staffSlotHeight: 40)
         accidental.showTestBorder()
-        print("accidental frame: \(accidental.frame)")
-        
         accidental.renderToPDF(name: "sharp")
     }
 }
