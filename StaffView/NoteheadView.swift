@@ -44,10 +44,18 @@ public class NoteheadView: CAShapeLayer, ShapeType {
         fatalError()
     }
     
+    public func build() {
+        path = makePath()
+        frame = makeFrame()
+    }
+    
     public func makePath() -> CGPath {
         let rect = Rectangle(x: 0, y: 0, width: width, height: height)
         let ellipse = Path.ellipse(in: rect)
-        let rotated = ellipse.rotated(by: Angle(degrees: -45))
+        let rotated = ellipse.rotated(
+            by: Angle(degrees: 45),
+            around: Point(x: 0.5 * width, y: 0.5 * height)
+        )
         return rotated.cgPath
     }
     

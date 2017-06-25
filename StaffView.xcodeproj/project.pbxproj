@@ -101,6 +101,8 @@
 		078EF3391E310702005576EE /* PitchSet+Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF3371E310702005576EE /* PitchSet+Showable.swift */; };
 		078EF33B1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF33A1E310916005576EE /* PitchSetSequence+Showable.swift */; };
 		078EF33C1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078EF33A1E310916005576EE /* PitchSetSequence+Showable.swift */; };
+		07BCB49E1EFFEB3B00469E9A /* ClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCB49D1EFFEB3B00469E9A /* ClefTests.swift */; };
+		07BCB49F1EFFEB3B00469E9A /* ClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCB49D1EFFEB3B00469E9A /* ClefTests.swift */; };
 		07FFE8C91E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CA1E2E85E400023FFC /* StaffViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */; };
 		07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
@@ -179,6 +181,7 @@
 		078EF3341E3106E4005576EE /* StaffViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewTests.swift; path = StaffViewTests/StaffViewTests.swift; sourceTree = "<group>"; };
 		078EF3371E310702005576EE /* PitchSet+Showable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitchSet+Showable.swift"; path = "StaffView/PitchSet+Showable.swift"; sourceTree = "<group>"; };
 		078EF33A1E310916005576EE /* PitchSetSequence+Showable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PitchSetSequence+Showable.swift"; path = "StaffView/PitchSetSequence+Showable.swift"; sourceTree = "<group>"; };
+		07BCB49D1EFFEB3B00469E9A /* ClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefTests.swift; path = StaffViewTests/ClefTests.swift; sourceTree = "<group>"; };
 		07FFE8C81E2E85E400023FFC /* StaffViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewConfiguration.swift; path = StaffView/StaffViewConfiguration.swift; sourceTree = "<group>"; };
 		07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffSlotHeight.swift; path = StaffView/StaffSlotHeight.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -343,6 +346,7 @@
 				078EF3311E3103FA005576EE /* AccidentalTests.swift */,
 				07600F8D1EE46E880049E8B2 /* NoteheadTests.swift */,
 				078EF3341E3106E4005576EE /* StaffViewTests.swift */,
+				07BCB49D1EFFEB3B00469E9A /* ClefTests.swift */,
 			);
 			name = StaffViewTests;
 			sourceTree = "<group>";
@@ -580,6 +584,7 @@
 				07600F8F1EE46E880049E8B2 /* NoteheadTests.swift in Sources */,
 				078EF3331E3103FA005576EE /* AccidentalTests.swift in Sources */,
 				078EF3361E3106E4005576EE /* StaffViewTests.swift in Sources */,
+				07BCB49F1EFFEB3B00469E9A /* ClefTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +595,7 @@
 				07600F8E1EE46E880049E8B2 /* NoteheadTests.swift in Sources */,
 				078EF3321E3103FA005576EE /* AccidentalTests.swift in Sources */,
 				078EF3351E3106E4005576EE /* StaffViewTests.swift in Sources */,
+				07BCB49E1EFFEB3B00469E9A /* ClefTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

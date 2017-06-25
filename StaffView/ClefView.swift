@@ -41,6 +41,7 @@ extension ClefView {
     }
     
     public var line: LineClefComponent {
+        print("frame.height: \(frame.height)")
         return LineClefComponent(
             height: Double(frame.height),
             lineWidth: lineWidth,

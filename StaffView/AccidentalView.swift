@@ -127,6 +127,12 @@ public class AccidentalView: CALayer, CompositeShapeType {
         components.forEach(addSublayer)
     }
     
+    public func build() {
+        createComponents()
+        commitComponents()
+        frame = makeFrame()
+    }
+    
     public func makeFrame() -> CGRect {
         let left = point.x - xRef
         let top = point.y - yRef
