@@ -38,5 +38,7 @@ public struct StaffRepresentedPitch {
             at: Point(x: 0, y: self.altitude),
             staffSlotHeight: self.staffSlotHeight
         )
+        
+        print("accidental.frame: \(accidental!.frame)")
     }
 }

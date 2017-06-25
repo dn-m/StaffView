@@ -99,6 +99,8 @@ public class Natural: AccidentalView {
     
     override public func makeFrame() -> CGRect {
         
+        //print("makeFrame: x: \(point.x); xRef: \(xRef); y: \(point.y); yRef: \(yRef)")
+        
         let frames = components.map { $0.frame }
         
         let minX = frames.map { $0.minX }.min()!
@@ -108,14 +110,11 @@ public class Natural: AccidentalView {
         let width = maxX - minX
         let height = maxY - minY
         
-//        print("yRef: \(yRef)")
-//        print("xRef: \(xRef)")
-        
-        return CGRect(x: minX - CGFloat(xRef), y: minY - CGFloat(yRef), width: width, height: height)
-////
-//        // get bounding box here:
-//        let left = point.x - xRef
-//        let top = point.y - yRef
-//        return CGRect(x: left, y: top, width: width, height: height)
+        return CGRect(
+            x: CGFloat(point.x) - minX - CGFloat(xRef),
+            y: CGFloat(point.y) - minY - CGFloat(yRef),
+            width: width,
+            height: height
+        )
     }
 }

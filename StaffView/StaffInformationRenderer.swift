@@ -52,19 +52,21 @@ public class StaffInformationRenderer: Renderer {
                     let slot = model.verticalAxis.coordinate(element.spelledPitch)
                     let altitude = StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
                     
+                    print("altitude: \(altitude)")
+
                     let represented = StaffRepresentedPitch(
                         representableContext: element,
                         altitude: altitude,
                         staffSlotHeight: configuration.staffSlotHeight
                     )
-                    
+
                     represented.notehead?.position.x = CGFloat(position)
                     
                     // FIXME: Inject accidental placement algorithm
                     represented.accidental?.position.x = CGFloat(position) - 30
                     
                     print("accidental frame: \(represented.accidental?.frame)")
-                    print("notehad frame: \(represented.notehead?.frame)")
+//                    print("notehad frame: \(represented.notehead?.frame)")
                     represented.accidental?.showTestBorder()
                     represented.notehead?.showTestBorder()
                     
