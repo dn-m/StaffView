@@ -86,66 +86,6 @@ public struct StaffView: VerticalPlotView {
         return StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
     }
 }
-//
-//    public typealias Model = StaffModel
-//    public typealias VerticalCoordinate = StaffSlot
-//    public typealias Configuration = StaffViewConfiguration
-//
-//    
-//    // FIXME: Declaring this specifically should not be necessary. All that should be needed
-//    // is `public let renderer: StaffRenderer`.
-//    //
-//    // Audit the `PlotView` -> `StaffView` protocol inheritence
-//    //public typealias Renderer = StaffRenderer
-//    
-//    //public let renderer: StaffRenderer
-//    
-//    /// FIXME: Not yet implemented!
-//    public let concreteVerticalPosition: (StaffSlot) -> Double = { _ in fatalError() }
-//    
-//    /// FIXME: Not yet implemented!
-//    public let concreteHorizontalPosition: (Double) -> Double = { _ in fatalError() }
-//
-//    public let model: StaffModel
-//    
-//    public init(model: StaffModel) {
-//        self.model = model
-//        
-//    }
-//    
-//    public required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    public func render(with configuration: StaffViewConfiguration) -> ConfiguredPlotView {
-//        
-//        let renderer = StaffRenderer(model: model)
-//
-//        let staffSlotHeight = configuration.staffSlotHeight
-//        
-//        let structureConfig = StaffStructureConfiguration(
-//            staffSlotHeight: staffSlotHeight,
-//            linesColor: Color(gray: 0.5, alpha: 1),
-//            clefColor: Color.red,
-//            maskColor: Color(gray: 1, alpha: 1)
-//        )
-//        
-//        let infoConfig = StaffInformationConfiguration(
-//            staffSlotHeight: staffSlotHeight,
-//            noteheadColor: Color.red
-//        )
-//        
-//        _ = StaffRenderConfiguration(
-//            informationConfiguration: infoConfig,
-//            structureConfiguration: structureConfig
-//        )
-//
-//        // temporary
-//        renderer.structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
-//        
-//        //renderer.render(in: context, with: config)
-//    }
-//}
 
 extension CALayer {
     
