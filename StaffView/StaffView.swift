@@ -7,9 +7,9 @@
 //
 
 import QuartzCore
+import PlotModel
 import StaffModel
 import GraphicsTools
-import PlotModel
 import PlotView
 
 public struct StaffRenderConfiguration {
