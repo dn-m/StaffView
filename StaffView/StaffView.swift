@@ -82,8 +82,8 @@ public struct StaffView: VerticalPlotView {
         self.configuration = configuration
     }
 
-    public var concreteVerticalPosition: (Model.VerticalAxis.Coordinate) -> Double = {
-        coordinate in 0
+    public func concreteVerticalPosition(for slot: Model.VerticalAxis.Coordinate) -> Double { //slot in
+        return StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
     }
 }
 //
