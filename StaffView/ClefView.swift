@@ -6,71 +6,117 @@
 //
 //
 
-import StaffModel
-import QuartzCore
+import GeometryTools
+import PathTools
 import GraphicsTools
+import PlotView
+import StaffModel
 
-public protocol ClefView: CompositeShapeType {
-    
-    var x: Double { get }
-    var staffTop: Double { get }
-    var lineWidth: Double { get }
-    var staffSlotHeight: StaffSlotHeight { get }
-    var foregroundColor: Color { get }
-    var maskColor: Color { get }
-    
-    var extenderLength: Double { get }
-    
-    init(
-        x: Double,
-        staffTop: Double,
-        staffSlotHeight: StaffSlotHeight,
-        foregroundColor: Color,
-        maskColor: Color
-    )
+// TODO: Move to dn-m/PlotView
+public struct ClefConfiguration {
+    public var foregroundColor: Color
+    public var maskColor: Color
 }
 
+// TODO: Move to dn-m/PlotView
+public protocol ClefView: VerticalAxisView {
+    
+    typealias Configuration = ClefConfiguration
+    
+    var extenderLength: Double { get }
+    var lineWidth: Double { get }
+    
+    var path: Path { get }
+    
+    var position: VerticalAxisPosition { get }
+    var configuration: ClefConfiguration { get }
+}
+
+// TODO: Move to dn-m/PlotView
 extension ClefView {
     
+    public var clefHeight: Double {
+        return abs(position.plotTop - position.plotBottom)
+    }
+    
     public var extenderLength: Double {
-        return 1 * Double(staffSlotHeight)
+        return clefHeight / 8
+    }
+    
+    public var height: Double {
+        return clefHeight + 1 * extenderLength
     }
     
     public var lineWidth: Double {
-        return 0.2 * Double(staffSlotHeight)
+        return 0.025 * clefHeight
+    }
+
+    public var line: Path {
+        return Path.line(from: Point(x: 0, y: 0), to: Point(x: 0, y: height))
     }
     
-    public var line: LineClefComponent {
-        print("frame.height: \(frame.height)")
-        return LineClefComponent(
-            height: Double(frame.height),
-            lineWidth: lineWidth,
-            color: foregroundColor.cgColor
-        )
+    public var frame: Rectangle {
+        return Rectangle(x: 0, y: -extenderLength, width: 0, height: height)
     }
     
-    public func makeFrame() -> CGRect {
-        return CGRect(
-            x: x,
-            y: staffTop - extenderLength,
-            width: 0,
-            height: 8 * Double(staffSlotHeight) + 2 * extenderLength
+    public var rendered: StyledPath.Composite {
+        
+        let styling = Styling(
+            fill: Fill(color: configuration.maskColor),
+            stroke: Stroke(width: lineWidth, color: configuration.foregroundColor)
         )
+        
+        return .leaf(StyledPath(frame: frame, path: path, styling: styling))
     }
 }
 
-extension Clef.Kind {
+
+public class StaffClefView: ClefView {
     
-    public var view: ClefView.Type {
-        switch self {
-        case .bass:
-            return TrebleClef.self
-        case .tenor:
-            return TenorClef.self
-        case .alto:
-            return AltoClef.self
-        case .treble:
-            return TrebleClef.self
+    public static func makeClef(_ kind: Clef.Kind, position: Position, configuration: Configuration)
+        -> StaffClefView
+    {
+        
+        var type: StaffClefView.Type {
+            switch kind {
+            case .bass:
+                return TrebleClef.self
+            case .tenor:
+                return TenorClef.self
+            case .alto:
+                return AltoClef.self
+            case .treble:
+                return TrebleClef.self
+            }
         }
+        
+        return type.init(position: position, configuration: configuration)
+    }
+    
+    public var position: VerticalAxisPosition
+    public var configuration: ClefConfiguration
+
+    public var ornamentAltitude: Double {
+        return 0
+    }
+    
+    public var ornament: Path {
+        return .unit
+    }
+    
+    required public init(position: Position, configuration: Configuration) {
+        self.position = position
+        self.configuration = configuration
+    }
+}
+
+extension StaffClefView {
+    
+    public var staffSlotHeight: Double {
+        return clefHeight / 8
+    }
+    
+    public var path: Path {
+        return line + ornament
     }
 }

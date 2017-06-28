@@ -32,6 +32,6 @@ import QuartzCore
 //        }
 //        
 //        let staffView = StaffView(model: model)
-//        staffView.render(in: context, with: StaffViewConfiguration())
+//        staffView.render(in: context, with: StaffConfiguration())
 //    }
 //}

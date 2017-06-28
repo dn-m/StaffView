@@ -1,3 +1,3 @@
-github "dn-m/GraphicsTools" "refine-renderable-protocols"
-github "dn-m/StaffModel" "refine-staff-model"
-github "dn-m/PlotView" "no-enforce-plot-renderer-structure"
+github "dn-m/GraphicsTools" >= 0.6
+github "dn-m/StaffModel" >= 0.2
+github "dn-m/PlotView" >= 0.2

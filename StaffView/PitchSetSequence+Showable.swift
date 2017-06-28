@@ -40,6 +40,6 @@ import QuartzCore
 //        let styledPath = staffView.rendered
 //        let layer = CALayer(styledPath)
 //        context.addSublayer(layer)
-//        //staffView.render(in: context, with: StaffViewConfiguration())
+//        //staffView.render(in: context, with: StaffConfiguration())
 //    }
 //}

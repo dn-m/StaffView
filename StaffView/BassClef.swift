@@ -6,62 +6,26 @@
 //
 //
 
-import StaffModel
-import QuartzCore
+import ArithmeticTools
 import GeometryTools
 import GraphicsTools
+import PathTools
+import PlotView
+import StaffModel
 
-public final class BassClef: CALayer, ClefView {
+public final class BassClef: StaffClefView {
     
-    public var ornamentAltitude: Double {
-        return 1 * staffSlotHeight + extenderLength
+    public override var ornamentAltitude: Double {
+        return 6 * staffSlotHeight + extenderLength
     }
     
-    private var dots: [DotClefOrnament] {
-        
-        // Create a dot above and below (by 0.8 staff slots) the `ornamentAltitude`
-        return [-1, 1].map { sign in
-            DotClefOrnament(
-                point: Point(
-                    x: 0.5 * staffSlotHeight,
-                    y: ornamentAltitude + 0.8 * Double(sign)
-                ),
-                radius: 0.175 * staffSlotHeight,
-                color: Color.red.cgColor
+    public override var ornament: Path {
+        let dots = [-1,1].map { sign in
+            Path.circle(
+                center: Point(x: 0.5 * staffSlotHeight, y: ornamentAltitude * Double(sign)),
+                radius: 0.175 * staffSlotHeight
             )
         }
-    }
-
-    /// Components that need to built and added
-    public var components: [CALayer] = []
-    public let x: Double
-    public let staffTop: Double
-    public let staffSlotHeight: StaffSlotHeight
-    public let foregroundColor: Color
-    public let maskColor: Color
-    
-    public init(
-        x: Double,
-        staffTop: Double,
-        staffSlotHeight: StaffSlotHeight,
-        foregroundColor: Color,
-        maskColor: Color
-    )
-    {
-        self.x = x
-        self.staffTop = staffTop
-        self.staffSlotHeight = staffSlotHeight
-        self.foregroundColor = foregroundColor
-        self.maskColor = maskColor
-        super.init()
-        build()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func createComponents() {
-        components = [line] + dots
+        return dots.sum
     }
 }

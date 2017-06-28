@@ -230,17 +230,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		076D04A21E2D43640023ED96 /* Clef */ = {
+		0762009E1F03C90D00D62726 /* Components (deprecated) */ = {
 			isa = PBXGroup;
 			children = (
-				076D04DE1E2D45690023ED96 /* AltoClef.swift */,
-				076D04DF1E2D45690023ED96 /* BassClef.swift */,
 				076D04E01E2D45690023ED96 /* CircleClefComponent.swift */,
 				076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */,
 				076D04E21E2D45690023ED96 /* ClefComponent.swift */,
 				076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */,
 				076D04E51E2D45690023ED96 /* DotClefOrnament.swift */,
 				076D04E61E2D45690023ED96 /* LineClefComponent.swift */,
+			);
+			name = "Components (deprecated)";
+			sourceTree = "<group>";
+		};
+		076D04A21E2D43640023ED96 /* Clef */ = {
+			isa = PBXGroup;
+			children = (
+				0762009E1F03C90D00D62726 /* Components (deprecated) */,
+				076D04DE1E2D45690023ED96 /* AltoClef.swift */,
+				076D04DF1E2D45690023ED96 /* BassClef.swift */,
 				076D04E71E2D45690023ED96 /* TenorClef.swift */,
 				076D04E81E2D45690023ED96 /* TrebleClef.swift */,
 				076D04FF1E2D46380023ED96 /* ClefView.swift */,

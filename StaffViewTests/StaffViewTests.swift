@@ -78,7 +78,7 @@ class StaffViewTests: XCTestCase {
 //        //layer.frame = CGRect(x: 0, y: 0, width: 800, height: 200)
 //        
 //        let view = StaffView(model: model)
-//        view.render(in: layer, with: StaffViewConfiguration(staffSlotHeight: 12))
+//        view.render(in: layer, with: StaffConfiguration(staffSlotHeight: 12))
 //        layer.showTestBorder()
 //        layer.renderToPDF(name: "staff_triad")
 //    }
@@ -105,7 +105,7 @@ class StaffViewTests: XCTestCase {
 //
 //        let container = CALayer()
 //        container.frame = CGRect(x: 0, y: 0, width: 800, height: 600)
-//        staffView.render(in: container, with: StaffViewConfiguration(staffSlotHeight: 10))
+//        staffView.render(in: container, with: StaffConfiguration(staffSlotHeight: 10))
 //        container.renderToPDF(name: "pitch_sequence")
 //    }
 }

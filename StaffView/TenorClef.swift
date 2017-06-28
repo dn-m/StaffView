@@ -7,57 +7,22 @@
 //
 
 import StaffModel
-import QuartzCore
 import GeometryTools
+import PathTools
 import GraphicsTools
+import PlotView
 
-public final class TenorClef: CALayer, ClefView {
-    
-    public var ornamentAltitude: Double {
+public final class TenorClef: StaffClefView {
+
+    public override var ornamentAltitude: Double {
         return 2 * staffSlotHeight + extenderLength
     }
     
-    /// - FIXME: Test width !
-    private var diamond: DiamondClefOrnament {
-        return DiamondClefOrnament(
-            point: Point(x: 0, y: ornamentAltitude),
-            width: 0.8 * staffSlotHeight,
-            lineWidth: lineWidth,
-            color: Color.red.cgColor
-        )
+    public override var ornament: Path {
+        let width = 0.8 * staffSlotHeight
+        return Path.square(
+            center: Point(x: 0.5 * width, y: 0.5 * width),
+            width: width
+        ).rotated(by: Angle(degrees: 45), around: Point(x: 0.5 * width, y: 0.5 * width))
     }
-    
-    /// Components that need to built and added
-    public var components: [CALayer] = []
-    public let x: Double
-    public let staffTop: Double
-    public let staffSlotHeight: StaffSlotHeight
-    public let foregroundColor: Color
-    public let maskColor: Color
-    
-    public init(
-        x: Double,
-        staffTop: Double,
-        staffSlotHeight: StaffSlotHeight,
-        foregroundColor: Color,
-        maskColor: Color
-    )
-    {
-        self.x = x
-        self.staffTop = staffTop
-        self.staffSlotHeight = staffSlotHeight
-        self.foregroundColor = foregroundColor
-        self.maskColor = maskColor
-        super.init()
-        build()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func createComponents() {
-        components = [line, diamond]
-    }
-
 }
