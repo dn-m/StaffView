@@ -20,14 +20,9 @@ public struct ClefConfiguration {
 
 // TODO: Move to dn-m/PlotView
 public protocol ClefView: VerticalAxisView {
-    
-    typealias Configuration = ClefConfiguration
-    
     var extenderLength: Double { get }
     var lineWidth: Double { get }
-    
     var path: Path { get }
-    
     var position: VerticalAxisPosition { get }
     var configuration: ClefConfiguration { get }
 }

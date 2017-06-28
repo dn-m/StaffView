@@ -1,15 +1,15 @@
+////
+////  AccidentalFactory.swift
+////  Staff
+////
+////  Created by James Bean on 6/15/16.
+////
+////
 //
-//  AccidentalFactory.swift
-//  Staff
+//import QuartzCore
+//import PitchSpellingTools
 //
-//  Created by James Bean on 6/15/16.
+//public struct AccidentalFactory {
+//    
 //
-//
-
-import QuartzCore
-import PitchSpellingTools
-
-public struct AccidentalFactory {
-    
-
-}
+//}

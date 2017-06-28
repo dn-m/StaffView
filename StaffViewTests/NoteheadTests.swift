@@ -15,7 +15,8 @@ class NoteheadTests: XCTestCase {
     
     func testNoteheadPDF() {
         let notehead = NoteheadView(point: Point(), staffSlotHeight: 12)
-        notehead.showTestBorder()
-        notehead.renderToPDF(name: "notehead")
+        let layer = CALayer(notehead.rendered)
+        layer.showTestBorder()
+        layer.renderToPDF(name: "notehead")
     }
 }

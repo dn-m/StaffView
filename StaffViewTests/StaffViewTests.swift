@@ -20,13 +20,7 @@ import GraphicsTools
 import StaffView
 
 class StaffViewTests: XCTestCase {
-    
-    func testNotehead() {
-        let notehead = NoteheadView(point: Point(), staffSlotHeight: 42)
-        notehead.showTestBorder()
-        notehead.renderToPDF(name: "notehead")
-    }
-    
+
     func testAccidentals() {
         
         let accidentals: [Accidental] = [

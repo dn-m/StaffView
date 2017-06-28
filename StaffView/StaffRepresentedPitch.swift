@@ -17,7 +17,8 @@ public struct StaffRepresentedPitch {
     private let staffSlotHeight: StaffSlotHeight
     
     public let notehead: NoteheadView?
-    public let accidental: AccidentalView?
+    
+    //public let accidental: AccidentalView?
     
     public init(
         representableContext: StaffRepresentablePitch,
@@ -34,11 +35,9 @@ public struct StaffRepresentedPitch {
             staffSlotHeight: self.staffSlotHeight
         )
         
-        self.accidental = AccidentalView.makeAccidental(self.representableContext.accidental,
-            at: Point(x: 0, y: self.altitude),
-            staffSlotHeight: self.staffSlotHeight
-        )
-        
-        print("accidental.frame: \(accidental!.frame)")
+//        self.accidental = AccidentalView.makeAccidental(self.representableContext.accidental,
+//            at: Point(x: 0, y: self.altitude),
+//            staffSlotHeight: self.staffSlotHeight
+//        )
     }
 }

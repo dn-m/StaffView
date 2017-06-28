@@ -63,18 +63,6 @@
 		076D04EA1E2D45690023ED96 /* AltoClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DE1E2D45690023ED96 /* AltoClef.swift */; };
 		076D04EB1E2D45690023ED96 /* BassClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DF1E2D45690023ED96 /* BassClef.swift */; };
 		076D04EC1E2D45690023ED96 /* BassClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04DF1E2D45690023ED96 /* BassClef.swift */; };
-		076D04ED1E2D45690023ED96 /* CircleClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E01E2D45690023ED96 /* CircleClefComponent.swift */; };
-		076D04EE1E2D45690023ED96 /* CircleClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E01E2D45690023ED96 /* CircleClefComponent.swift */; };
-		076D04EF1E2D45690023ED96 /* CircleClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */; };
-		076D04F01E2D45690023ED96 /* CircleClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */; };
-		076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E21E2D45690023ED96 /* ClefComponent.swift */; };
-		076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E21E2D45690023ED96 /* ClefComponent.swift */; };
-		076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */; };
-		076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */; };
-		076D04F71E2D45690023ED96 /* DotClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E51E2D45690023ED96 /* DotClefOrnament.swift */; };
-		076D04F81E2D45690023ED96 /* DotClefOrnament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E51E2D45690023ED96 /* DotClefOrnament.swift */; };
-		076D04F91E2D45690023ED96 /* LineClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E61E2D45690023ED96 /* LineClefComponent.swift */; };
-		076D04FA1E2D45690023ED96 /* LineClefComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E61E2D45690023ED96 /* LineClefComponent.swift */; };
 		076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E71E2D45690023ED96 /* TenorClef.swift */; };
 		076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E71E2D45690023ED96 /* TenorClef.swift */; };
 		076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04E81E2D45690023ED96 /* TrebleClef.swift */; };
@@ -162,12 +150,6 @@
 		076D04B71E2D43D60023ED96 /* SharpUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharpUp.swift; path = StaffView/SharpUp.swift; sourceTree = "<group>"; };
 		076D04DE1E2D45690023ED96 /* AltoClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AltoClef.swift; path = StaffView/AltoClef.swift; sourceTree = "<group>"; };
 		076D04DF1E2D45690023ED96 /* BassClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BassClef.swift; path = StaffView/BassClef.swift; sourceTree = "<group>"; };
-		076D04E01E2D45690023ED96 /* CircleClefComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleClefComponent.swift; path = StaffView/CircleClefComponent.swift; sourceTree = "<group>"; };
-		076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleClefOrnament.swift; path = StaffView/CircleClefOrnament.swift; sourceTree = "<group>"; };
-		076D04E21E2D45690023ED96 /* ClefComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefComponent.swift; path = StaffView/ClefComponent.swift; sourceTree = "<group>"; };
-		076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiamondClefOrnament.swift; path = StaffView/DiamondClefOrnament.swift; sourceTree = "<group>"; };
-		076D04E51E2D45690023ED96 /* DotClefOrnament.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DotClefOrnament.swift; path = StaffView/DotClefOrnament.swift; sourceTree = "<group>"; };
-		076D04E61E2D45690023ED96 /* LineClefComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineClefComponent.swift; path = StaffView/LineClefComponent.swift; sourceTree = "<group>"; };
 		076D04E71E2D45690023ED96 /* TenorClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TenorClef.swift; path = StaffView/TenorClef.swift; sourceTree = "<group>"; };
 		076D04E81E2D45690023ED96 /* TrebleClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrebleClef.swift; path = StaffView/TrebleClef.swift; sourceTree = "<group>"; };
 		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
@@ -230,23 +212,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0762009E1F03C90D00D62726 /* Components (deprecated) */ = {
-			isa = PBXGroup;
-			children = (
-				076D04E01E2D45690023ED96 /* CircleClefComponent.swift */,
-				076D04E11E2D45690023ED96 /* CircleClefOrnament.swift */,
-				076D04E21E2D45690023ED96 /* ClefComponent.swift */,
-				076D04E41E2D45690023ED96 /* DiamondClefOrnament.swift */,
-				076D04E51E2D45690023ED96 /* DotClefOrnament.swift */,
-				076D04E61E2D45690023ED96 /* LineClefComponent.swift */,
-			);
-			name = "Components (deprecated)";
-			sourceTree = "<group>";
-		};
 		076D04A21E2D43640023ED96 /* Clef */ = {
 			isa = PBXGroup;
 			children = (
-				0762009E1F03C90D00D62726 /* Components (deprecated) */,
 				076D04DE1E2D45690023ED96 /* AltoClef.swift */,
 				076D04DF1E2D45690023ED96 /* BassClef.swift */,
 				076D04E71E2D45690023ED96 /* TenorClef.swift */,
@@ -611,7 +579,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076D04F01E2D45690023ED96 /* CircleClefOrnament.swift in Sources */,
 				078EF32F1E310169005576EE /* PitchCollection+Showable.swift in Sources */,
 				076D04FC1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C91E2D43D60023ED96 /* NaturalUp.swift in Sources */,
@@ -623,18 +590,14 @@
 				076D04CF1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
 				076D047F1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
 				076D04BF1E2D43D60023ED96 /* Flat.swift in Sources */,
-				076D04EE1E2D45690023ED96 /* CircleClefComponent.swift in Sources */,
 				076D04C31E2D43D60023ED96 /* FlatUp.swift in Sources */,
 				076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */,
-				076D04F81E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
 				076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
 				078EF32C1E3100F0005576EE /* Showable.swift in Sources */,
 				07FFE8CD1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04CD1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
 				076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */,
-				076D04F21E2D45690023ED96 /* ClefComponent.swift in Sources */,
-				076D04F61E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CB1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
 				076D05071E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */,
 				076D04DB1E2D43D60023ED96 /* SharpType.swift in Sources */,
@@ -656,7 +619,6 @@
 				0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				076D04D31E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */,
 				078EF33C1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
-				076D04FA1E2D45690023ED96 /* LineClefComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076D04EF1E2D45690023ED96 /* CircleClefOrnament.swift in Sources */,
 				078EF32E1E310169005576EE /* PitchCollection+Showable.swift in Sources */,
 				076D04FB1E2D45690023ED96 /* TenorClef.swift in Sources */,
 				076D04C81E2D43D60023ED96 /* NaturalUp.swift in Sources */,
@@ -676,18 +637,14 @@
 				076D04CE1E2D43D60023ED96 /* QuarterFlatUp.swift in Sources */,
 				076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */,
 				076D04BE1E2D43D60023ED96 /* Flat.swift in Sources */,
-				076D04ED1E2D45690023ED96 /* CircleClefComponent.swift in Sources */,
 				076D04C21E2D43D60023ED96 /* FlatUp.swift in Sources */,
 				076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */,
-				076D04F71E2D45690023ED96 /* DotClefOrnament.swift in Sources */,
 				076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
 				078EF32B1E3100F0005576EE /* Showable.swift in Sources */,
 				07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04CC1E2D43D60023ED96 /* QuarterFlatDown.swift in Sources */,
 				076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */,
-				076D04F11E2D45690023ED96 /* ClefComponent.swift in Sources */,
-				076D04F51E2D45690023ED96 /* DiamondClefOrnament.swift in Sources */,
 				076D04CA1E2D43D60023ED96 /* QuarterFlat.swift in Sources */,
 				076D05061E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */,
 				076D04DA1E2D43D60023ED96 /* SharpType.swift in Sources */,
@@ -709,7 +666,6 @@
 				0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				076D04D21E2D43D60023ED96 /* QuarterSharpDown.swift in Sources */,
 				078EF33B1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
-				076D04F91E2D45690023ED96 /* LineClefComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

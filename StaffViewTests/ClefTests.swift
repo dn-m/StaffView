@@ -15,10 +15,6 @@ import StaffView
 class ClefTests: XCTestCase {
     
     func testClefs() {
-        let position = VerticalAxisPosition.init()
-        let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
-        let views = clefs.forEach { kind in
-            //
-        }
+        // TODO:
     }
 }
