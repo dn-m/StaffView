@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		071E10EB1F04352D00BA9FD1 /* StaffView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500875C5E63DA13A41385EB5 /* StaffView.framework */; };
+		071E10EC1F04354500BA9FD1 /* StaffView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011480B1B9E225B515CD20C5 /* StaffView.framework */; };
 		0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
 		0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
 		075AFCC91F042DDF004C1E80 /* StaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */; };
 		075AFCCA1F042DDF004C1E80 /* StaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */; };
 		075AFCCC1F042E02004C1E80 /* NoteheadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */; };
 		075AFCCD1F042E02004C1E80 /* NoteheadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */; };
+		075AFCCF1F043078004C1E80 /* ClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCCE1F043078004C1E80 /* ClefTests.swift */; };
+		075AFCD01F043078004C1E80 /* ClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCCE1F043078004C1E80 /* ClefTests.swift */; };
 		076D04781E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D04791E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D047E1E2D32B10023ED96 /* StaffInformationRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */; };
@@ -121,6 +125,7 @@
 		0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffLinesRenderDelegate.swift; path = StaffView/StaffLinesRenderDelegate.swift; sourceTree = "<group>"; };
 		075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewTests.swift; path = StaffViewTests/StaffViewTests.swift; sourceTree = "<group>"; };
 		075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadTests.swift; path = StaffViewTests/NoteheadTests.swift; sourceTree = "<group>"; };
+		075AFCCE1F043078004C1E80 /* ClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefTests.swift; path = StaffViewTests/ClefTests.swift; sourceTree = "<group>"; };
 		076D04771E2D32870023ED96 /* StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.swift; path = StaffView/StaffView.swift; sourceTree = "<group>"; };
 		076D047D1E2D32B10023ED96 /* StaffInformationRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationRenderer.swift; path = StaffView/StaffInformationRenderer.swift; sourceTree = "<group>"; };
 		076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureRenderer.swift; path = StaffView/StaffStructureRenderer.swift; sourceTree = "<group>"; };
@@ -192,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */,
+				071E10EB1F04352D00BA9FD1 /* StaffView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */,
+				071E10EC1F04354500BA9FD1 /* StaffView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +322,7 @@
 				93A8E6EE8C78D26491C95E7B /* Supporting Files */,
 				075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */,
 				075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */,
+				075AFCCE1F043078004C1E80 /* ClefTests.swift */,
 			);
 			name = StaffViewTests;
 			sourceTree = "<group>";
@@ -512,7 +520,8 @@
 				"$(SRCROOT)/Carthage/Build/Mac/PlotModel.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/PlotView.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/StaffModel.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/GeometryTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/GeometryTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SWXMLHash.framework",
 			);
 			outputPaths = (
 			);
@@ -537,6 +546,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PlotView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/StaffModel.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/GeometryTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SWXMLHash.framework",
 			);
 			outputPaths = (
 			);
@@ -551,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075AFCD01F043078004C1E80 /* ClefTests.swift in Sources */,
 				075AFCCA1F042DDF004C1E80 /* StaffViewTests.swift in Sources */,
 				075AFCCD1F042E02004C1E80 /* NoteheadTests.swift in Sources */,
 			);
@@ -560,6 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075AFCCF1F043078004C1E80 /* ClefTests.swift in Sources */,
 				075AFCC91F042DDF004C1E80 /* StaffViewTests.swift in Sources */,
 				075AFCCC1F042E02004C1E80 /* NoteheadTests.swift in Sources */,
 			);
@@ -719,7 +731,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -740,7 +755,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -787,7 +805,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -818,7 +839,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

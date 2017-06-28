@@ -8,11 +8,15 @@
 
 import XCTest
 import GeometryTools
+import PathTools
+import GraphicsTools
 import StaffView
 
 class NoteheadTests: XCTestCase {
     
     func testNotehead() {
-        let p = Point()
+        //let position = Point()
+        
+        //let notehead = NoteheadView(position: position, size: NoteheadView.Size(staffSlotHeight: 12))
     }
 }

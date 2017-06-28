@@ -6,6 +6,7 @@
 //
 //
 
+import ArithmeticTools
 import GeometryTools
 import PathTools
 import GraphicsTools
@@ -16,6 +17,10 @@ import StaffModel
 public struct ClefConfiguration {
     public var foregroundColor: Color
     public var maskColor: Color
+    public init(foregroundColor: Color, maskColor: Color) {
+        self.foregroundColor = foregroundColor
+        self.maskColor = maskColor
+    }
 }
 
 // TODO: Move to dn-m/PlotView

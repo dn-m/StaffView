@@ -1,20 +1,20 @@
+////
+////  StaffInformationConfiguration.swift
+////  StaffView
+////
+////  Created by James Bean on 1/16/17.
+////
+////
 //
-//  StaffInformationConfiguration.swift
-//  StaffView
+//import GraphicsTools
 //
-//  Created by James Bean on 1/16/17.
+//public struct StaffInformationConfiguration {
 //
-//
-
-import GraphicsTools
-
-public struct StaffInformationConfiguration {
-
-    public let staffSlotHeight: StaffSlotHeight
-    public let noteheadColor: Color
-    
-    public init(staffSlotHeight: StaffSlotHeight, noteheadColor: Color) {
-        self.staffSlotHeight = staffSlotHeight
-        self.noteheadColor = noteheadColor
-    }
-}
+//    public let staffSlotHeight: StaffSlotHeight
+//    public let noteheadColor: Color
+//    
+//    public init(staffSlotHeight: StaffSlotHeight, noteheadColor: Color) {
+//        self.staffSlotHeight = staffSlotHeight
+//        self.noteheadColor = noteheadColor
+//    }
+//}
