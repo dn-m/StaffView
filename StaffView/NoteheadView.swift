@@ -14,6 +14,17 @@ import GraphicsTools
 
 public class NoteheadView: Renderable {
 
+    public struct Size {
+
+        public let staffSlotHeight: StaffSlotHeight
+        public let scale: Double
+
+        public init(staffSlotHeight: StaffSlotHeight, scale: Double = 1) {
+            self.staffSlotHeight = staffSlotHeight
+            self.scale = scale
+        }
+    }
+    
     public var rendered: StyledPath.Composite {
         let styling = Styling(fill: Fill(color: Color(gray: 0.5, alpha: 1)))
         return .leaf(StyledPath(frame: frame, path: path, styling: styling))
@@ -27,32 +38,28 @@ public class NoteheadView: Renderable {
     
     private var frame: Rectangle {
         return Rectangle(
-            x: point.x - 0.5 * width,
-            y: point.y - 0.5 * height,
+            x: position.x - 0.5 * width,
+            y: position.y - 0.5 * height,
             width: width,
             height: height
         )
     }
     
     private var width: Double {
-        return 2.25 * staffSlotHeight * scale
+        return 2.25 * size.staffSlotHeight * size.scale
     }
     
     private var height: Double {
-        return 0.75 * width * scale
+        return 0.75 * width
     }
     
-    public var point: Point
-    
-    // FIXME: Get rid of this knowledge
-    public var staffSlotHeight: StaffSlotHeight
-    
-    public var scale: Double
+    public var position: Point
+
+    public var size: Size
     
     // Add configuration
-    public init(point: Point, staffSlotHeight: StaffSlotHeight, scale: Double = 1) {
-        self.point = point
-        self.staffSlotHeight = staffSlotHeight
-        self.scale = scale
+    public init(position: Point, size: Size) {
+        self.position = position
+        self.size = size
     }
 }
