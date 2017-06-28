@@ -6,6 +6,7 @@
 //
 //
 
+import Collections
 import ArithmeticTools
 import GeometryTools
 import PathTools
@@ -27,9 +28,9 @@ public struct ClefConfiguration {
 public protocol ClefView: VerticalAxisView {
     var extenderLength: Double { get }
     var lineWidth: Double { get }
-    var path: Path { get }
     var position: VerticalAxisPosition { get }
     var configuration: ClefConfiguration { get }
+    var components: [StyledPath] { get }
 }
 
 // TODO: Move to dn-m/PlotView
@@ -39,20 +40,22 @@ extension ClefView {
         return abs(position.plotTop - position.plotBottom)
     }
     
+    public var lineWidth: Double {
+        return 0.025 * clefHeight
+    }
+    
     public var extenderLength: Double {
         return clefHeight / 8
     }
     
     public var height: Double {
-        return clefHeight + 1 * extenderLength
+        return clefHeight + 2 * extenderLength
     }
     
-    public var lineWidth: Double {
-        return 0.025 * clefHeight
-    }
-
-    public var line: Path {
-        return Path.line(from: Point(x: 0, y: 0), to: Point(x: 0, y: height))
+    public var line: StyledPath {
+        let path = Path.line(from: Point(x: 0, y: 0), to: Point(x: 0, y: height))
+        let style = Styling(stroke: Stroke(width: lineWidth, color: configuration.foregroundColor))
+        return StyledPath(frame: frame, path: path, styling: style)
     }
     
     public var frame: Rectangle {
@@ -60,16 +63,9 @@ extension ClefView {
     }
     
     public var rendered: StyledPath.Composite {
-        
-        let styling = Styling(
-            fill: Fill(color: configuration.maskColor),
-            stroke: Stroke(width: lineWidth, color: configuration.foregroundColor)
-        )
-        
-        return .leaf(StyledPath(frame: frame, path: path, styling: styling))
+        return .branch(StyledPath.Group(identifier: "clef"), components.map { .leaf($0) })
     }
 }
-
 
 public class StaffClefView: ClefView {
     
@@ -80,7 +76,7 @@ public class StaffClefView: ClefView {
         var type: StaffClefView.Type {
             switch kind {
             case .bass:
-                return TrebleClef.self
+                return BassClef.self
             case .tenor:
                 return TenorClef.self
             case .alto:
@@ -100,8 +96,8 @@ public class StaffClefView: ClefView {
         return 0
     }
     
-    public var ornament: Path {
-        return .unit
+    public var ornament: StyledPath? {
+        return nil
     }
     
     required public init(position: Position, configuration: Configuration) {
@@ -116,7 +112,7 @@ extension StaffClefView {
         return clefHeight / 8
     }
     
-    public var path: Path {
-        return line + ornament
+    public var components: [StyledPath] {
+        return [line] + ornament
     }
 }

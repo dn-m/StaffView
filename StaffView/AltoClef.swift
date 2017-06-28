@@ -19,11 +19,19 @@ public final class AltoClef: StaffClefView {
         return 4 * staffSlotHeight + extenderLength
     }
     
-    public override var ornament: Path {
+    public override var ornament: StyledPath {
+        
         let width = 0.8 * staffSlotHeight
-        return Path.square(
-            center: Point(x: 0.5 * width, y: 0.5 * width),
-            width: width
-        ).rotated(by: Angle(degrees: 45), around: Point(x: 0.5 * width, y: 0.5 * width))
+        let position = Point(x: 0, y: ornamentAltitude)
+        let path = Path
+            .square(center: position, width: width)
+            .rotated(by: Angle(degrees: 45), around: position)
+        
+        let styling = Styling(
+            fill: Fill(color: configuration.maskColor),
+            stroke: Stroke(width: lineWidth, color: configuration.foregroundColor)
+        )
+        
+        return StyledPath(frame: frame, path: path, styling: styling)
     }
 }
