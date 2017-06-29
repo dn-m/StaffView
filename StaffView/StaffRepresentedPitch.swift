@@ -35,8 +35,8 @@ public struct StaffRepresentedPitch {
             size: NoteheadView.Size(staffSlotHeight: staffSlotHeight, scale: 1)
         )
         
-        self.accidental = AccidentalView(
-            position: Point(x: -30, y: altitude),
+        self.accidental = AccidentalView.makeAccidental(representableContext.accidental,
+            at: Point(x: -30, y: altitude),
             size: AccidentalView.Size(staffSlotHeight: staffSlotHeight, scale: 1),
             color: .black
         )

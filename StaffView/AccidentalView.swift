@@ -15,6 +15,11 @@ import StaffModel
 
 public class AccidentalView: Renderable {
     
+    public enum VerticalDirection: Double {
+        case above = -1
+        case below = 1
+    }
+    
     public struct Size {
         public let staffSlotHeight: StaffSlotHeight
         public let scale: Double
@@ -24,103 +29,22 @@ public class AccidentalView: Renderable {
         }
     }
     
-    private var outside: Path {
-        
-        let builder = Path.builder
-            
-            // top left column
-            .move(to: Point())
-            .addLine(to: Point(x: thinLineWidth, y: 0))
-            
-            // body top
-            .addLine(
-                to: Point(
-                    x: thinLineWidth,
-                    y: thickLineY(x: thinLineWidth, displacement: -thickLineDisplacement, side: -1)
-                )
-            )
-            .addLine(
-                to: Point(
-                    x: width,
-                    y: thickLineY(x: width, displacement: -thickLineDisplacement, side: -1)
-                )
-            )
-            
-            .addLine(to: Point(x: width, y: height))
-            .addLine(to: Point(x: width - thinLineWidth, y: height))
-            
-            // body bottom
-            .addLine(
-                to: Point(
-                    x: width - thinLineWidth,
-                    y: thickLineY(x: width - thinLineWidth, displacement: thickLineDisplacement, side: 1)
-                )
-            )
-            
-            .addLine(
-                to: Point(
-                    x: 0,
-                    y: thickLineY(x: 0, displacement: thickLineDisplacement, side: 1)
-                )
-            )
-            
-            .close()
-        
-        return builder.build()
-    }
-    
-    private var inside: Path {
-        
-        let builder = Path.builder
-        
-            .move(
-                to: Point(
-                    x: thinLineWidth,
-                    y: thickLineY(x: thinLineWidth, displacement: -thickLineDisplacement, side: 1)
-                )
-            )
-        
-            .addLine(
-                to: Point(
-                    x: width - thinLineWidth,
-                    y: thickLineY(x: width - thinLineWidth, displacement: -thickLineDisplacement, side: 1)
-                )
-            )
-        
-            .addLine(
-                to: Point(
-                    x: width - thinLineWidth,
-                    y: thickLineY(x: width - thinLineWidth, displacement: thickLineDisplacement, side: -1)
-                )
-            )
-        
-            .addLine(
-                to: Point(
-                    x: thinLineWidth,
-                    y: thickLineY(x: thinLineWidth, displacement: thickLineDisplacement, side: -1)
-                )
-            )
-        
-            .close()
-        
-        return builder.build()
+    public var path: Path {
+        fatalError("Must override")
     }
     
     public var rendered: StyledPath.Composite {
-        let path = outside + inside
         let styling = Styling(fill: Fill(rule: .evenOdd))
         return .leaf(StyledPath(frame: frame, path: path, styling: styling))
     }
     
-    // FIXME: Refactor to enum
-    // side = -1 = top, 1 = bottom
-    func thickLineY(x: Double, displacement: Double, side: Double) -> Double {
-        let yRef = centerReference.y + displacement + side * (0.5 * thickLineWidth)
+    func thickLineY(x: Double, displace: Double, from direction: VerticalDirection) -> Double {
+        let yRef = centerReference.y + displace + direction.rawValue * (0.5 * thickLineWidth)
         let xRef = x - 0.5 * width
         return yRef - thickLineSlope * xRef
     }
 
-    var thickLineDisplacement: Double {
+    var thickLineDisplace: Double {
         return 0.8250 * size
     }
     
@@ -140,6 +64,10 @@ public class AccidentalView: Renderable {
         return 1.150 * size
     }
     
+    var flankWidth: Double {
+        return 0.3 * size
+    }
+    
     var columnLength: Double {
         return 2.472 * size
     }
@@ -152,7 +80,6 @@ public class AccidentalView: Renderable {
         return 2 * columnLength
     }
     
-    // frame
     var frame: Rectangle {
         return Rectangle(
             x: position.x - centerReference.x,
@@ -170,10 +97,14 @@ public class AccidentalView: Renderable {
     let size: Size
     let color: Color
     
-    public init(position: Point = Point(), size: Size = Size(), color: Color = .black) {
+    public required init(position: Point = Point(), size: Size = Size(), color: Color = .black) {
         self.position = position
         self.size = size
         self.color = color
+    }
+    
+    func point(x: Double, displace: Double, from direction: VerticalDirection) -> Point {
+        return Point(x: x, y: thickLineY(x: x, displace: displace, from: direction))
     }
 }
 
@@ -261,18 +192,20 @@ func * (lhs: AccidentalView.Size, rhs: Double) -> Double {
 //    }
 //}
 //
-//extension _AccidentalView {
-//    
-//    public static func makeAccidental(
-//        _ kind: Accidental,
-//        at point: Point,
-//        staffSlotHeight: StaffSlotHeight,
-//        scale: Double = 1
-//    ) -> AccidentalView
-//    {
-//        var classType: AccidentalView.Type {
-//            switch kind {
-//            case .natural: return Natural.self
+extension AccidentalView {
+    
+    public static func makeAccidental(
+        _ kind: Accidental,
+        at position: Point,
+        size: Size,
+        color: Color
+    ) -> AccidentalView
+    {
+        var type: AccidentalView.Type {
+            switch kind {
+            case .natural: return Natural.self
+            default:
+                fatalError()
 //            case .naturalUp: return NaturalUp.self
 //            case .naturalDown: return NaturalDown.self
 //            case .sharp: return Sharp.self
@@ -287,12 +220,15 @@ func * (lhs: AccidentalView.Size, rhs: Double) -> Double {
 //            case .quarterFlat: return QuarterFlat.self
 //            case .quarterFlatUp: return QuarterFlatUp.self
 //            case .quarterFlatDown: return QuarterFlatDown.self
-//            }
-//        }
-//        return classType.init(point: point, staffSlotHeight: staffSlotHeight, scale: scale)
-//    }
-//
-//}
+            }
+        }
+        
+        return type.init(position: position, size: size, color: color)
+        
+        //return classType.init(point: point, staffSlotHeight: staffSlotHeight, scale: scale)
+    }
+
+}
 //
 //
 //
@@ -454,26 +390,22 @@ func * (lhs: AccidentalView.Size, rhs: Double) -> Double {
 ////        return newLayers.first!.frame.maxY
 ////    }
 ////}
-//
-//extension AccidentalView {
-//    
-//    public static func makeAccidental(
-//        coarse: Float,
-//        fine: Float,
-//        at point: Point,
-//        staffSlotHeight: StaffSlotHeight,
-//        scale: Double = 1
-//    ) -> AccidentalView?
-//    {
-//        
-//        guard let kind = Accidental(coarse: coarse, fine: fine) else {
-//            return nil
-//        }
-//        
-//        return makeAccidental(kind,
-//            at: point,
-//            staffSlotHeight: staffSlotHeight,
-//            scale: scale
-//        )
-//    }
-//}
+
+extension AccidentalView {
+    
+    public static func makeAccidental(
+        coarse: Float,
+        fine: Float,
+        at position: Point,
+        size: Size,
+        color: Color
+    ) -> AccidentalView?
+    {
+        
+        guard let kind = Accidental(coarse: coarse, fine: fine) else {
+            return nil
+        }
+        
+        return makeAccidental(kind, at: position, size: size, color: color)
+    }
+}

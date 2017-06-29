@@ -25,11 +25,21 @@ class AccidentalTests: XCTestCase {
     
     func testNatural() {
         let frame = Rectangle(x: 0, y: 0, width: 20, height: 20)
-        let accidental = AccidentalView(position: Point(x: frame.midX, y: frame.midY))
+        let accidental = Natural(position: Point(x: frame.midX, y: frame.midY))
         let container = CALayer()
         let layer = CALayer(accidental.rendered)
         container.addSublayer(layer)
         container.frame = CGRect(frame)
         container.renderToPDF(name: "accidental_natural")
+    }
+    
+    func testSharp() {
+        let frame = Rectangle(x: 0, y: 0, width: 20, height: 20)
+        let accidental = Sharp(position: Point(x: frame.midX, y: frame.midY))
+        let container = CALayer()
+        let layer = CALayer(accidental.rendered)
+        container.addSublayer(layer)
+        container.frame = CGRect(frame)
+        container.renderToPDF(name: "accidental_sharp")
     }
 }
