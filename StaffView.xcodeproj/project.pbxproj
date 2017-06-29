@@ -17,10 +17,6 @@
 		075AFCD01F043078004C1E80 /* ClefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCCE1F043078004C1E80 /* ClefTests.swift */; };
 		076D04781E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
 		076D04791E2D32870023ED96 /* StaffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04771E2D32870023ED96 /* StaffView.swift */; };
-		076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */; };
-		076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */; };
-		076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
-		076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
 		076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* AccidentalView.swift */; };
 		076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* AccidentalView.swift */; };
 		076D04BE1E2D43D60023ED96 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A81E2D43D60023ED96 /* Flat.swift */; };
@@ -96,8 +92,6 @@
 		075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadTests.swift; path = StaffViewTests/NoteheadTests.swift; sourceTree = "<group>"; };
 		075AFCCE1F043078004C1E80 /* ClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefTests.swift; path = StaffViewTests/ClefTests.swift; sourceTree = "<group>"; };
 		076D04771E2D32870023ED96 /* StaffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.swift; path = StaffView/StaffView.swift; sourceTree = "<group>"; };
-		076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationConfiguration.swift; path = StaffView/StaffInformationConfiguration.swift; sourceTree = "<group>"; };
-		076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureConfiguration.swift; path = StaffView/StaffStructureConfiguration.swift; sourceTree = "<group>"; };
 		076D04A51E2D43D60023ED96 /* AccidentalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalView.swift; path = StaffView/AccidentalView.swift; sourceTree = "<group>"; };
 		076D04A81E2D43D60023ED96 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flat.swift; path = StaffView/Flat.swift; sourceTree = "<group>"; };
 		076D04AB1E2D43D60023ED96 /* Natural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Natural.swift; path = StaffView/Natural.swift; sourceTree = "<group>"; };
@@ -279,8 +273,6 @@
 				07829BE61F05932E0074E477 /* StaffLinesCollection.swift */,
 				078EF32A1E3100F0005576EE /* Showable.swift */,
 				07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */,
-				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
-				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
 				076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */,
 				078EF3301E31017C005576EE /* Showable */,
 				076D04A21E2D43640023ED96 /* Clef */,
@@ -542,8 +534,6 @@
 				076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */,
 				078EF3291E30F7B5005576EE /* Pitch+Showable.swift in Sources */,
 				076D04C51E2D43D60023ED96 /* Natural.swift in Sources */,
-				076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
-				076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 				076D05011E2D46380023ED96 /* ClefView.swift in Sources */,
 				076D04D71E2D43D60023ED96 /* Sharp.swift in Sources */,
 				078EF33C1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
@@ -573,8 +563,6 @@
 				076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */,
 				078EF3281E30F7B5005576EE /* Pitch+Showable.swift in Sources */,
 				076D04C41E2D43D60023ED96 /* Natural.swift in Sources */,
-				076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
-				076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 				076D05001E2D46380023ED96 /* ClefView.swift in Sources */,
 				076D04D61E2D43D60023ED96 /* Sharp.swift in Sources */,
 				078EF33B1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
