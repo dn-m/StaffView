@@ -1,11 +1,9 @@
 //
-////
-////  AccidentalView.swift
-////  StaffView
-////
-////  Created by James Bean on 8/18/15.
-////  Copyright © 2015 James Bean. All rights reserved.
-////
+//  AccidentalView.swift
+//  StaffView
+//
+//  Created by James Bean on 8/18/15.
+//  Copyright © 2015 James Bean. All rights reserved.
 //
 
 import GeometryTools
@@ -34,7 +32,7 @@ public class AccidentalView: Renderable {
     }
     
     public var rendered: StyledPath.Composite {
-        let styling = Styling(fill: Fill(rule: .evenOdd))
+        let styling = Styling(fill: Fill(color: color, rule: .evenOdd))
         return .leaf(StyledPath(frame: frame, path: path, styling: styling))
     }
     
@@ -117,53 +115,6 @@ func * (lhs: AccidentalView.Size, rhs: Double) -> Double {
 }
 
 //
-//public class AccidentalView: Renderable {
-//
-//    public struct Size {
-//        
-//        public let staffSlotHeight: StaffSlotHeight
-//        public let scale: Double
-//        
-//        public init(staffSlotHeight: StaffSlotHeight, scale: Double) {
-//            self.staffSlotHeight = staffSlotHeight
-//            self.scale = scale
-//        }
-//    }
-//    
-//    public struct Configuration {
-//        
-//        public let foregroundColor: Color
-//        public let maskColor: Color
-//        
-//        public init(foregroundColor: Color, maskColor: Color) {
-//            self.foregroundColor = foregroundColor
-//            self.maskColor = maskColor
-//        }
-//    }
-//    
-//    public var rendered: StyledPath.Composite {
-//        fatalError()
-//    }
-//    
-//    public var path: Path {
-//        fatalError()
-//    }
-//    
-//    public var internalCenter: Point {
-//        fatalError()
-//    }
-//    
-//    public let position: Point
-//    public let size: Size
-//    public let configuration: Configuration
-//    
-//    public init(position: Point, size: Size, configuration: Configuration) {
-//        self.position = position
-//        self.size = size
-//        self.configuration = configuration
-//    }
-//}
-//
 //protocol AccidentalViewProtocol {
 //    var position: Point { get }
 //    var size: _AccidentalView.Size { get }
@@ -204,15 +155,14 @@ extension AccidentalView {
         var type: AccidentalView.Type {
             switch kind {
             case .natural: return Natural.self
-//            case .naturalUp: return NaturalUp.self
-//            case .naturalDown: return NaturalDown.self
             case .sharp: return Sharp.self
-//            case .sharpUp: return SharpUp.self
-//            case .sharpDown: return SharpDown.self
             case .flat: return Flat.self
             default:
                 fatalError()
-
+//            case .naturalUp: return NaturalUp.self
+//            case .naturalDown: return NaturalDown.self
+//            case .sharpUp: return SharpUp.self
+//            case .sharpDown: return SharpDown.self
 //            case .flatUp: return FlatUp.self
 //            case .flatDown: return FlatDown.self
 //            case .quarterSharp: return QuarterSharp.self
@@ -225,8 +175,6 @@ extension AccidentalView {
         }
         
         return type.init(position: position, size: size, color: color)
-        
-        //return classType.init(point: point, staffSlotHeight: staffSlotHeight, scale: scale)
     }
 
 }

@@ -50,4 +50,27 @@ class StaffViewTests: XCTestCase {
         layer.frame = CGRect(x: 0, y: 0, width: 800, height: 300)
         layer.renderToPDF(name: "staff_pitches")
     }
+    
+    func testHull() {
+        
+        let pitches: [Pitch] = [60,62,63,64,66,68,71]
+        let spelled = pitches.map { $0.spelledWithDefaultSpelling() }
+        let representable = spelled.map { StaffRepresentablePitch($0) }
+        let points = representable.map { StaffPointModel([$0]) }
+        
+        var positions: [Double] = []
+        var accum: Double = 100
+        for _ in points.indices {
+            positions.append(accum)
+            accum += 100
+        }
+        
+        let builder = StaffModel.builder
+        zip(positions, points).forEach { position, point in builder.add(point, at: position) }
+        let model = builder.build()
+        
+        let view = StaffView(model: model)
+        let composite = view.rendered
+        
+    }
 }

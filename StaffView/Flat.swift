@@ -17,7 +17,7 @@ public class Flat: AccidentalView {
     }
     
     var shortColumnHeight: Double {
-        return 1.5 * size
+        return 1.4 * size
     }
     
     override var height: Double {

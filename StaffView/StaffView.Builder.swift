@@ -13,14 +13,16 @@ import PlotModel
 import StaffModel
 import PlotView
 
+public enum LedgerLineDirection: Double {
+    case above = -1
+    case below = 1
+}
+
 extension StaffView {
     
     public class Builder {
         
-        private enum LedgerLineDirection: Double {
-            case above = -1
-            case below = 1
-        }
+        
         
         // Intput
         private let clef: Clef
@@ -49,6 +51,7 @@ extension StaffView {
                     addLedgerLines(at: position, above: above, below: below)
                     let pointView = PointView(
                         of: point,
+                        at: position,
                         clef: model.verticalAxis,
                         staffSlotHeight: configuration.staffSlotHeight
                     )
@@ -94,81 +97,85 @@ extension StaffView {
             return StaffClefView.makeClef(clef.kind, at: position, with: clefConfig)
         }
         
-        private func staffLines(configuration: StaffConfiguration) -> StyledPath {
-            
-            let staffSlotHeight = configuration.staffSlotHeight
-            
-            let path = Path(
-                staffLines.flatMap { segment in
-                    return (0..<5).map { lineNumber in
-                        let altitude = Double(lineNumber) * staffSlotHeight * 2
-                        let left = segment.start
-                        let right = segment.stop
-                        return BezierCurve(
-                            start: Point(x: left, y: altitude),
-                            end: Point(x: right, y: altitude)
-                        )
-                    }
-                }
-            )
-            
-            let styling = Styling(
-                stroke: Stroke(width: configuration.lineWidth, color: configuration.linesColor)
-            )
-            
-            return StyledPath(frame: .zero, path: path, styling: styling)
-        }
-        
-        private func ledgerLines(configuration: StaffConfiguration) -> StyledPath {
-            
-            let staffSlotHeight = configuration.staffSlotHeight
-            let length = configuration.ledgerLineLength
-            var curves: [BezierCurve] = []
-            
-            for (x, amountByDirection) in ledgerLines {
-                for (direction, amount) in amountByDirection {
-                    let left = x - 0.5 * length
-                    let right = x + 0.5 * length
-                    let refY = direction == .above ? -2 * staffSlotHeight : 10 * staffSlotHeight
-                    
-                    for number in 0..<amount {
-                        let altitude = Double(number) * direction.rawValue * 2 * staffSlotHeight + refY
-                        let curve = BezierCurve(
-                            start: Point(x: left, y: altitude),
-                            end: Point(x: right, y: altitude)
-                        )
-                        curves.append(curve)
-                    }
-                }
-            }
-            
-            let path = Path(curves)
-            
-            let styling = Styling(
-                stroke: Stroke(
-                    width: configuration.ledgerLineWidth,
-                    color: configuration.linesColor
-                )
-            )
-            
-            return StyledPath(frame: .zero, path: path, styling: styling)
-        }
-        
-        private func makeLines(configuration: StaffConfiguration) -> StyledPath.Composite {
-            
-            let group = StyledPath.Group("lines")
-            
-            let paths = [
-                staffLines(configuration: configuration),
-                ledgerLines(configuration: configuration)
-            ]
-            
-            return .branch(group, paths.map { .leaf($0) })
-        }
+//        private func staffLines(configuration: StaffConfiguration) -> StyledPath {
+//            
+//            let staffSlotHeight = configuration.staffSlotHeight
+//            
+//            let path = Path(
+//                staffLines.flatMap { segment in
+//                    return (0..<5).map { lineNumber in
+//                        let altitude = Double(lineNumber) * staffSlotHeight * 2
+//                        let left = segment.start
+//                        let right = segment.stop
+//                        return BezierCurve(
+//                            start: Point(x: left, y: altitude),
+//                            end: Point(x: right, y: altitude)
+//                        )
+//                    }
+//                }
+//            )
+//            
+//            let styling = Styling(
+//                stroke: Stroke(width: configuration.lineWidth, color: configuration.linesColor)
+//            )
+//            
+//            return StyledPath(frame: .zero, path: path, styling: styling)
+//        }
+//        
+//        private func ledgerLines(configuration: StaffConfiguration) -> StyledPath {
+//            
+//            let staffSlotHeight = configuration.staffSlotHeight
+//            let length = configuration.ledgerLineLength
+//            var curves: [BezierCurve] = []
+//            
+//            for (x, amountByDirection) in ledgerLines {
+//                for (direction, amount) in amountByDirection {
+//                    let left = x - 0.5 * length
+//                    let right = x + 0.5 * length
+//                    let refY = direction == .above ? -2 * staffSlotHeight : 10 * staffSlotHeight
+//                    
+//                    for number in 0..<amount {
+//                        let altitude = Double(number) * direction.rawValue * 2 * staffSlotHeight + refY
+//                        let curve = BezierCurve(
+//                            start: Point(x: left, y: altitude),
+//                            end: Point(x: right, y: altitude)
+//                        )
+//                        curves.append(curve)
+//                    }
+//                }
+//            }
+//            
+//            let path = Path(curves)
+//            
+//            let styling = Styling(
+//                stroke: Stroke(
+//                    width: configuration.ledgerLineWidth,
+//                    color: configuration.linesColor
+//                )
+//            )
+//            
+//            return StyledPath(frame: .zero, path: path, styling: styling)
+//        }
+//        
+//        private func makeLines(configuration: StaffConfiguration) -> StyledPath.Composite {
+//            
+//            let group = StyledPath.Group("lines")
+//            
+//            let paths = [
+//                staffLines(configuration: configuration),
+//                ledgerLines(configuration: configuration)
+//            ]
+//            
+//            return .branch(group, paths.map { .leaf($0) })
+//        }
         
         public func build() -> StaffView {
             let clef = makeClef(with: configuration)
-            let lines = makeLines(configuration: configuration)
+            let lines = StaffLinesCollection(
+                staffLines: staffLines,
+                ledgerLines: ledgerLines,
+                configuration: configuration
+            )
             return StaffView(clef: clef, lines: lines, points: points)
         }
     }
@@ -176,7 +183,7 @@ extension StaffView {
 
 extension StaffView.PointView {
     
-    init(of pointModel: StaffPointModel, clef: Clef, staffSlotHeight: StaffSlotHeight) {
+    init(of pointModel: StaffPointModel, at position: Double, clef: Clef, staffSlotHeight: StaffSlotHeight) {
         
         let pitches: [StaffRepresentedPitch] = pointModel.elements.map { element in
             
@@ -184,13 +191,14 @@ extension StaffView.PointView {
             let altitude = StaffSlotHeight(4 - slot) * staffSlotHeight
             
             return StaffRepresentedPitch(
-                representableContext: element,
+                for: element,
+                at: position,
                 altitude: altitude,
                 staffSlotHeight: staffSlotHeight
             )
         }
         
-        self.init(pitches: pitches)
+        self.init(pitches: pitches, at: position)
     }
 }
 

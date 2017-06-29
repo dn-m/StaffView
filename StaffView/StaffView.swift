@@ -24,25 +24,27 @@ public struct StaffView: VerticalPlotView {
             return noteheads + accidentals
         }
         
+        public let position: Double
         public let pitches: [StaffRepresentedPitch]
-        public init(pitches: [StaffRepresentedPitch]) {
+        
+        public init(pitches: [StaffRepresentedPitch], at position: Double) {
             self.pitches = pitches
+            self.position = position
         }
     }
     
     public let clef: StaffClefView
-    public let lines: StyledPath.Composite
+    public let lines: StaffLinesCollection
     
-    // Use SortedDictionary
+    // TODO: Use `SortedDictionary<Double, [PointView]>`
     public let points: [Double: [PointView]]
     
     public typealias Model = StaffModel
     
-    // TODO: Make LinesView legite type
-    public init(clef: StaffClefView, lines: StyledPath.Composite, points: [Double: [PointView]]) {
+    public init(clef: StaffClefView, lines: StaffLinesCollection, points: [Double: [PointView]]) {
         self.clef = clef
-        self.points = points
         self.lines = lines
+        self.points = points
     }
     
     public init(model: Model, configuration: StaffConfiguration = StaffConfiguration()) {
@@ -60,14 +62,8 @@ extension StaffView {
     
     // MARK: - Rendering
     
-    public var rendered: StyledPath.Composite {
-        let group = StyledPath.Group("staff")
-        let pointPaths: [StyledPath.Composite] =
-            points.flatMap { position, pointViews in
-                let frame = Rectangle(x: position, y: 0, width: 0, height: 0)
-                let group = StyledPath.Group("point", frame: frame)
-                return .branch(group, pointViews.map { $0.rendered })
-        }
-        return .branch(group, [lines, clef.rendered] + pointPaths)
+    public var components: [Renderable] {
+        let pointViews: [Renderable] = points.flatMap { _, views in views }
+        return [lines, clef] + pointViews
     }
 }
