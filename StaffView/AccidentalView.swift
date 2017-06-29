@@ -204,14 +204,15 @@ extension AccidentalView {
         var type: AccidentalView.Type {
             switch kind {
             case .natural: return Natural.self
-            default:
-                fatalError()
 //            case .naturalUp: return NaturalUp.self
 //            case .naturalDown: return NaturalDown.self
-//            case .sharp: return Sharp.self
+            case .sharp: return Sharp.self
 //            case .sharpUp: return SharpUp.self
 //            case .sharpDown: return SharpDown.self
-//            case .flat: return Flat.self
+            case .flat: return Flat.self
+            default:
+                fatalError()
+
 //            case .flatUp: return FlatUp.self
 //            case .flatDown: return FlatDown.self
 //            case .quarterSharp: return QuarterSharp.self

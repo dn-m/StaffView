@@ -29,7 +29,7 @@ class StaffViewTests: XCTestCase {
     
     func testInitWithModelAndConfiguration() {
         
-        let pitches: [Pitch] = [60,67,65,64,62,60,71]
+        let pitches: [Pitch] = [60,62,63,64,66,68,71]
         let spelled = pitches.map { $0.spelledWithDefaultSpelling() }
         let representable = spelled.map { StaffRepresentablePitch($0) }
         let points = representable.map { StaffPointModel([$0]) }
@@ -46,7 +46,6 @@ class StaffViewTests: XCTestCase {
         let model = builder.build()
         
         let view = StaffView(model: model)
-        
         let layer = CALayer(view.rendered)
         layer.frame = CGRect(x: 0, y: 0, width: 800, height: 300)
         layer.renderToPDF(name: "staff_pitches")

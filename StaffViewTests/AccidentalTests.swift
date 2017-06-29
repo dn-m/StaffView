@@ -42,4 +42,15 @@ class AccidentalTests: XCTestCase {
         container.frame = CGRect(frame)
         container.renderToPDF(name: "accidental_sharp")
     }
+    
+    func testFlat() {
+        let frame = Rectangle(x: 0, y: 0, width: 20, height: 20)
+        let accidental = Flat(position: Point(x: frame.midX, y: frame.midY))
+        let container = CALayer()
+        let layer = CALayer(accidental.rendered)
+        layer.showTestBorder()
+        container.addSublayer(layer)
+        container.frame = CGRect(frame)
+        container.renderToPDF(name: "accidental_flat")
+    }
 }

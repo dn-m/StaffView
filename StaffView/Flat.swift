@@ -1,64 +1,116 @@
-////
-////  Flat.swift
-////  Staff
-////
-////  Created by James Bean on 6/14/16.
-////
-////
 //
-//import GeometryTools
+//  Flat.swift
+//  Staff
 //
-//public class Flat: AccidentalView {
-//    
-//    public override var description: String { return "flat" }
-//    
-//    internal var column_up_height: Double { return 1.618 * gS }
-//    internal var column_down_height: Double { return 0.75 * gS }
-//    
-//    internal override var height: Double {
-//        get { return column_up_height + column_down_height }
-//    }
-//    
-//    internal override var width: Double { return midWidth }
-//    internal override var xRef: Double { return 0.5 * midWidth }
-//    internal override var yRef: Double { return column_up_height }
-//    
-//    public override func createComponents() {
-//        addBody()
-//        addColumnUp()
-//        addColumnDown()
-//    }
-//    
-//    internal func addBody() {
-//        body = ComponentBodyFlat(
-//            staffSlotHeight: staffSlotHeight,
-//            scale: scale,
-//            point: Point(x: xRef + 0.4 * thinLineWidth, y: yRef)
-//        )
-//        components.append(body!)
-//    }
-//    
-//    internal func addColumnUp() {
-//        column_left_up = ComponentColumn(
-//            staffSlotHeight: staffSlotHeight,
-//            scale: scale,
-//            x: 0,
-//            y_internal: yRef,
-//            y_external: yRef - column_up_height
-//        )
-//        components.append(column_left_up!)
-//        column_left_up!.alignment = .right
-//    }
-//    
-//    internal func addColumnDown() {
-//        column_left_down = ComponentColumn(
-//            staffSlotHeight: staffSlotHeight,
-//            scale: scale,
-//            x: 0,
-//            y_internal: yRef,
-//            y_external: yRef + column_down_height
-//        )
-//        components.append(column_left_down!)
-//        column_left_down!.alignment = .left
-//    }
-//}
+//  Created by James Bean on 6/14/16.
+//
+//
+
+import GeometryTools
+import PathTools
+import GraphicsTools
+
+public class Flat: AccidentalView {
+    
+    var tallColumnHeight: Double {
+        return 3.236 * size
+    }
+    
+    var shortColumnHeight: Double {
+        return 1.5 * size
+    }
+    
+    override var height: Double {
+        return tallColumnHeight + shortColumnHeight
+    }
+    
+    var bodyHeight: Double {
+        return 2.5 * size
+    }
+    
+    var bodyTop: Double {
+        return height - bodyHeight
+    }
+    
+    var bowlLineWidthTop: Double {
+        return 0.375 * size
+    }
+    
+    var bowlLineWidthBottom: Double {
+        return 0.764 * size
+    }
+    
+    var bowlLineWidthStress: Double {
+        return 0.5 * size
+    }
+    
+    var left: Double {
+        return 0
+    }
+    
+    var right: Double {
+        return width
+    }
+    
+    var insideLeft: Double {
+        return thinLineWidth
+    }
+    
+    private var outside: Path {
+        
+        let builder = Path.builder
+            .move(to: Point())
+            .addLine(to: Point(x: insideLeft, y: 0))
+            .addLine(to: Point(x: insideLeft, y: bodyTop))
+            .addCurve(
+                to: Point(x: width, y: bodyTop),
+                control1: Point(x: insideLeft, y: bodyTop),
+                control2: Point(x: width - 0.25 * size, y: bodyTop - 0.25 * size)
+            )
+            .addCurve(
+                to: Point(x: insideLeft, y: height),
+                control1: Point(x: insideLeft + width + 0.5 * size, y: bodyTop + 0.618 * size),
+                control2: Point(x: insideLeft + 0.25 * size, y: height - 0.66 * size)
+            )
+            .addLine(to: Point(x: left, y: height))
+            .close()
+        
+        return builder.build()
+    }
+    
+    private var inside: Path {
+        
+        let builder = Path.builder
+            .move(to: Point(x: insideLeft, y: height - bowlLineWidthBottom))
+            .addCurve(
+                to: Point(x: width - bowlLineWidthStress, y: bodyTop + 0.75 * bowlLineWidthStress),
+                control1: Point(
+                    x: 0.5 * bowlLineWidthBottom,
+                    y: height - 1.25 * bowlLineWidthBottom
+                ),
+                control2: Point(
+                    x: width - 0.5 * bowlLineWidthBottom,
+                    y: bodyTop + 1.333 * bowlLineWidthStress
+                )
+            )
+            .addCurve(
+                to: Point(x: insideLeft, y: bodyTop + bowlLineWidthTop),
+                control1: Point(
+                    x: width - 1.309 * bowlLineWidthStress,
+                    y: bodyTop + 0.309 * bowlLineWidthStress
+                ),
+                control2: Point(x: insideLeft, y: bodyTop + bowlLineWidthTop)
+            )
+            .close()
+        
+        return builder.build()
+    }
+    
+    override var centerReference: Point {
+        return Point(x: 0.5 * width, y: tallColumnHeight)
+    }
+    
+    public override var path: Path {
+        return outside + inside
+    }
+}
