@@ -29,8 +29,6 @@
 		076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */; };
 		076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* AccidentalView.swift */; };
 		076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A51E2D43D60023ED96 /* AccidentalView.swift */; };
-		076D04BA1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */; };
-		076D04BB1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */; };
 		076D04BE1E2D43D60023ED96 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A81E2D43D60023ED96 /* Flat.swift */; };
 		076D04BF1E2D43D60023ED96 /* Flat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04A81E2D43D60023ED96 /* Flat.swift */; };
 		076D04C41E2D43D60023ED96 /* Natural.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04AB1E2D43D60023ED96 /* Natural.swift */; };
@@ -110,7 +108,6 @@
 		076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffInformationConfiguration.swift; path = StaffView/StaffInformationConfiguration.swift; sourceTree = "<group>"; };
 		076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffStructureConfiguration.swift; path = StaffView/StaffStructureConfiguration.swift; sourceTree = "<group>"; };
 		076D04A51E2D43D60023ED96 /* AccidentalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalView.swift; path = StaffView/AccidentalView.swift; sourceTree = "<group>"; };
-		076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalComponent.swift; path = StaffView/AccidentalComponent.swift; sourceTree = "<group>"; };
 		076D04A81E2D43D60023ED96 /* Flat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flat.swift; path = StaffView/Flat.swift; sourceTree = "<group>"; };
 		076D04AB1E2D43D60023ED96 /* Natural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Natural.swift; path = StaffView/Natural.swift; sourceTree = "<group>"; };
 		076D04B41E2D43D60023ED96 /* Sharp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sharp.swift; path = StaffView/Sharp.swift; sourceTree = "<group>"; };
@@ -196,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				076D04A51E2D43D60023ED96 /* AccidentalView.swift */,
-				076D04A61E2D43D60023ED96 /* AccidentalComponent.swift */,
 				076D04AB1E2D43D60023ED96 /* Natural.swift */,
 				076D04A81E2D43D60023ED96 /* Flat.swift */,
 				076D04B41E2D43D60023ED96 /* Sharp.swift */,
@@ -564,7 +560,6 @@
 				076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 				076D05011E2D46380023ED96 /* ClefView.swift in Sources */,
 				076D04D71E2D43D60023ED96 /* Sharp.swift in Sources */,
-				076D04BB1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */,
 				0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				078EF33C1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
 			);
@@ -599,7 +594,6 @@
 				076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 				076D05001E2D46380023ED96 /* ClefView.swift in Sources */,
 				076D04D61E2D43D60023ED96 /* Sharp.swift in Sources */,
-				076D04BA1E2D43D60023ED96 /* AccidentalComponent.swift in Sources */,
 				0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				078EF33B1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
 			);
