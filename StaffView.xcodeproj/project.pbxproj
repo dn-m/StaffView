@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		071E10EB1F04352D00BA9FD1 /* StaffView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500875C5E63DA13A41385EB5 /* StaffView.framework */; };
 		071E10EC1F04354500BA9FD1 /* StaffView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011480B1B9E225B515CD20C5 /* StaffView.framework */; };
-		0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
-		0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */; };
 		075AFCC91F042DDF004C1E80 /* StaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */; };
 		075AFCCA1F042DDF004C1E80 /* StaffViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */; };
 		075AFCCC1F042E02004C1E80 /* NoteheadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */; };
@@ -47,8 +45,6 @@
 		076D05011E2D46380023ED96 /* ClefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04FF1E2D46380023ED96 /* ClefView.swift */; };
 		076D05031E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
 		076D05041E2D481C0023ED96 /* NoteheadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05021E2D481C0023ED96 /* NoteheadView.swift */; };
-		076D05061E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */; };
-		076D05071E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */; };
 		076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
 		076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */; };
 		077BCC7C1F051BE600986CAF /* StaffView.Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077BCC7B1F051BE600986CAF /* StaffView.Builder.swift */; };
@@ -98,7 +94,6 @@
 
 /* Begin PBXFileReference section */
 		011480B1B9E225B515CD20C5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffLinesRenderDelegate.swift; path = StaffView/StaffLinesRenderDelegate.swift; sourceTree = "<group>"; };
 		075AFCC81F042DDF004C1E80 /* StaffViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffViewTests.swift; path = StaffViewTests/StaffViewTests.swift; sourceTree = "<group>"; };
 		075AFCCB1F042E02004C1E80 /* NoteheadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadTests.swift; path = StaffViewTests/NoteheadTests.swift; sourceTree = "<group>"; };
 		075AFCCE1F043078004C1E80 /* ClefTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefTests.swift; path = StaffViewTests/ClefTests.swift; sourceTree = "<group>"; };
@@ -117,7 +112,6 @@
 		076D04E81E2D45690023ED96 /* TrebleClef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrebleClef.swift; path = StaffView/TrebleClef.swift; sourceTree = "<group>"; };
 		076D04FF1E2D46380023ED96 /* ClefView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClefView.swift; path = StaffView/ClefView.swift; sourceTree = "<group>"; };
 		076D05021E2D481C0023ED96 /* NoteheadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteheadView.swift; path = StaffView/NoteheadView.swift; sourceTree = "<group>"; };
-		076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LedgerLinesRenderDelegate.swift; path = StaffView/LedgerLinesRenderDelegate.swift; sourceTree = "<group>"; };
 		076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffRepresentedPitch.swift; path = StaffView/StaffRepresentedPitch.swift; sourceTree = "<group>"; };
 		077BCC7B1F051BE600986CAF /* StaffView.Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.Builder.swift; path = StaffView/StaffView.Builder.swift; sourceTree = "<group>"; };
 		077BCC7E1F05425D00986CAF /* AccidentalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalTests.swift; path = StaffViewTests/AccidentalTests.swift; sourceTree = "<group>"; };
@@ -291,8 +285,6 @@
 				076D04801E2D32BB0023ED96 /* StaffStructureRenderer.swift */,
 				076D049C1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift */,
 				076D049F1E2D3F120023ED96 /* StaffStructureConfiguration.swift */,
-				076D05051E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift */,
-				0759A47D1E3022E300E2E40C /* StaffLinesRenderDelegate.swift */,
 				076D05081E2D4E050023ED96 /* StaffRepresentedPitch.swift */,
 				078EF3301E31017C005576EE /* Showable */,
 				076D04A21E2D43640023ED96 /* Clef */,
@@ -552,7 +544,6 @@
 				07FFE8CD1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */,
-				076D05071E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */,
 				078EF3291E30F7B5005576EE /* Pitch+Showable.swift in Sources */,
 				076D04C51E2D43D60023ED96 /* Natural.swift in Sources */,
 				076D04A11E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
@@ -560,7 +551,6 @@
 				076D049E1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 				076D05011E2D46380023ED96 /* ClefView.swift in Sources */,
 				076D04D71E2D43D60023ED96 /* Sharp.swift in Sources */,
-				0759A47F1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				078EF33C1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,7 +576,6 @@
 				07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */,
-				076D05061E2D493E0023ED96 /* LedgerLinesRenderDelegate.swift in Sources */,
 				078EF3281E30F7B5005576EE /* Pitch+Showable.swift in Sources */,
 				076D04C41E2D43D60023ED96 /* Natural.swift in Sources */,
 				076D04A01E2D3F120023ED96 /* StaffStructureConfiguration.swift in Sources */,
@@ -594,7 +583,6 @@
 				076D049D1E2D3EFB0023ED96 /* StaffInformationConfiguration.swift in Sources */,
 				076D05001E2D46380023ED96 /* ClefView.swift in Sources */,
 				076D04D61E2D43D60023ED96 /* Sharp.swift in Sources */,
-				0759A47E1E3022E300E2E40C /* StaffLinesRenderDelegate.swift in Sources */,
 				078EF33B1E310916005576EE /* PitchSetSequence+Showable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
