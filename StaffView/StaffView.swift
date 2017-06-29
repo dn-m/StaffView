@@ -13,35 +13,23 @@ import PlotModel
 import StaffModel
 import PlotView
 
+/// Graphical representation of a musical staff.
 public struct StaffView: VerticalPlotView {
     
-    // TODO: Articulations, etc
-    public struct PointView: CompositeRenderable {
-        
-        public var components: [Renderable] {
-            let noteheads: [Renderable] = pitches.flatMap { $0.notehead }
-            let accidentals: [Renderable] = pitches.flatMap { $0.accidental }
-            return noteheads + accidentals
-        }
-        
-        public let position: Double
-        public let pitches: [StaffRepresentedPitch]
-        
-        public init(pitches: [StaffRepresentedPitch], at position: Double) {
-            self.pitches = pitches
-            self.position = position
-        }
-    }
+    /// Points.
+    public let points: [PointView]
     
+    /// Clef.
     public let clef: StaffClefView
+    
+    /// Staff and ledger lines.
     public let lines: StaffLinesCollection
     
-    // TODO: Use `SortedDictionary<Double, [PointView]>`
-    public let points: [Double: [PointView]]
-    
+    // FIXME: This is left over from an over-engineered `PlotModel`.
     public typealias Model = StaffModel
     
-    public init(clef: StaffClefView, lines: StaffLinesCollection, points: [Double: [PointView]]) {
+    /// Creates a `StaffView` with the given `clef`, `lines`, and `points`.
+    public init(clef: StaffClefView, lines: StaffLinesCollection, points: [PointView]) {
         self.clef = clef
         self.lines = lines
         self.points = points
@@ -51,10 +39,10 @@ public struct StaffView: VerticalPlotView {
         self = Builder(model: model, configuration: configuration).build()
     }
 
-    // Ultimately, this is probably useless, if we use builders for everything...
+    // FIXME: Ultimately, this is useless, if builders are used for everything.
+    // FIXME: This is left over from an over-engineered `PlotModel`.
     public func concreteVerticalPosition(for slot: Model.VerticalAxis.Coordinate) -> Double {
         fatalError()
-        //return StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
     }
 }
 
@@ -63,7 +51,7 @@ extension StaffView {
     // MARK: - Rendering
     
     public var components: [Renderable] {
-        let pointViews: [Renderable] = points.flatMap { _, views in views }
-        return [lines, clef] + pointViews
+        let points: [Renderable] = self.points
+        return [lines, clef] + points
     }
 }

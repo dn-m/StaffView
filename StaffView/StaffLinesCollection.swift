@@ -11,6 +11,10 @@ import PathTools
 import GraphicsTools
 import PlotView
 
+/// Collection of staff and ledger lines, which can be rendered graphically when necessary.
+///
+/// - FIXME: Use own `Configuration` type (currently using `StaffConfiguration`, which is TMI).
+///
 public struct StaffLinesCollection: Renderable {
     
     private func staffLines(configuration: StaffConfiguration) -> StyledPath {
