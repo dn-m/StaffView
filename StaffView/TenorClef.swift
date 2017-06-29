@@ -20,7 +20,7 @@ public final class TenorClef: StaffClefView {
     
     public override var ornament: StyledPath {
         
-        let width = 0.8 * staffSlotHeight
+        let width = staffSlotHeight
         let position = Point(x: 0, y: ornamentAltitude)
         let path = Path
             .square(center: position, width: width)

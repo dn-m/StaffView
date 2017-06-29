@@ -63,14 +63,17 @@ extension ClefView {
     }
     
     public var rendered: StyledPath.Composite {
-        return .branch(StyledPath.Group(identifier: "clef"), components.map { .leaf($0) })
+        return .branch(StyledPath.Group("clef"), components.map { .leaf($0) })
     }
 }
 
 public class StaffClefView: ClefView {
     
-    public static func makeClef(_ kind: Clef.Kind, position: Position, configuration: Configuration)
-        -> StaffClefView
+    public static func makeClef(
+        _ kind: Clef.Kind,
+        at position: Position,
+        with configuration: Configuration
+    ) -> StaffClefView
     {
         
         var type: StaffClefView.Type {

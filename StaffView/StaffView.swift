@@ -1,182 +1,73 @@
-////
-////  StaffView.swift
-////  StaffView
-////
-////  Created by James Bean on 1/16/17.
-////
-////
 //
-//import GeometryTools
-//import PathTools
-//import GraphicsTools
-//import PlotModel
-//import StaffModel
-//import PlotView
+//  StaffView.swift
+//  StaffView
 //
-//public struct StaffRenderConfiguration {
-//    public let informationConfiguration: StaffInformationConfiguration
-//    public let structureConfiguration: StaffStructureConfiguration
-//}
-//
-//public final class StaffRenderer: Renderable {
-//    
-//    public var rendered: StyledPath.Composite {
-//        fatalError()
-//    }
-//
-//    private enum LedgerLineDirection: Double {
-//        case above = -1
-//        case below = 1
-//    }
-//    
-//    private var staffLines = LinesSegmentCollection()
-//    private var ledgerLines: [Double: [LedgerLineDirection: Int]] = [:]
-//    private let model: StaffModel
-//    private let configuration: StaffConfiguration
-//    
-//    public init(model: StaffModel, configuration: StaffConfiguration) {
-//        self.model = model
-//        self.configuration = configuration
-//    }
-//    
-//    public func startLines(at x: Double) {
-//        staffLines.startLines(at: x)
-//    }
-//    
-//    public func stopLines(at x: Double) {
-//        staffLines.stopLines(at: x)
-//    }
-//    
-//    public func addLedgerLines(at position: Double, above: Int, below: Int) {
-//        ledgerLines.ensureValue(for: position)
-//        ledgerLines[position]![.below] = below
-//        ledgerLines[position]![.above] = above
-//    }
-//    
-//    private func makeClef(with configuration: StaffConfiguration) -> StaffClefView {
-//        fatalError()
-//    }
-//    
-//    private func staffLines(configuration: StaffStructureConfiguration) -> Path {
-//        
-//        let staffSlotHeight = configuration.staffSlotHeight
-//        
-//        return Path(
-//            staffLines.flatMap { segment in
-//                return (0..<5).map { lineNumber in
-//                    let altitude = Double(lineNumber) * staffSlotHeight * 2
-//                    let left = segment.start
-//                    let right = segment.stop
-//                    return BezierCurve(
-//                        start: Point(x: left, y: altitude),
-//                        end: Point(x: right, y: altitude)
-//                    )
-//                }
-//            }
-//        )
-//    }
-//    
-//    private func ledgerLines(configuration: StaffStructureConfiguration) -> Path {
-//        
-//        let staffSlotHeight = configuration.staffSlotHeight
-//        let length = configuration.ledgerLineLength
-//        var curves: [BezierCurve] = []
-//        
-//        for (x, amountByDirection) in ledgerLines {
-//            for (direction, amount) in amountByDirection {
-//                let left = x - 0.5 * length
-//                let right = x + 0.5 * length
-//                let refY = direction == .above ? -2 * staffSlotHeight : 10 * staffSlotHeight
-//                
-//                for number in 0..<amount {
-//                    let altitude = Double(number) * direction.rawValue * 2 * staffSlotHeight + refY
-//                    let curve = BezierCurve(
-//                        start: Point(x: left, y: altitude),
-//                        end: Point(x: right, y: altitude)
-//                    )
-//                    curves.append(curve)
-//                }
-//            }
-//        }
-//        
-//        return Path(curves)
-//    }
-//}
-//
-//public struct StaffView: VerticalPlotView {
-//    
-//    public typealias Model = StaffModel
-//
-//    let model: Model
-//    let configuration: StaffConfiguration
-//    
-//    public init(model: Model, configuration: StaffConfiguration = StaffConfiguration()) {
-//        self.model = model
-//        self.configuration = configuration
-//    }
-//
-//    public func concreteVerticalPosition(for slot: Model.VerticalAxis.Coordinate) -> Double {
-//        return StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
-//    }
-//}
-//
-//extension StaffView {
-//    
-//    // MARK: - Rendering
-//    
-//    public var rendered: StyledPath.Composite {
-//        return StaffRenderer(model: model, configuration: configuration).rendered
-//        
-//        
-////        let staffSlotHeight = configuration.staffSlotHeight
-////        
-////        let structureConfig = StaffStructureConfiguration(
-////            staffSlotHeight: staffSlotHeight,
-////            linesColor: Color(gray: 0.5, alpha: 1),
-////            clefColor: Color.red,
-////            maskColor: Color(gray: 1, alpha: 1)
-////        )
-////        
-////        let infoConfig = StaffInformationConfiguration(
-////            staffSlotHeight: staffSlotHeight,
-////            noteheadColor: Color.red
-////        )
-////        
-////        _ = StaffRenderConfiguration(
-////            informationConfiguration: infoConfig,
-////            structureConfiguration: structureConfig
-////        )
-////        
-////        // temporary
-////        renderer.structureRenderer.stopLines(at: Double(model.count) * 100 + 100)
-//    }
-//    
-//    // MARK: - Lines
-//    
-//
-//    
-//    // MARK: - Information
-//}
+//  Created by James Bean on 1/16/17.
 //
 //
-////extension CALayer {
-////    
-////    var boundingBoxOfSublayers: CGRect {
-////        
-////        func traverse(_ layer: CALayer) {
-////            print("\(type(of: layer)): \(layer.frame)")
-////            
-////            if let shapeLayer = layer as? CAShapeLayer {
-////                print("-- shape layer: \(shapeLayer.path?.boundingBoxOfPath)")
-////            }
-////            
-////            if let sublayers = layer.sublayers, !sublayers.isEmpty {
-////                sublayers.forEach(traverse)
-////            }
-////        }
-////        
-////        traverse(self)
-////        
-////        return CGRect.zero
-////    }
-////}
+
+import GeometryTools
+import PathTools
+import GraphicsTools
+import PlotModel
+import StaffModel
+import PlotView
+
+public struct StaffView: VerticalPlotView {
+    
+    // TODO: Articulations, etc
+    public struct PointView: CompositeRenderable {
+        
+        public var components: [Renderable] {
+            let noteheads: [Renderable] = pitches.flatMap { $0.notehead }
+            let accidentals: [Renderable] = pitches.flatMap { $0.accidental }
+            return noteheads + accidentals
+        }
+        
+        public let pitches: [StaffRepresentedPitch]
+        public init(pitches: [StaffRepresentedPitch]) {
+            self.pitches = pitches
+        }
+    }
+    
+    public let clef: StaffClefView
+    public let lines: StyledPath.Composite
+    
+    // Use SortedDictionary
+    public let points: [Double: [PointView]]
+    
+    public typealias Model = StaffModel
+    
+    // TODO: Make LinesView legite type
+    public init(clef: StaffClefView, lines: StyledPath.Composite, points: [Double: [PointView]]) {
+        self.clef = clef
+        self.points = points
+        self.lines = lines
+    }
+    
+    public init(model: Model, configuration: StaffConfiguration = StaffConfiguration()) {
+        self = Builder(model: model, configuration: configuration).build()
+    }
+
+    // Ultimately, this is probably useless, if we use builders for everything...
+    public func concreteVerticalPosition(for slot: Model.VerticalAxis.Coordinate) -> Double {
+        fatalError()
+        //return StaffSlotHeight(4 - slot) * configuration.staffSlotHeight
+    }
+}
+
+extension StaffView {
+    
+    // MARK: - Rendering
+    
+    public var rendered: StyledPath.Composite {
+        let group = StyledPath.Group("staff")
+        let pointPaths: [StyledPath.Composite] =
+            points.flatMap { position, pointViews in
+                let frame = Rectangle(x: position, y: 0, width: 0, height: 0)
+                let group = StyledPath.Group("point", frame: frame)
+                return .branch(group, pointViews.map { $0.rendered })
+        }
+        return .branch(group, [lines, clef.rendered] + pointPaths)
+    }
+}

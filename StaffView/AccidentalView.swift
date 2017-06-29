@@ -7,11 +7,184 @@
 ////  Copyright © 2015 James Bean. All rights reserved.
 ////
 //
-////import QuartzCore
-//import GeometryTools
-//import PathTools
-//import GraphicsTools
-//import StaffModel
+
+import GeometryTools
+import PathTools
+import GraphicsTools
+import StaffModel
+
+public class AccidentalView: Renderable {
+    
+    public struct Size {
+        public let staffSlotHeight: StaffSlotHeight
+        public let scale: Double
+        public init(staffSlotHeight: StaffSlotHeight = 12, scale: Double = 1) {
+            self.staffSlotHeight = staffSlotHeight
+            self.scale = scale
+        }
+    }
+    
+    private var outside: Path {
+        
+        let builder = Path.builder
+            
+            // top left column
+            .move(to: Point())
+            .addLine(to: Point(x: thinLineWidth, y: 0))
+            
+            // body top
+            .addLine(
+                to: Point(
+                    x: thinLineWidth,
+                    y: thickLineY(x: thinLineWidth, displacement: -thickLineDisplacement, side: -1)
+                )
+            )
+            .addLine(
+                to: Point(
+                    x: width,
+                    y: thickLineY(x: width, displacement: -thickLineDisplacement, side: -1)
+                )
+            )
+            
+            .addLine(to: Point(x: width, y: height))
+            .addLine(to: Point(x: width - thinLineWidth, y: height))
+            
+            // body bottom
+            .addLine(
+                to: Point(
+                    x: width - thinLineWidth,
+                    y: thickLineY(x: width - thinLineWidth, displacement: thickLineDisplacement, side: 1)
+                )
+            )
+            
+            .addLine(
+                to: Point(
+                    x: 0,
+                    y: thickLineY(x: 0, displacement: thickLineDisplacement, side: 1)
+                )
+            )
+            
+            .close()
+        
+        return builder.build()
+    }
+    
+    private var inside: Path {
+        
+        let builder = Path.builder
+        
+            .move(
+                to: Point(
+                    x: thinLineWidth,
+                    y: thickLineY(x: thinLineWidth, displacement: -thickLineDisplacement, side: 1)
+                )
+            )
+        
+            .addLine(
+                to: Point(
+                    x: width - thinLineWidth,
+                    y: thickLineY(x: width - thinLineWidth, displacement: -thickLineDisplacement, side: 1)
+                )
+            )
+        
+            .addLine(
+                to: Point(
+                    x: width - thinLineWidth,
+                    y: thickLineY(x: width - thinLineWidth, displacement: thickLineDisplacement, side: -1)
+                )
+            )
+        
+            .addLine(
+                to: Point(
+                    x: thinLineWidth,
+                    y: thickLineY(x: thinLineWidth, displacement: thickLineDisplacement, side: -1)
+                )
+            )
+        
+            .close()
+        
+        return builder.build()
+    }
+    
+    public var rendered: StyledPath.Composite {
+        let path = outside + inside
+        let styling = Styling(fill: Fill(rule: .evenOdd))
+        return .leaf(StyledPath(frame: frame, path: path, styling: styling))
+    }
+    
+    // FIXME: Refactor to enum
+    // side = -1 = top, 1 = bottom
+    func thickLineY(x: Double, displacement: Double, side: Double) -> Double {
+        let yRef = centerReference.y + displacement + side * (0.5 * thickLineWidth)
+        let xRef = x - 0.5 * width
+        return yRef - thickLineSlope * xRef
+    }
+
+    var thickLineDisplacement: Double {
+        return 0.8250 * size
+    }
+    
+    var thinLineWidth: Double {
+        return 0.175 * size
+    }
+    
+    var thickLineWidth: Double {
+        return 0.764 * size
+    }
+    
+    var thickLineSlope: Double {
+        return 0.25
+    }
+    
+    var midWidth: Double {
+        return 1.150 * size
+    }
+    
+    var columnLength: Double {
+        return 2.472 * size
+    }
+    
+    var width: Double {
+        return midWidth + 2 * thinLineWidth
+    }
+    
+    var height: Double {
+        return 2 * columnLength
+    }
+    
+    // frame
+    var frame: Rectangle {
+        return Rectangle(
+            x: position.x - centerReference.x,
+            y: position.y - centerReference.y,
+            width: width,
+            height: height
+        )
+    }
+    
+    var centerReference: Point {
+        return Point(x: 0.5 * width, y: 0.5 * height)
+    }
+    
+    let position: Point
+    let size: Size
+    let color: Color
+    
+    public init(position: Point = Point(), size: Size = Size(), color: Color = .black) {
+        self.position = position
+        self.size = size
+        self.color = color
+    }
+}
+
+func * (lhs: Double, rhs: AccidentalView.Size) -> Double {
+    return lhs * rhs.staffSlotHeight * rhs.scale
+}
+
+func * (lhs: AccidentalView.Size, rhs: Double) -> Double {
+    return rhs * lhs.staffSlotHeight * lhs.scale
+}
+
 //
 //public class AccidentalView: Renderable {
 //

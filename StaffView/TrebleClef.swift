@@ -20,7 +20,10 @@ public final class TrebleClef: StaffClefView {
     
     public override var ornament: StyledPath {
         
-        let path = Path.circle(center: Point(x: 0, y: ornamentAltitude), radius: staffSlotHeight)
+        let path = Path.circle(
+            center: Point(x: 0, y: ornamentAltitude),
+            radius: staffSlotHeight
+        )
         
         let styling = Styling(
             fill: Fill(color: configuration.maskColor),

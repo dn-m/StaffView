@@ -25,7 +25,7 @@ class ClefTests: XCTestCase {
         
         let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
         for clef in clefs {
-            let view = StaffClefView.makeClef(clef, position: position, configuration: configuration)
+            let view = StaffClefView.makeClef(clef, at: position, with: configuration)
             let layer = CALayer(view.rendered)
             layer.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
             layer.showTestBorder()
