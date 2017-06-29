@@ -2,30 +2,34 @@
 //  ClefTests.swift
 //  StaffView
 //
-//  Created by James Bean on 6/25/17.
+//  Created by James Bean on 6/28/17.
 //
 //
 
 import XCTest
+import ArithmeticTools
+import GeometryTools
+import PathTools
 import GraphicsTools
+import PlotModel
+import PlotView
 import StaffModel
 import StaffView
 
 class ClefTests: XCTestCase {
     
     func testClefs() {
+        
+        let position = VerticalAxisPosition(x: 0, plotTop: 0, plotBottom: 40)
+        let configuration = ClefConfiguration(foregroundColor: .black, maskColor: .white)
+        
         let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
-        let views = clefs.map {
-            $0.view.init(
-                x: 0,
-                staffTop: 0,
-                staffSlotHeight: 42,
-                foregroundColor: .red,
-                maskColor: Color(gray: 1, alpha: 1) //Color(hex: 0xFFFFFF)
-            ) as! CALayer
-        }
-        zip(clefs, views).forEach { clef, view in
-            view.renderToPDF(name: "\(clef)")
+        for clef in clefs {
+            let view = StaffClefView.makeClef(clef, at: position, with: configuration)
+            let layer = CALayer(view.rendered)
+            layer.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
+            layer.showTestBorder()
+            layer.renderToPDF(name: "clef_\(clef)")
         }
     }
 }

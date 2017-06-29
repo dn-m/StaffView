@@ -1,17 +1,20 @@
 //
-//  StaffStructureConfiguration.swift
+//  StaffConfiguration.swift
 //  StaffView
 //
-//  Created by James Bean on 1/16/17.
+//  Created by James Bean on 1/17/17.
 //
 //
 
 import StaffModel
 import GraphicsTools
 
-public struct StaffStructureConfiguration {
- 
+public struct StaffConfiguration {
+    
+    public static var `default` = StaffConfiguration()
+    
     public let staffSlotHeight: StaffSlotHeight
+    public let noteheadColor: Color
     public let linesColor: Color
     public let clefColor: Color
     public let maskColor: Color
@@ -30,12 +33,14 @@ public struct StaffStructureConfiguration {
     
     public init(
         staffSlotHeight: StaffSlotHeight = 12,
-        linesColor: Color = Color.init(gray: 0.5, alpha: 1),
-        clefColor: Color,
-        maskColor: Color
+        noteheadColor: Color = Color(gray: 0.25, alpha: 1),
+        linesColor: Color = Color(gray: 0.5, alpha: 1),
+        clefColor: Color = Color(gray: 0, alpha: 1),
+        maskColor: Color = Color(gray: 1, alpha: 1)
     )
     {
         self.staffSlotHeight = staffSlotHeight
+        self.noteheadColor = noteheadColor
         self.linesColor = linesColor
         self.clefColor = clefColor
         self.maskColor = maskColor

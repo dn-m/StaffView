@@ -12,59 +12,54 @@ import GeometryTools
 import PathTools
 import GraphicsTools
 
-/// - TODO: Decouple `NoteheadView` from `staffSlotHeight`.
-public class NoteheadView: CAShapeLayer, ShapeType {
-    
-    public var point: Point
-    public var staffSlotHeight: StaffSlotHeight
-    
-    public var color: Color = Color(gray: 0.5, alpha: 1) {
-        didSet {
-            fillColor = color.cgColor
+public class NoteheadView: Renderable {
+
+    public struct Size {
+
+        public let staffSlotHeight: StaffSlotHeight
+        public let scale: Double
+
+        public init(staffSlotHeight: StaffSlotHeight, scale: Double = 1) {
+            self.staffSlotHeight = staffSlotHeight
+            self.scale = scale
         }
     }
     
+    public var rendered: StyledPath.Composite {
+        let styling = Styling(fill: Fill(color: Color(gray: 0.5, alpha: 1)))
+        return .leaf(StyledPath(frame: frame, path: path, styling: styling))
+    }
+    
+    private var path: Path {
+        return Path
+            .ellipse(in: Rectangle(x: 0, y: 0, width: width, height: height))
+            .rotated(by: Angle(degrees: 45), around: Point(x: 0.5 * width, y: 0.5 * height))
+    }
+    
+    private var frame: Rectangle {
+        return Rectangle(
+            x: position.x - 0.5 * width,
+            y: position.y - 0.5 * height,
+            width: width,
+            height: height
+        )
+    }
+    
     private var width: Double {
-        return 2.25 * staffSlotHeight
+        return 2.25 * size.staffSlotHeight * size.scale
     }
     
     private var height: Double {
         return 0.75 * width
     }
     
-    public init(point: Point, staffSlotHeight: StaffSlotHeight) {
-        self.point = point
-        self.staffSlotHeight = staffSlotHeight
-        super.init()
-        self.fillColor = Color(gray: 0.75, alpha: 1).cgColor
-        build()
-    }
+    public var position: Point
+
+    public var size: Size
     
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError()
-    }
-    
-    public func build() {
-        path = makePath()
-        frame = makeFrame()
-    }
-    
-    public func makePath() -> CGPath {
-        let rect = Rectangle(x: 0, y: 0, width: width, height: height)
-        let ellipse = Path.ellipse(in: rect)
-        let rotated = ellipse.rotated(
-            by: Angle(degrees: 45),
-            around: Point(x: 0.5 * width, y: 0.5 * height)
-        )
-        return rotated.cgPath
-    }
-    
-    public func makeFrame() -> CGRect {
-        return CGRect(
-            x: point.x - 0.5 * width,
-            y: point.y - 0.5 * height,
-            width: width,
-            height: height
-        )
+    // Add configuration
+    public init(position: Point, size: Size) {
+        self.position = position
+        self.size = size
     }
 }

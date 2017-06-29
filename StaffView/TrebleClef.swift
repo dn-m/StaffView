@@ -7,56 +7,29 @@
 //
 
 import StaffModel
-import QuartzCore
 import GeometryTools
+import PathTools
 import GraphicsTools
+import PlotView
 
-public final class TrebleClef: CALayer, ClefView {
+public final class TrebleClef: StaffClefView {
     
-    public var ornamentAltitude: Double {
+    public override var ornamentAltitude: Double {
         return 6 * staffSlotHeight + extenderLength
     }
     
-    private var circle: CircleClefOrnament {
-        return CircleClefOrnament(
-            point: Point(x: 0, y: ornamentAltitude),
-            radius: 1 * staffSlotHeight,
-            lineWidth: lineWidth,
-            lineColor: Color.red.cgColor,
-            backgroundColor: Color(gray: 1, alpha: 1).cgColor
+    public override var ornament: StyledPath {
+        
+        let path = Path.circle(
+            center: Point(x: 0, y: ornamentAltitude),
+            radius: staffSlotHeight
         )
-    }
-    
-    /// Components that need to built and added
-    public var components: [CALayer] = []
-    public let x: Double
-    public let staffTop: Double
-    public let staffSlotHeight: StaffSlotHeight
-    public var foregroundColor: Color
-    public var maskColor: Color
-    
-    public init(
-        x: Double,
-        staffTop: Double,
-        staffSlotHeight: StaffSlotHeight,
-        foregroundColor: Color,
-        maskColor: Color
-    )
-    {
-        self.x = x
-        self.staffTop = staffTop
-        self.staffSlotHeight = staffSlotHeight
-        self.foregroundColor = foregroundColor
-        self.maskColor = maskColor
-        super.init()
-        build()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func createComponents() {
-        components = [line, circle]
+        
+        let styling = Styling(
+            fill: Fill(color: configuration.maskColor),
+            stroke: Stroke(width: lineWidth, color: configuration.foregroundColor)
+        )
+        
+        return StyledPath(frame: frame, path: path, styling: styling)
     }
 }

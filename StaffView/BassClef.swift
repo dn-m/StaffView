@@ -6,62 +6,33 @@
 //
 //
 
-import StaffModel
-import QuartzCore
+import ArithmeticTools
 import GeometryTools
 import GraphicsTools
+import PathTools
+import PlotView
+import StaffModel
 
-public final class BassClef: CALayer, ClefView {
+public final class BassClef: StaffClefView {
     
-    public var ornamentAltitude: Double {
-        return 1 * staffSlotHeight + extenderLength
+    public override var ornamentAltitude: Double {
+        return 2 * staffSlotHeight + extenderLength
     }
     
-    private var dots: [DotClefOrnament] {
-        
-        // Create a dot above and below (by 0.8 staff slots) the `ornamentAltitude`
-        return [-1, 1].map { sign in
-            DotClefOrnament(
-                point: Point(
-                    x: 0.5 * staffSlotHeight,
-                    y: ornamentAltitude + 0.8 * Double(sign)
+    public override var ornament: StyledPath {
+
+        let path = [-1,1].map { sign in
+            Path.circle(
+                center: Point(
+                    x: 0.75 * staffSlotHeight,
+                    y: ornamentAltitude + 0.8 * Double(sign) * staffSlotHeight
                 ),
-                radius: 0.175 * staffSlotHeight,
-                color: Color.red.cgColor
+                radius: 0.25 * staffSlotHeight
             )
-        }
-    }
-
-    /// Components that need to built and added
-    public var components: [CALayer] = []
-    public let x: Double
-    public let staffTop: Double
-    public let staffSlotHeight: StaffSlotHeight
-    public let foregroundColor: Color
-    public let maskColor: Color
-    
-    public init(
-        x: Double,
-        staffTop: Double,
-        staffSlotHeight: StaffSlotHeight,
-        foregroundColor: Color,
-        maskColor: Color
-    )
-    {
-        self.x = x
-        self.staffTop = staffTop
-        self.staffSlotHeight = staffSlotHeight
-        self.foregroundColor = foregroundColor
-        self.maskColor = maskColor
-        super.init()
-        build()
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func createComponents() {
-        components = [line] + dots
+        }.sum
+        
+        let styling = Styling(fill: Fill(color: configuration.foregroundColor))
+        
+        return StyledPath(frame: frame, path: path, styling: styling)
     }
 }

@@ -2,110 +2,75 @@
 //  StaffViewTests.swift
 //  StaffView
 //
-//  Created by James Bean on 1/19/17.
+//  Created by James Bean on 6/28/17.
 //
 //
 
 import XCTest
-import QuartzCore
-import Collections
-import ArithmeticTools
 import Pitch
 import PitchSpellingTools
-import PlotModel
 import StaffModel
-import GeometryTools
-import PathTools
-import GraphicsTools
 import StaffView
 
 class StaffViewTests: XCTestCase {
     
-    func testNotehead() {
-        let notehead = NoteheadView(point: Point(), staffSlotHeight: 42)
-        notehead.showTestBorder()
-        notehead.renderToPDF(name: "notehead")
-    }
-    
-    func testAccidentals() {
-        
-        let accidentals: [Accidental] = [
-            .natural, .naturalUp, .naturalDown,
-            .sharp, .sharpUp, .sharpDown,
-            .flat, .flatUp, .flatDown
-        ]
-        
-        for accidental in accidentals {
-            let view = AccidentalView.makeAccidental(accidental, at: Point(), staffSlotHeight: 42)
-            view.showTestBorder()
-            view.renderToPDF(name: "accidental_\(accidental)")
+    func testBuilderAPI() {
+        let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
+        for clef in clefs {
+            let builder = StaffView.Builder(clef: Clef(clef), configuration: StaffConfiguration())
+            builder.startLines(at: 0)
+            builder.stopLines(at: 500)
+            let staffView = builder.build()
+            let layer = CALayer(staffView.rendered)
+            layer.frame = CGRect(x: 0, y: 0, width: 500, height: 100)
+            layer.renderToPDF(name: "\(clef)_staff")
         }
     }
     
-    func testMelodicCMajorTreble() {
-        let layer = CALayer()
-        layer.frame = CGRect(x: 0, y: 0, width: 800, height: 200)
-        let cMajorScale: PitchCollection = [60,62,64,65,67,69,71]
-        cMajorScale.show(in: layer)
-        layer.showTestBorder()
-        layer.renderToPDF(name: "treble_c_major_melodic")
-    }
-    
-    func testMelodicCMinorTreble() {
-        let layer = CALayer()
-        layer.frame = CGRect(x: 0, y: 0, width: 800, height: 200)
-        let cMajorScale: PitchCollection = [60,62,63,65,67,69,71]
-        cMajorScale.show(in: layer)
-        layer.showTestBorder()
-        layer.renderToPDF(name: "treble_c_minor_melodic")
-    }
-    
-    func testPDF() {
+    func testInitWithModelAndConfiguration() {
         
-        var model = StaffModel(clef: Clef(.treble))
+        let pitches: [Pitch] = [60,62,63,64,66,68,71]
+        let spelled = pitches.map { $0.spelledWithDefaultSpelling() }
+        let representable = spelled.map { StaffRepresentablePitch($0) }
+        let points = representable.map { StaffPointModel([$0]) }
         
-        let cMajorScale: PitchCollection = [60,62,64,65,67,69,71]
-        let sequence: [StaffRepresentablePitch] = cMajorScale.map { pitch in
-            let pitch = pitch.spelledWithDefaultSpelling()
-            let notehead: Notehead = .ord
-            return StaffRepresentablePitch.init(pitch, notehead)
+        var positions: [Double] = []
+        var accum: Double = 100
+        for _ in points.indices {
+            positions.append(accum)
+            accum += 100
         }
         
-        let point = StaffPointModel(sequence)
-        model.addPoint(point, at: 10)
-        
-        let layer = CALayer()
-        //layer.frame = CGRect(x: 0, y: 0, width: 800, height: 200)
+        let builder = StaffModel.builder
+        zip(positions, points).forEach { position, point in builder.add(point, at: position) }
+        let model = builder.build()
         
         let view = StaffView(model: model)
-        view.render(in: layer, with: StaffViewConfiguration(staffSlotHeight: 12))
-        layer.showTestBorder()
-        layer.renderToPDF(name: "staff_triad")
+        let layer = CALayer(view.rendered)
+        layer.frame = CGRect(x: 0, y: 0, width: 800, height: 300)
+        layer.renderToPDF(name: "staff_pitches")
     }
-
-    func testSequence() {
+    
+    func testHull() {
         
-        // Create pitch model
-        var model = StaffModel(clef: Clef(.treble))
-        let cMajorScale: PitchCollection = [60,62,64,65,67,69,71]
-        let sequence: [StaffRepresentablePitch] = cMajorScale.map { pitch in
-            let pitch = pitch.spelledWithDefaultSpelling()
-            let notehead: Notehead = .ord
-            return StaffRepresentablePitch.init(pitch, notehead)
+        let pitches: [Pitch] = [60,62,63,64,66,68,71]
+        let spelled = pitches.map { $0.spelledWithDefaultSpelling() }
+        let representable = spelled.map { StaffRepresentablePitch($0) }
+        let points = representable.map { StaffPointModel([$0]) }
+        
+        var positions: [Double] = []
+        var accum: Double = 100
+        for _ in points.indices {
+            positions.append(accum)
+            accum += 100
         }
         
-        var x: Double = 40
-        for note in sequence {
-            let point = StaffPointModel.init([note])
-            model.addPoint(point, at: x)
-            x += 80
-        }
+        let builder = StaffModel.builder
+        zip(positions, points).forEach { position, point in builder.add(point, at: position) }
+        let model = builder.build()
         
-        let staffView = StaffView(model: model)
-
-        let container = CALayer()
-        container.frame = CGRect(x: 0, y: 0, width: 800, height: 600)
-        staffView.render(in: container, with: StaffViewConfiguration(staffSlotHeight: 10))
-        container.renderToPDF(name: "pitch_sequence")
+        let view = StaffView(model: model)
+        let composite = view.rendered
+        
     }
 }
