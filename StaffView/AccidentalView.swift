@@ -18,15 +18,6 @@ public class AccidentalView: Renderable {
         case below = 1
     }
     
-    public struct Size {
-        public let staffSlotHeight: StaffSlotHeight
-        public let scale: Double
-        public init(staffSlotHeight: StaffSlotHeight = 12, scale: Double = 1) {
-            self.staffSlotHeight = staffSlotHeight
-            self.scale = scale
-        }
-    }
-    
     public var path: Path {
         fatalError("Must override")
     }
@@ -92,10 +83,15 @@ public class AccidentalView: Renderable {
     }
     
     let position: Point
-    let size: Size
+    let size: StaffItemSize
     let color: Color
     
-    public required init(position: Point = Point(), size: Size = Size(), color: Color = .black) {
+    public required init(
+        position: Point = Point(),
+        size: StaffItemSize = StaffItemSize(),
+        color: Color = .black
+    )
+    {
         self.position = position
         self.size = size
         self.color = color
@@ -104,14 +100,6 @@ public class AccidentalView: Renderable {
     func point(x: Double, displace: Double, from direction: VerticalDirection) -> Point {
         return Point(x: x, y: thickLineY(x: x, displace: displace, from: direction))
     }
-}
-
-func * (lhs: Double, rhs: AccidentalView.Size) -> Double {
-    return lhs * rhs.staffSlotHeight * rhs.scale
-}
-
-func * (lhs: AccidentalView.Size, rhs: Double) -> Double {
-    return rhs * lhs.staffSlotHeight * lhs.scale
 }
 
 //
@@ -148,7 +136,7 @@ extension AccidentalView {
     public static func makeAccidental(
         _ kind: Accidental,
         at position: Point,
-        size: Size,
+        size: StaffItemSize,
         color: Color
     ) -> AccidentalView
     {
@@ -346,7 +334,7 @@ extension AccidentalView {
         coarse: Float,
         fine: Float,
         at position: Point,
-        size: Size,
+        size: StaffItemSize,
         color: Color
     ) -> AccidentalView?
     {
