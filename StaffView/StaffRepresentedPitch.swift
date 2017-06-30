@@ -40,7 +40,7 @@ public struct StaffRepresentedPitch {
         
         self.accidental = AccidentalView.makeAccidental(representableContext.accidental,
             at: Point(x: position - 30, y: altitude),
-            size: AccidentalView.Size(staffSlotHeight: staffSlotHeight, scale: 1),
+            size: StaffItemSize(staffSlotHeight: staffSlotHeight, scale: 1),
             color: .black
         )
     }

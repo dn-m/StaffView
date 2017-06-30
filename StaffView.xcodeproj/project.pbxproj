@@ -51,8 +51,6 @@
 		07829BEB1F0598E60074E477 /* StaffView.PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07829BE91F0598E60074E477 /* StaffView.PointView.swift */; };
 		07FFE8C91E2E85E400023FFC /* StaffConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */; };
 		07FFE8CA1E2E85E400023FFC /* StaffConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */; };
-		07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
-		07FFE8CD1E2E862800023FFC /* StaffSlotHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
 		4CB4DD7E8AD8C1CEDF1117C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
 		9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB674A640E0221D687A517C3 /* Foundation.framework */; };
@@ -101,7 +99,6 @@
 		07829BE61F05932E0074E477 /* StaffLinesCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffLinesCollection.swift; path = StaffView/StaffLinesCollection.swift; sourceTree = "<group>"; };
 		07829BE91F0598E60074E477 /* StaffView.PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.PointView.swift; path = StaffView/StaffView.PointView.swift; sourceTree = "<group>"; };
 		07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffConfiguration.swift; path = StaffView/StaffConfiguration.swift; sourceTree = "<group>"; };
-		07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffSlotHeight.swift; path = StaffView/StaffSlotHeight.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500875C5E63DA13A41385EB5 /* StaffView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StaffView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				F83B90CEC209B3E190D6780A /* Supporting Files */,
-				07FFE8CB1E2E862800023FFC /* StaffSlotHeight.swift */,
 				07731E9B1F065C3700BDDCD6 /* StaffItemSize.swift */,
 				076D04771E2D32870023ED96 /* StaffView.swift */,
 				07829BE91F0598E60074E477 /* StaffView.PointView.swift */,
@@ -502,7 +498,6 @@
 				076D04FE1E2D45690023ED96 /* TrebleClef.swift in Sources */,
 				076D050A1E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
 				07829BE81F05932E0074E477 /* StaffLinesCollection.swift in Sources */,
-				07FFE8CD1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				07731E9D1F065C3700BDDCD6 /* StaffItemSize.swift in Sources */,
 				076D04791E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04B91E2D43D60023ED96 /* AccidentalView.swift in Sources */,
@@ -527,7 +522,6 @@
 				076D04FD1E2D45690023ED96 /* TrebleClef.swift in Sources */,
 				076D05091E2D4E050023ED96 /* StaffRepresentedPitch.swift in Sources */,
 				07829BE71F05932E0074E477 /* StaffLinesCollection.swift in Sources */,
-				07FFE8CC1E2E862800023FFC /* StaffSlotHeight.swift in Sources */,
 				07731E9C1F065C3700BDDCD6 /* StaffItemSize.swift in Sources */,
 				076D04781E2D32870023ED96 /* StaffView.swift in Sources */,
 				076D04B81E2D43D60023ED96 /* AccidentalView.swift in Sources */,

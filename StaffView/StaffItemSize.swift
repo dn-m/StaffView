@@ -6,7 +6,14 @@
 //
 //
 
+/// Unit of height of a single `StaffSlot`
+public typealias StaffSlotHeight = Double
+
 public struct StaffItemSize {
+    
+    public var scaledValue: Double {
+        return staffSlotHeight * scale
+    }
     
     public let staffSlotHeight: StaffSlotHeight
     public let scale: Double
@@ -18,9 +25,9 @@ public struct StaffItemSize {
 }
 
 internal func * (lhs: Double, rhs: StaffItemSize) -> Double {
-    return lhs * rhs.staffSlotHeight * rhs.scale
+    return lhs * rhs.scaledValue
 }
 
 internal func * (lhs: StaffItemSize, rhs: Double) -> Double {
-    return rhs * lhs.staffSlotHeight * lhs.scale
+    return rhs * lhs.scaledValue
 }
