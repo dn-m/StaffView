@@ -22,7 +22,7 @@ extension StaffView {
     
     public class Builder {
 
-        // Intput
+        // Input
         private let clef: Clef
         private let configuration: StaffConfiguration
         
