@@ -51,6 +51,11 @@ extension ClefView {
     public var height: Double {
         return clefHeight + 2 * extenderLength
     }
+}
+
+extension ClefView {
+    
+    // MARK: - Renderable
     
     public var line: StyledPath {
         let path = Path.line(from: Point(x: 0, y: 0), to: Point(x: 0, y: height))

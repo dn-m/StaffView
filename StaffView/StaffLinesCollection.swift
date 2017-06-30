@@ -17,6 +17,35 @@ import PlotView
 ///
 public struct StaffLinesCollection: Renderable {
     
+    public var rendered: StyledPath.Composite {
+        
+        let group = StyledPath.Group("lines")
+        
+        let paths = [
+            staffLines(configuration: configuration),
+            ledgerLines(configuration: configuration)
+        ]
+        
+        return .branch(group, paths.map { .leaf($0) })
+    }
+    
+    let staffLines: LinesSegmentCollection
+    let ledgerLines: [Double: [LedgerLineDirection: Int]]
+    let configuration: StaffConfiguration
+    
+    public init(
+        staffLines: LinesSegmentCollection,
+        ledgerLines: [Double: [LedgerLineDirection: Int]],
+        configuration: StaffConfiguration
+    )
+    {
+        self.staffLines = staffLines
+        self.ledgerLines = ledgerLines
+        self.configuration = configuration
+    }
+    
+    // FIXME: Passing Configuration for no reason
+    // - Either accept statefulness, or break out to pure functions
     private func staffLines(configuration: StaffConfiguration) -> StyledPath {
         
         let staffSlotHeight = configuration.staffSlotHeight
@@ -42,6 +71,8 @@ public struct StaffLinesCollection: Renderable {
         return StyledPath(frame: .zero, path: path, styling: styling)
     }
     
+    // FIXME: Passing Configuration for no reason
+    // - Either accept statefulness, or break out to pure functions
     private func ledgerLines(configuration: StaffConfiguration) -> StyledPath {
         
         let staffSlotHeight = configuration.staffSlotHeight
@@ -75,32 +106,5 @@ public struct StaffLinesCollection: Renderable {
         )
         
         return StyledPath(frame: .zero, path: path, styling: styling)
-    }
-    
-    public var rendered: StyledPath.Composite {
-        
-        let group = StyledPath.Group("lines")
-        
-        let paths = [
-            staffLines(configuration: configuration),
-            ledgerLines(configuration: configuration)
-        ]
-        
-        return .branch(group, paths.map { .leaf($0) })
-    }
-    
-    let staffLines: LinesSegmentCollection
-    let ledgerLines: [Double: [LedgerLineDirection: Int]]
-    let configuration: StaffConfiguration
-    
-    public init(
-        staffLines: LinesSegmentCollection,
-        ledgerLines: [Double: [LedgerLineDirection: Int]],
-        configuration: StaffConfiguration
-    )
-    {
-        self.staffLines = staffLines
-        self.ledgerLines = ledgerLines
-        self.configuration = configuration
     }
 }
