@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import StaffModel
 import GeometryTools
 import PathTools
 import GraphicsTools
@@ -24,33 +25,63 @@ class AccidentalTests: XCTestCase {
     }
     
     func testNatural() {
-        let frame = Rectangle(x: 0, y: 0, width: 20, height: 20)
-        let accidental = Natural(position: Point(x: frame.midX, y: frame.midY))
-        let container = CALayer()
+        let accidental = Natural(position: Point(x: 0, y: 0))
         let layer = CALayer(accidental.rendered)
-        container.addSublayer(layer)
-        container.frame = CGRect(frame)
-        container.renderToPDF(name: "accidental_natural")
+        layer.showTestBorder()
+        layer.renderToPDF(name: "accidental_natural")
     }
     
     func testSharp() {
-        let frame = Rectangle(x: 0, y: 0, width: 20, height: 20)
-        let accidental = Sharp(position: Point(x: frame.midX, y: frame.midY))
-        let container = CALayer()
+        let accidental = Sharp(position: Point(x: 0, y: 0))
         let layer = CALayer(accidental.rendered)
-        container.addSublayer(layer)
-        container.frame = CGRect(frame)
-        container.renderToPDF(name: "accidental_sharp")
+        layer.showTestBorder()
+        layer.renderToPDF(name: "accidental_sharp")
     }
     
     func testFlat() {
-        let frame = Rectangle(x: 0, y: 0, width: 20, height: 20)
-        let accidental = Flat(position: Point(x: frame.midX, y: frame.midY))
-        let container = CALayer()
+        let accidental = Flat(position: Point(x: 0, y: 0))
         let layer = CALayer(accidental.rendered)
         layer.showTestBorder()
-        container.addSublayer(layer)
+        layer.renderToPDF(name: "accidental_flat")
+    }
+
+    func testInContext() {
+
+        let frame = Rectangle(x: 0, y: 0, width: 100, height: 100)
+        let accidental = Natural(position: frame.center)
+        let composite = accidental.rendered
+
+        let resizedComposite = composite
+        let layer = CALayer(resizedComposite)
+        layer.showTestBorder()
+
+        let container = CALayer()
         container.frame = CGRect(frame)
-        container.renderToPDF(name: "accidental_flat")
+        container.addSublayer(layer)
+        container.renderToPDF(name: "accidental_in_context")
     }
 }
+
+extension CALayer {
+
+    public convenience init(_ composite: StyledPath.Composite) {
+
+        func traverse(_ composite: StyledPath.Composite, building container: CALayer) {
+            switch composite {
+            case .leaf(let styledPath):
+                let layer = CAShapeLayer(styledPath)
+                container.addSublayer(layer)
+            case .branch(let group, let trees):
+                let layer = CALayer()
+                layer.frame = CGRect(group.frame)
+                trees.forEach { traverse($0, building: layer) }
+                container.addSublayer(layer)
+            }
+        }
+
+        self.init()
+        self.frame = CGRect(composite.frame)
+        traverse(composite.resizedToFitContents, building: self)
+    }
+}
+

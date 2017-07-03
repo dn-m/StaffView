@@ -49,9 +49,10 @@ public struct StaffView: VerticalPlotView {
 extension StaffView {
     
     // MARK: - Rendering
-    
+
     public var components: [Renderable] {
         let points: [Renderable] = self.points
-        return [lines, clef] + points
+        let result: [Renderable] = [lines, clef] + points
+        return result
     }
 }

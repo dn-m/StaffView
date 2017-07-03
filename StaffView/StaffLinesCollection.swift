@@ -25,8 +25,9 @@ public struct StaffLinesCollection: Renderable {
             staffLines(configuration: configuration),
             ledgerLines(configuration: configuration)
         ]
-        
-        return .branch(group, paths.map { .leaf($0) })
+
+        let branch: StyledPath.Composite = .branch(group, paths.map { .leaf($0) })
+        return branch.resizedToFitContents
     }
     
     let staffLines: LinesSegmentCollection
@@ -63,12 +64,12 @@ public struct StaffLinesCollection: Renderable {
                 }
             }
         )
-        
+
         let styling = Styling(
             stroke: Stroke(width: configuration.lineWidth, color: configuration.linesColor)
         )
         
-        return StyledPath(frame: .zero, path: path, styling: styling)
+        return StyledPath(frame: .zero, path: path, styling: styling).resizedToFitContents
     }
     
     // FIXME: Passing Configuration for no reason
@@ -105,6 +106,6 @@ public struct StaffLinesCollection: Renderable {
             )
         )
         
-        return StyledPath(frame: .zero, path: path, styling: styling)
+        return StyledPath(frame: .zero, path: path, styling: styling).resizedToFitContents
     }
 }

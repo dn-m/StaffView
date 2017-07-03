@@ -6,6 +6,7 @@
 //
 //
 
+import GeometryTools
 import GraphicsTools
 
 extension StaffView {
@@ -31,7 +32,7 @@ extension StaffView {
 extension StaffView.PointView: CompositeRenderable {
     
     // MARK: - CompositeRenderable
-    
+
     /// Subcomponents to be rendered.
     public var components: [Renderable] {
         let noteheads: [Renderable] = pitches.flatMap { $0.notehead }

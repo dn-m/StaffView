@@ -7,8 +7,10 @@
 //
 
 import XCTest
+import Collections
 import Pitch
 import PitchSpellingTools
+import GeometryTools
 import StaffModel
 import StaffView
 
@@ -21,8 +23,8 @@ class StaffViewTests: XCTestCase {
             builder.startLines(at: 0)
             builder.stopLines(at: 500)
             let staffView = builder.build()
-            let layer = CALayer(staffView.rendered)
-            layer.frame = CGRect(x: 0, y: 0, width: 500, height: 100)
+            let path = staffView.rendered.resizedToFitContents
+            let layer = CALayer(path)
             layer.renderToPDF(name: "\(clef)_staff")
         }
     }
@@ -46,9 +48,15 @@ class StaffViewTests: XCTestCase {
         let model = builder.build()
         
         let view = StaffView(model: model)
-        let layer = CALayer(view.rendered)
-        layer.frame = CGRect(x: 0, y: 0, width: 800, height: 300)
-        layer.renderToPDF(name: "staff_pitches")
+        let composite = view.rendered.resizedToFitContents.translated(by: Point(x: 0, y: 300))
+        dump(composite)
+        let layer = CALayer(composite)
+        layer.showTestBorder()
+
+        let container = CALayer()
+        container.frame = CGRect(x: 0, y: 0, width: 800, height: 800)
+        container.addSublayer(layer)
+        container.renderToPDF(name: "staff_pitches")
     }
     
     func testHull() {
@@ -74,3 +82,4 @@ class StaffViewTests: XCTestCase {
         
     }
 }
+
