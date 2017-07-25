@@ -121,10 +121,8 @@ extension AccidentalView {
                 fatalError()
             }
         }
-        
         return type.init(position: position, size: size, color: color)
     }
-
 }
 
 extension AccidentalView {
