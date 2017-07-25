@@ -130,8 +130,8 @@ extension AccidentalView {
 extension AccidentalView {
     
     public static func makeAccidental(
-        coarse: Float,
-        fine: Float,
+        coarse: Double,
+        fine: Double,
         at position: Point,
         size: StaffItemSize,
         color: Color
