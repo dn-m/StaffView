@@ -25,10 +25,10 @@ public class NoteheadView: Renderable {
         }
     }
     
-    public var rendered: StyledPath.Composite {
+    public var rendered: Composite {
         let styling = Styling(fill: Fill(color: Color(gray: 0.5, alpha: 1)))
         let styledPath = StyledPath(frame: frame, path: path, styling: styling)
-        let leaf: StyledPath.Composite = .leaf(styledPath)
+        let leaf: Composite = .leaf(.path(styledPath))
         return leaf
     }
     

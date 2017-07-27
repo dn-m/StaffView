@@ -22,10 +22,10 @@ public class AccidentalView: Renderable {
         fatalError("Must override")
     }
     
-    public var rendered: StyledPath.Composite {
+    public var rendered: Composite {
         let styling = Styling(fill: Fill(color: color, rule: .evenOdd))
         let styledPath = StyledPath(frame: frame, path: path, styling: styling)
-        return StyledPath.Composite.leaf(styledPath)
+        return Composite.leaf(.path(styledPath))
     }
     
     func thickLineY(x: Double, displace: Double, from direction: VerticalDirection) -> Double {

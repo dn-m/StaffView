@@ -67,8 +67,8 @@ extension ClefView {
         return Rectangle(x: 0, y: -extenderLength, width: 0, height: height)
     }
     
-    public var rendered: StyledPath.Composite {
-        return .branch(StyledPath.Group("clef"), components.map { .leaf($0) })
+    public var rendered: Composite {
+        return .branch(Group("clef"), components.map { .leaf(.path($0)) })
     }
 }
 

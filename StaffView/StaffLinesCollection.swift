@@ -17,16 +17,16 @@ import PlotView
 ///
 public struct StaffLinesCollection: Renderable {
     
-    public var rendered: StyledPath.Composite {
+    public var rendered: Composite {
         
-        let group = StyledPath.Group("lines")
+        let group = Group("lines")
         
         let paths = [
             staffLines(configuration: configuration),
             ledgerLines(configuration: configuration)
         ]
 
-        let branch: StyledPath.Composite = .branch(group, paths.map { .leaf($0) })
+        let branch: Composite = .branch(group, paths.map { .leaf(.path($0)) })
         return branch.resizedToFitContents
     }
     
