@@ -13,8 +13,9 @@ import PitchSpellingTools
 import GeometryTools
 import StaffModel
 import StaffView
+import GraphicsTestTools
 
-class StaffViewTests: XCTestCase {
+class StaffViewTests: GraphicsTestCase {
     
     func testBuilderAPI() {
         let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
@@ -25,7 +26,7 @@ class StaffViewTests: XCTestCase {
             let staffView = builder.build()
             let path = staffView.rendered.resizedToFitContents
             let layer = CALayer(path)
-            layer.renderToPDF(name: "\(clef)_staff")
+            render(layer, name: "\(clef)_staff")
         }
     }
     
@@ -56,7 +57,7 @@ class StaffViewTests: XCTestCase {
         let container = CALayer()
         container.frame = CGRect(x: 0, y: 0, width: 800, height: 800)
         container.addSublayer(layer)
-        container.renderToPDF(name: "staff_pitches")
+        render(container, name: "staff_pitches")
     }
     
     func testHull() {

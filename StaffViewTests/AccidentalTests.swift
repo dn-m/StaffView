@@ -12,8 +12,9 @@ import GeometryTools
 import PathTools
 import GraphicsTools
 import StaffView
+import GraphicsTestTools
 
-class AccidentalTests: XCTestCase {
+class AccidentalTests: GraphicsTestCase {
 
     func testHole() {
         let outside = Path.square(center: Point(), width: 10)
@@ -21,28 +22,28 @@ class AccidentalTests: XCTestCase {
         let path = outside + inside
         let styledPath = StyledPath(path: path, styling: Styling(fill: Fill(rule: .evenOdd)))
         let layer = CAShapeLayer(styledPath)
-        layer.renderToPDF(name: "hole")
+        render(layer, name: "hole")
     }
     
     func testNatural() {
         let accidental = Natural(position: Point(x: 0, y: 0))
         let layer = CALayer(accidental.rendered)
         layer.showTestBorder()
-        layer.renderToPDF(name: "accidental_natural")
+        render(layer, name: "accidental_natural")
     }
     
     func testSharp() {
         let accidental = Sharp(position: Point(x: 0, y: 0))
         let layer = CALayer(accidental.rendered)
         layer.showTestBorder()
-        layer.renderToPDF(name: "accidental_sharp")
+        render(layer, name: "accidental_sharp")
     }
     
     func testFlat() {
         let accidental = Flat(position: Point(x: 0, y: 0))
         let layer = CALayer(accidental.rendered)
         layer.showTestBorder()
-        layer.renderToPDF(name: "accidental_flat")
+        render(layer, name: "accidental_flat")
     }
 
     func testInContext() {
@@ -58,30 +59,6 @@ class AccidentalTests: XCTestCase {
         let container = CALayer()
         container.frame = CGRect(frame)
         container.addSublayer(layer)
-        container.renderToPDF(name: "accidental_in_context")
+        render(container, name: "accidental_in_context")
     }
 }
-
-extension CALayer {
-
-    public convenience init(_ composite: StyledPath.Composite) {
-
-        func traverse(_ composite: StyledPath.Composite, building container: CALayer) {
-            switch composite {
-            case .leaf(let styledPath):
-                let layer = CAShapeLayer(styledPath)
-                container.addSublayer(layer)
-            case .branch(let group, let trees):
-                let layer = CALayer()
-                layer.frame = CGRect(group.frame)
-                trees.forEach { traverse($0, building: layer) }
-                container.addSublayer(layer)
-            }
-        }
-
-        self.init()
-        self.frame = CGRect(composite.frame)
-        traverse(composite.resizedToFitContents, building: self)
-    }
-}
-
