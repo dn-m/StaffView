@@ -49,6 +49,8 @@
 		07829BE81F05932E0074E477 /* StaffLinesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07829BE61F05932E0074E477 /* StaffLinesCollection.swift */; };
 		07829BEA1F0598E60074E477 /* StaffView.PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07829BE91F0598E60074E477 /* StaffView.PointView.swift */; };
 		07829BEB1F0598E60074E477 /* StaffView.PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07829BE91F0598E60074E477 /* StaffView.PointView.swift */; };
+		079D60341F2A5D5200AC83A5 /* GraphicsTestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D60331F2A5D5200AC83A5 /* GraphicsTestTools.framework */; };
+		079D60361F2A5D5C00AC83A5 /* GraphicsTestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D60351F2A5D5C00AC83A5 /* GraphicsTestTools.framework */; };
 		07FFE8C91E2E85E400023FFC /* StaffConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */; };
 		07FFE8CA1E2E85E400023FFC /* StaffConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */; };
 		1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919256C7525A0E03C5E63BF /* Cocoa.framework */; };
@@ -98,6 +100,8 @@
 		077BCC7E1F05425D00986CAF /* AccidentalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccidentalTests.swift; path = StaffViewTests/AccidentalTests.swift; sourceTree = "<group>"; };
 		07829BE61F05932E0074E477 /* StaffLinesCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffLinesCollection.swift; path = StaffView/StaffLinesCollection.swift; sourceTree = "<group>"; };
 		07829BE91F0598E60074E477 /* StaffView.PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffView.PointView.swift; path = StaffView/StaffView.PointView.swift; sourceTree = "<group>"; };
+		079D60331F2A5D5200AC83A5 /* GraphicsTestTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsTestTools.framework; path = Carthage/Build/iOS/GraphicsTestTools.framework; sourceTree = "<group>"; };
+		079D60351F2A5D5C00AC83A5 /* GraphicsTestTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsTestTools.framework; path = Carthage/Build/Mac/GraphicsTestTools.framework; sourceTree = "<group>"; };
 		07FFE8C81E2E85E400023FFC /* StaffConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaffConfiguration.swift; path = StaffView/StaffConfiguration.swift; sourceTree = "<group>"; };
 		3919256C7525A0E03C5E63BF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		3B106DDC8F2F03ED3F7EE075 /* StaffView iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StaffView iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +136,7 @@
 			files = (
 				9A2361F86AFD3EED7358B9A8 /* Foundation.framework in Frameworks */,
 				071E10EB1F04352D00BA9FD1 /* StaffView.framework in Frameworks */,
+				079D60341F2A5D5200AC83A5 /* GraphicsTestTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +146,7 @@
 			files = (
 				1996FC81D379F7AEAF7D1369 /* Cocoa.framework in Frameworks */,
 				071E10EC1F04354500BA9FD1 /* StaffView.framework in Frameworks */,
+				079D60361F2A5D5C00AC83A5 /* GraphicsTestTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +263,8 @@
 		F2E8506C0CC88EF53879345D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				079D60351F2A5D5C00AC83A5 /* GraphicsTestTools.framework */,
+				079D60331F2A5D5200AC83A5 /* GraphicsTestTools.framework */,
 				17CAC6C263E92247D79516ED /* iOS */,
 				82CA29FA49AB6EA1EAB39E95 /* OS X */,
 			);
@@ -638,7 +646,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(SRCROOT)/Carthage/Build/Mac";
@@ -729,7 +740,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = StaffViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks $(SRCROOT)/Carthage/Build/Mac";

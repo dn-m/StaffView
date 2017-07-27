@@ -15,8 +15,9 @@ import PlotModel
 import PlotView
 import StaffModel
 import StaffView
+import GraphicsTestTools
 
-class ClefTests: XCTestCase {
+class ClefTests: GraphicsTestCase {
     
     func testClefs() {
         
@@ -29,7 +30,7 @@ class ClefTests: XCTestCase {
             let layer = CALayer(view.rendered)
             layer.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
             layer.showTestBorder()
-            layer.renderToPDF(name: "clef_\(clef)")
+            render(layer, name: "clef_\(clef)")
         }
     }
 }
